@@ -1,0 +1,97 @@
+<div class="container mt-5" v-cloak>
+    <tabs>
+      <tab title="Noble Fir">
+          <table class="table table-borderless table-responsive-md">
+              <thead>
+              <tr>
+                <th scope="col">Tree Size</th>
+                <th scope="col">Price (HKD)</th>
+                <th scope="col">Stock</th>
+              </tr>
+              <tbody>
+              <tr v-for="(item, index) in productDetails.nf">
+                <td>\{{ index }}</td>
+                <td><input type="number" class="mx-2" v-model="item.price" min="0"></td>
+                <td><input type="number" class="mx-2" v-model="item.stock" min="0"></td>
+              </tr>
+              </tbody>
+            </thead>
+          </table>
+      </tab>
+      <tab title="Frasier Fir">
+        <table class="table table-borderless table-responsive-md">
+            <thead>
+            <tr>
+              <th scope="col">Tree Size</th>
+              <th scope="col">Price (HKD)</th>
+              <th scope="col">Stock</th>
+            </tr>
+            <tbody>
+            <tr v-for="(item, index) in productDetails.ff">
+              <td>\{{ index }}</td>
+              <td><input type="number" class="mx-2" v-model="item.price" min="0"></td>
+              <td><input type="number" class="mx-2" v-model="item.stock" min="0"></td>
+            </tr>
+            </tbody>
+          </thead>
+        </table>
+      </tab>
+      <tab title="Douglas Fir">
+        <table class="table table-borderless table-responsive-md">
+            <thead>
+            <tr>
+              <th scope="col">Tree Size</th>
+              <th scope="col">Price (HKD)</th>
+              <th scope="col">Stock</th>
+            </tr>
+            <tbody>
+            <tr v-for="(item, index) in productDetails.df">
+              <td>\{{ index }}</td>
+              <td><input type="number" class="mx-2" v-model="item.price" min="0"></td>
+              <td><input type="number" class="mx-2" v-model="item.stock" min="0"></td>
+            </tr>
+            </tbody>
+          </thead>
+        </table>
+      </tab>
+      <tab title="Poinsettia / Wreath">
+        <table class="table table-borderless table-responsive-md">
+            <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Price (HKD)</th>
+              <th scope="col">Stock</th>
+            </tr>
+            <tbody>
+            <tr v-for="(item, index) in productDetails.pw">
+              <td>\{{ item.name }}</td>
+              <td><input type="number" class="mx-2" v-model="item.price" min="0"></td>
+              <td><input type="number" class="mx-2" v-model="item.stock" min="0"></td>
+            </tr>
+            </tbody>
+          </thead>
+        </table>
+      </tab>
+      <tab title="Stand">
+          <table class="table table-borderless table-responsive-md">
+            <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Price (HKD)</th>
+            </tr>
+            <tbody>
+            <tr v-for="(item, index) in productDetails.stand">
+              <td ><input type="text" class="mx-2 w-100" v-model="item.name"></td>
+              <td><input type="number" class="mx-2" v-model="item.price" min="0"></td>
+            </tr>
+            </tbody>
+          </thead>
+        </table>
+      </tab>
+    </tabs>
+</div>
+
+<div class="container mt-2">
+  <hr>
+  <button class="btn btn-success" @click.prevent="onProductSave">Save</button>
+</div>

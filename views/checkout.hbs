@@ -1,0 +1,196 @@
+<div class="container">
+      <div class="my-5 text-center" v-if="Object.keys(cart).length == 0">
+      <h1>Cart is Empty.</h1>
+      </div>
+
+      <div v-else>
+      <div class="py-5 text-center">
+        <i class="fab fa-stripe fa-10x"></i>
+        <h2>Finish your payment</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">The Cart</span>
+            <span class="badge badge-secondary badge-pill" v-cloak>\{{cartItemCount}}</span>
+          </h4>
+          <ul class="list-group mb-3" >
+            <div v-for="item in cart" v-cloak>
+            <li class="list-group-item d-flex justify-content-between lh-condensed" v-if="item.product !== 'pw'">
+              <div>
+                <h6 class="my-0">\{{item.product | formatCartProductName}}</h6>
+                <small class="text-muted">Stand: \{{item.stand}}</small>
+              </div>
+              <span class="text-muted">HK$ \{{calculateUnitPrice(item)}}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed" v-else>
+              <div>
+                <h6 class="my-0">\{{formatFlowerName(item.size)}}</h6>
+                <small class="text-muted">Quantity: \{{item.quantity}}</small>
+              </div>
+              <span class="text-muted">HK$ \{{calculateUnitPrice(item)}}</span>
+            </li>
+            </div>
+            <li class="list-group-item d-flex justify-content-between bg-light" v-cloak>
+              <div class="text-info">
+                <h6 class="my-0">Delivery Charge</h6>
+                <small v-if="cInfo.delivery_method === 0 ">Self Pick-up</small>
+                <small v-else>Standard Delivery</small>
+              </div>
+              <span class="text-info" v-if="cInfo.delivery_method === 0 ">HK$ 0</span>
+              <span class="text-info" v-else>HK$ \{{ deliveryCharge }}</span>
+            </li>
+              <li class="list-group-item d-flex justify-content-between bg-light" v-if="cInfo.delivery_method === 1" v-cloak>
+              <div class="text-info">
+                <h6 class="my-0">Delivery Charge</h6>
+                <small>Floor Change (HKD75 x \{{ cInfo.floor }} floor)</small>
+              </div>
+              <span class="text-info" v-if="cInfo.delivery_method === 0 ">HK$ 0</span>
+              <span class="text-info" v-else>HK$ \{{ floorCharge }}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between bg-light">
+              <div class="text-success">
+                <h6 class="my-0">Promo code</h6>
+                <small>\{{ cInfo.coupon || 'N/A'}}</small>
+              </div>
+              <span class="text-success">- \{{ coupon_discount * 100 }}% (HK$ \{{ coupon_discount_amount}})</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Total (HKD)</span>
+              <strong v-cloak>HK$ \{{ calculateTotalPriceIncludingDelivery() }}</strong>
+            </li>
+          </ul>
+          
+          <div class="row">
+            <div class="col-8 col-md-8">
+            <input type="text" class="form-control" id="coupon" v-model="coupon" placeholder="coupon code" required="">
+            </div>
+            <button class="col-2 col-md-4 btn btn-success" :disabled="!coupon" @click="onApplyCoupon()">Apply</button>
+          </div>
+
+        </div>
+
+        <div class="col-md-8 order-md-1">
+          <h4 class="mb-3">Choose your payment</h4>
+            <input type="radio" id="credit_card" value="0" v-model="payment_method">
+            <label class="radio-label" for="one">Credit card</label>
+            <input type="radio" id="bank-in" value="1" v-model="payment_method">
+            <label class="radio-label" for="two">Bank-In</label>
+          <br>
+          <h4 class="mb-3">Customer Information</h4>
+
+          <Validation-observer ref="observer" v-slot="{ invalid, valid }">
+
+          <form class="needs-validation" novalidate="">
+            <div class="row">
+              <div class="col-md-12 mb-3">
+                <label for="fullname">Full name</label>
+                <Validation-provider ref="fullname" name="fullname" rules="required">
+                <div slot-scope="{ errors }">
+                <input type="text" class="form-control" id="fullname" v-model="cInfo.name" placeholder="" required="">
+                <span style="color:red;" v-cloak>\{{ errors[0] }}</span>
+                </div>
+                </Validation-provider>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12 mb-3">
+                <label for="phonenumber">Phone Number</label>
+                <Validation-provider ref="phonenumber" name="phonenumber" rules="required">
+                <div slot-scope="{ errors }">
+                <input type="text" class="form-control" id="phonenumber" v-model="cInfo.phone" placeholder="contact phone number" required="">
+                <span style="color:red;" v-cloak>\{{ errors[0] }}</span>
+                </div>
+                </Validation-provider>
+              </div>
+            </div>
+
+            <div class="row">
+            <div class="col-md-12 mb-3">
+              <label for="email">Email</label>
+              <Validation-provider ref="email" name="email" rules="required|email">
+              <div slot-scope="{ errors }">
+              <input type="email" class="form-control" id="email" placeholder="you@example.com" v-model="cInfo.email">
+              <span style="color:red;" v-cloak>\{{ errors[0] }}</span>
+              </div>
+              </Validation-provider>
+            </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="delivery_method">Delivery Method</label>
+              <select class="form-control" id="delivery_method" v-model="cInfo.delivery_method" v-cloak>
+              <option v-for="(item, key) in defaultDeliveryMethod" :value="item.value" >
+                \{{ item.name }}
+              </option>
+              </select>
+            </div>
+
+            <div class="mb-3" v-if="cInfo.delivery_method === 1" v-cloak>
+              <label for="region">Region</label>
+              <Validation-provider ref="region" name="region" rules="required">
+              <div slot-scope="{ errors }">
+              <select class="form-control" id="region" v-model="cInfo.region" @change="() => {cInfo.delivery_date = ''}" v-cloak>
+              <option v-for="(item, key) in deliveryDetails" :value="item.value" >
+                \{{ item.name }}
+              </option>
+              </select>
+              <span style="color:red;" v-cloak>\{{ errors[0] }}</span>
+              </div>
+              </Validation-provider>
+            </div>
+
+            <div class="mb-3" v-if="cInfo.delivery_method === 1 && selectedRegion" v-cloak>
+              <label for="delivery_date">Delivery Date</label>
+              <Validation-provider ref="delivery_date" name="delivery_date" rules="required">
+              <div slot-scope="{ errors }">
+              <select class="form-control" id="delivery_date" v-model="cInfo.delivery_date" v-cloak>
+              <option v-for="(item, key) in selectedRegion.date" >
+                \{{ item }}
+              </option>
+              </select>
+              <span style="color:red;" v-cloak>\{{ errors[0] }}</span>
+              </div>
+              </Validation-provider>
+            </div>
+
+            <div class="mb-3" v-if="cInfo.delivery_method === 1" v-cloak>
+              <Validation-provider ref="address" name="address" rules="required">
+              <div slot-scope="{ errors }">
+              <label for="address">Address</label>
+              <input type="text" class="form-control" id="address" placeholder="English address" required="" v-model="cInfo.address">
+              <span style="color:red;" v-cloak>\{{ errors[0] }}</span>
+              </div>
+              </Validation-provider>
+            </div>
+
+            <div class="mb-3" v-if="cInfo.delivery_method === 1" v-cloak>
+              <Validation-provider ref="floor" name="floor" :rules="{ required: true, between: { min: 0, max: 10 } }">
+              <div slot-scope="{ errors }">
+              <label for="floor">Goods require access through staircases  </label>
+              <input type="text" min="0" max="10" class="form-control w-25" id="floor" placeholder="Floor" v-model="cInfo.floor" style="display: inline;" required=""><span>  x HKD75</span>
+              <span style="color:red;" v-cloak>\{{ errors[0] }}</span>
+              </div>
+              </Validation-provider>
+            </div>
+
+            <div class="mb-3">
+              <label for="remark">Remark <span class="text-muted">(Optional)</span></label>
+              <textarea type="text-area" class="form-control" id="remark" v-model="cInfo.remark" placeholder="eg. Call before arrived" maxlength="200"></textarea>
+            </div>
+
+            <hr class="mb-2">
+            <input type="checkbox" id="acceptPolicy" v-model="acceptPolicy">
+            <label for="checkbox" class="mb-5 radio-label">I've read the <a href="/about">refund policy</a></label>
+            <button class="btn btn-primary btn-lg btn-block" :disabled="!valid || !acceptPolicy" type="submit" @click.prevent="onCheckOut()">Continue to checkout</button>
+          </form>
+          </Validation-observer>
+        </div>
+      </div>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+      </footer>
+      </div>
+    </div>

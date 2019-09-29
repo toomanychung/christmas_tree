@@ -1,0 +1,31 @@
+<div class="container mt-5" v-cloak>
+  <div class="row">
+    <div class="col-12">
+      <h1>Coupon</h1>
+    </div>
+    <div class="col-12" v-for="(item, index) in coupon">
+      <div class="form-inline">
+        <label class="sr-only" for="inlineFormInputName2">Code</label>
+        <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Code" v-model="item.code">
+
+        <label class="sr-only" for="inlineFormInputGroupUsername2">Discount</label>
+        <div class="input-group mb-2 mr-sm-2">
+          <input type="number" class="form-control" id="inlineFormInputGroupUsername2" max="1" placeholder="Discount (e.g. 0.03)" v-model="item.discount">
+        </div>
+
+        <div class="form-check mb-2 mr-sm-2">
+          <input class="form-check-input" type="checkbox" id="inlineFormCheck" v-model="item.valid">
+          <label class="form-check-label" for="inlineFormCheck">
+            Valid
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-12">
+      <button class="btn btn-success btn-lg" @click.prevent="onCouponSubmit">Save</button>
+      <button class="btn btn-warning btn-lg" @click.prevent="onAddCoupon">Add Coupon</button>
+      </div>
+    </div>
+</div>

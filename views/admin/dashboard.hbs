@@ -1,0 +1,109 @@
+<div class="container-fluid">
+  <form>
+  <div class="row my-5">
+    <div class="col-lg-2">
+      <div class="form-group">
+          <div class="col-lg-4">
+            <label for="delivery_method" style="white-space: nowrap;">Delivery method</label>
+          </div>
+          <div class="col-lg-8">
+            <select class="form-control" v-model="filters.delivery_method">
+            <option value="0" >
+              Self-Pickup
+            </option>
+            <option value="1" >
+              Standard Delivery
+            </option>
+            </select>
+          </div>
+      </div>
+    </div>
+    <div class="col-lg-2">
+      <div class="form-group">
+          <div class="col-lg-4">
+            <label for="status">Status</label>
+          </div>
+          <div class="col-lg-8">
+            <select class="form-control" v-model="filters.status">
+            <option value="0" >
+              Pending
+            </option>
+            <option value="1" >
+              Deliverying
+            </option>
+            <option value="2" >
+              Completed
+            </option>
+            <option value="-1" >
+              Waiting
+            </option>
+            <option value="-2" >
+              Cancelled
+            </option>
+            <option value="-3" >
+              Refunded
+            </option>
+            </select>
+          </div>
+      </div>
+    </div>
+    <div class="col-lg-2">
+      <div class="form-group">
+          <div class="col-lg-4">
+            <label for="Email">Email</label>
+          </div>
+          <div class="col-lg-8">
+            <input class="form-control" v-model="filters.email">
+          </div>
+      </div>
+    </div>
+    <div class="col-lg-2">
+      <div class="form-group">
+          <div class="col-lg-4">
+            <label for="Phone">Phone</label>
+          </div>
+          <div class="col-lg-8">
+            <input class="form-control" v-model="filters.phone">
+          </div>
+      </div>
+    </div>
+    <div class="col-lg-2">
+      <div class="form-group">
+          <div class="col-lg-4">
+            <label for="date" style="white-space: nowrap;">Delivery Date</label>
+          </div>
+          <div class="col-lg-8">
+            <datepicker :bootstrap-styling="true" :typeable="true" format="yyyy-MM-dd" v-model="filters.date"></datepicker>
+            {{!-- <input class="form-control" v-model="filters.date"> --}}
+          </div>
+      </div>
+    </div>
+    <div class="col-lg-2 d-flex align-items-center">
+      <button class="btn btn-success" @click.prevent="onApplyFilter">Search</button>
+      <button class="btn btn-info mx-3" @click.prevent="onResetFilter">Reset</button>
+    </div>
+  </div>
+  </form>
+  <hr>
+
+  <div class="row my-5">
+    <div class="col-12">
+          <v-server-table ref="table" :columns="columns" :options="options">
+            <a slot="_id" slot-scope="{row}" :href="'/admin/order?id=' + row._id" target="_blank"> \{{ row._id.slice(-6) }} </a>
+            <p slot="email" slot-scope="{row}"> \{{ row.cInfo.email }} </p>
+            <p slot="phone" slot-scope="{row}"> \{{ row.cInfo.phone }} </p>
+            <p slot="delivery_method" slot-scope="{row}">\{{ row.cInfo.delivery_method | formatDeliveryMethod }}</p>
+            <p slot="delivery_date" slot-scope="{row}">\{{ row.cInfo.delivery_date}} </p>
+            <p slot="region" slot-scope="{row}">\{{ row.cInfo.region}}</p>
+            <p slot="create_time" slot-scope="{row}">\{{ row.create_time | formatDate }}</p>
+            <p slot="total_price" slot-scope="{row}">HK$\{{ row.total_price | formatPrice }}</p>
+            <p slot="status" slot-scope="{row}">\{{ row.status | formatStatus }}</p>
+            <div slot="remark" slot-scope="{row}">
+              <i class="fa fa-exclamation fa-lg" style="color:red;" v-if="row.cInfo.remark"></i>
+              <i class="fa fa-exclamation fa-lg" style="color:green;" v-if="row.remark"></i>
+              <span style="color:grey;" v-if="row.payment_method">Bank</span>
+            </div>
+          </v-server-table>
+    </div>
+  </div>
+</div>

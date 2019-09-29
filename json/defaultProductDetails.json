@@ -1,0 +1,125 @@
+{
+  "nf": {
+    "4ft": {
+      "stock": 100,
+      "price": 770
+    },
+    "5ft": {
+      "stock": 50,
+      "price": 935
+    },
+    "6ft": {
+      "stock": 0,
+      "price": 1100
+    },
+    "7ft": {
+      "stock": 0,
+      "price": 1380
+    },
+    "8ft": {
+      "stock": 10,
+      "price": 2140
+    },
+    "9ft": {
+      "stock": 0,
+      "price": 3225
+    }
+  },
+  "df": {
+    "5ft": {
+      "stock": 50,
+      "price": 860
+    },
+    "6ft": {
+      "stock": 0,
+      "price": 1025
+    },
+    "7ft": {
+      "stock": 0,
+      "price": 1155
+    },
+    "8ft": {
+      "stock": 10,
+      "price": 2040
+    },
+    "9ft": {
+      "stock": 0,
+      "price": 2950
+    }
+  },
+  "ff": {
+    "5ft": {
+      "stock": 0,
+      "price": 860
+    }
+  },
+  "pw": {
+    "H5W": {
+      "stock": 10,
+      "name": "Poinsettia H 5' Pot (White)",
+      "price": 60
+    },
+    "H9W": {
+      "stock": 10,
+      "name": "Poinsettia H 9' Pot (White)",
+      "price": 140
+    },
+    "H12W": {
+      "stock": 10,
+      "name": "Poinsettia H 12' Pot (White)",
+      "price": 200
+    },
+    "H5R": {
+      "stock": 10,
+      "name": "Poinsettia H 5' Pot (Red)",
+      "price": 60
+    },
+    "H9R": {
+      "stock": 10,
+      "name": "Poinsettia H 9' Pot (Red)",
+      "price": 140
+    },
+    "H12R": {
+      "stock": 10,
+      "name": "Poinsettia H 12' Pot (Red)",
+      "price": 200
+    },
+    "12D": {
+      "stock": 10,
+      "name": "12' Diametre",
+      "price": 210
+    },
+    "20D": {
+      "stock": 10,
+      "name": "20' Diametre",
+      "price": 325
+    },
+    "24D": {
+      "stock": 10,
+      "name": "24' Diametre",
+      "price": 390
+    }
+  },
+  "stand": {
+    "NA": {
+      "name": "No stand and installation need",
+      "price": 0
+    },
+    "C152": {
+      "name": "C152 Stand (For 4-6ft tree) - HK$285",
+      "price": 285
+    },
+    "C148": {
+      "name": "C148 Stand (For 7-9ft tree) - HK$385",
+      "price": 385
+    },
+    "exchange": {
+      "name": "Exchange (C152 / C148 stand only)",
+      "price": 0
+    },
+    "install": {
+      "name": "Installation at delivery (use your own stand) - HK$120",
+      "price": 120
+    }
+  }
+}

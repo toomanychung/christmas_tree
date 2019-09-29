@@ -1,0 +1,109 @@
+<div class="container">
+  <div class="row my-5" style="border-bottom:1px dotted;width:70%">
+    <h1 >Edit Order</h1> 
+    {{#if order.payment_method }}
+    <p class="mx-2">Bank In Order</p>
+    {{/if}}
+  </div>
+  <div class="row my-3 p-2 rounded" style="border: 1px solid rgb(187, 186, 186)">
+    <div class="col-12">
+      <p class="float-right block">Order No.: <span id="order_id">{{ order._id }}</span></p>
+    </div>
+    <br>
+  <div class="col-12">
+  <form class="form-horizontal" id="edit_orderadd" action="#">
+    <div class="form-group">
+      <label class="control-label col-md-2" for="status">Status:</label>
+      <div class="col-md-10">
+        <select class="custom-select w-50" id="status" value="0" required>
+        <option value="{{ order.status }}" hidden="hidden" selected="selected">\{{ {{ order.status }} | formatStatus }}</option>
+        <option value="-3">\{{-3 | formatStatus}}</option>
+        <option value="-2">\{{-2 | formatStatus}}</option>
+        <option value="-1">\{{-1 | formatStatus}}</option>
+        <option value="0">\{{-0 | formatStatus}}</option>
+        <option value="1">\{{1 | formatStatus}}</option>
+        <option value="2" >\{{2 | formatStatus}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-2">Stripe Reference:</label>
+      <div class="col-md-10">
+      <input type="text" class="form-control" value="{{ order.stripe_ref }}" disabled>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-2" for="name">Client name:</label>
+      <div class="col-md-10">
+        <input type="text" class="form-control" id="name" value="{{ order.cInfo.name}}" disabled required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-2" for="email">Email:</label>
+      <div class="col-md-10">
+        <input type="email" class="form-control" id="email" value="{{ order.cInfo.email}}" disabled required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="phone">Phone Number:</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="phone" value="{{ order.cInfo.phone}}" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-2" for="delivery">Delivery Method:</label>
+      <div class="col-md-10">
+        <select class="custom-select w-50" id="delivery_method" disabled required>
+          <option value="{{ order.cInfo.delivery_method }}" hidden="hidden" selected="selected">\{{ {{ order.cInfo.delivery_method }} | formatDeliveryMethod }}</option>
+          <option value="0">\{{-0 | formatDeliveryMethod}}</option>
+          <option value="1">\{{1 | formatDeliveryMethod}}</option>
+        </select>
+      </div>
+    </div>
+    {{#if order.cInfo.delivery_method }}
+    <div class="form-group">
+      <label class="control-label col-md-2" for="delivery">Delivery Region:</label>
+      <span>{{ order.cInfo.region }}</span>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="delivery_date">Delivery Date:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="delivery_date" value="{{ order.cInfo.delivery_date }}" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="address">English Address:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="address" value="{{ order.cInfo.address }}" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="address_chi">Chinese Address:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="address_chi" value="{{ order.cInfo.address_chi }}">
+      </div>
+    </div>
+    {{/if}}
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="remark_client">Client Remark:</label>
+      <div class="col-sm-10">
+        <textarea type="text" class="form-control" id="remark_client" disabled>{{ order.cInfo.remark }}</textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="remark_internal">Internal Remark:</label>
+      <div class="col-sm-10">
+        <textarea type="text" class="form-control" id="remark_internal">{{ order.remark }}</textarea>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="col-md-12 my-2">
+      <button class="btn btn-success btn-lg" @click.prevent="onSaveOrder">Save</button>
+      <button class="btn btn-danger btn-lg mx-2" @click.prevent="close">Close</button>
+    </div>
+  </form>
+  </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="container mt-5" v-cloak>
+  <div class="row">
+    <div class="col-12">
+    <h1>Setting</h1>
+    </div>
+    <div class="col-12">
+          <label>*Announcement(Within 20 words)</label> <input id="announcement" class="form-control" value="{{ announcement.content }}">
+    </div>
+    <div class="col-12">
+          <button class="btn btn-info btn-lg mt-3" @click.prevent="onSettingSubmit">Submit</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="container-fluid mt-5" v-cloak>
+  <div class="row my-2" v-for="(item, index) in deliveryDetails">
+    <div class="col-12">
+    <h1 style="color:Grey;">\{{ item.name }}</h1>
+    <hr>
+    </div>
+    
+    <div class="col-12">
+      <span>Price(HKD):</span> <input class="mx-3" style="border:1px dotted" v-model="item.price">
+    </div>
+
+    <div class="col-sm-2 mt-3">
+      <table class="table table-borderless">
+        <thead>
+          <tr>
+            <th scope="col">Date (YYYY-MM-DD)<a href="#" class="fa ml-2 fa-1.25x fa-plus-circle" style="color:green;" @click.prevent="onAddDeliveryDate(item.value)"></a></th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(day, inx) in item.date">
+            <th scope="row"><input class="mx-3" style="border:1px solid" v-model="item.date[inx]"></th>
+            <td><i class="delete-delivery fa fa-2x fa-trash" style="color:red;" @click.prevent="onDeleteDeliveryDate(item.value, inx)"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row my-5">
+    <div class="col-12">
+      <button class="btn btn-lg btn-success" @click.prevent="onSaveDelivery">Save</button>
+    </div>
+  </div>
+</div>

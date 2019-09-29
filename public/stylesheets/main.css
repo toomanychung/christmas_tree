@@ -1,0 +1,341 @@
+/* Global */
+body {
+    font-family: 'Lato', serif;
+}
+
+[v-cloak] {
+    display: none !important;
+}
+
+input[type="radio"],input[type="checkbox"] {
+    -ms-transform: scale(1.8); /* IE 9 */
+    -webkit-transform: scale(1.8); /* Chrome, Safari, Opera */
+    transform: scale(1.8);
+}
+
+.radio-label {
+    margin-right: 8px;
+    margin-left: 8px;
+    font-size: 20px;
+}
+
+/* Mobile view */ 
+@media only screen and (max-width: 768px) {
+    .desktop-only {
+        display: none;
+    }
+    .header-announce {
+        font-size: 10px !important;
+    }
+    .delivery-schedule-div::after {
+        background-size: cover !important;
+      }
+}
+
+/* Desktop view */
+@media only screen and (min-width: 768px) {
+    .mobile-only {
+        display: none;
+    }
+}
+
+/* Loader */
+.loading {
+    position: fixed;
+    z-index: 999;
+    height: 2em;
+    width: 2em;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+/* Transparent Overlay */
+.loading:before {
+content: '';
+display: block;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+    background: radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0, .8));
+
+background: -webkit-radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0,.8));
+}
+
+/* :not(:required) hides these rules from IE9 and below */
+.loading:not(:required) {
+/* hide "loading..." text */
+font: 0/0 a;
+color: transparent;
+text-shadow: none;
+background-color: transparent;
+border: 0;
+}
+
+.loading:not(:required):after {
+content: '';
+display: block;
+font-size: 10px;
+width: 1em;
+height: 1em;
+margin-top: -0.5em;
+-webkit-animation: spinner 1500ms infinite linear;
+-moz-animation: spinner 1500ms infinite linear;
+-ms-animation: spinner 1500ms infinite linear;
+-o-animation: spinner 1500ms infinite linear;
+animation: spinner 1500ms infinite linear;
+border-radius: 0.5em;
+-webkit-box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1.1em 0 0, rgba(255,255,255, 0.75) 0 1.5em 0 0, rgba(255,255,255, 0.75) -1.1em 1.1em 0 0, rgba(255,255,255, 0.75) -1.5em 0 0 0, rgba(255,255,255, 0.75) -1.1em -1.1em 0 0, rgba(255,255,255, 0.75) 0 -1.5em 0 0, rgba(255,255,255, 0.75) 1.1em -1.1em 0 0;
+box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1.1em 0 0, rgba(255,255,255, 0.75) 0 1.5em 0 0, rgba(255,255,255, 0.75) -1.1em 1.1em 0 0, rgba(255,255,255, 0.75) -1.5em 0 0 0, rgba(255,255,255, 0.75) -1.1em -1.1em 0 0, rgba(255,255,255, 0.75) 0 -1.5em 0 0, rgba(255,255,255, 0.75) 1.1em -1.1em 0 0;
+}
+
+/* Animation */
+
+@-webkit-keyframes spinner {
+0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+}
+@-moz-keyframes spinner {
+0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+}
+@-o-keyframes spinner {
+0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+}
+@keyframes spinner {
+0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+}
+
+/* Header */
+.header-title {
+    font-size: 40px;
+    color: #9C51A0;
+}
+
+.header-announce {
+    font-family: 'Lato Light', serif;
+    font-size: 18px;
+    background: #53565B;
+    height: 40px;
+}
+
+.header-announce span{
+    letter-spacing: 3px;
+    color: #ffffff;
+}
+
+.cart-button {
+    border-color: #9C51A0 !important;
+    cursor: pointer;
+}
+
+.cart-button:hover {
+    opacity: 0.6;
+}
+
+.header-nav-bar li a{
+    font-family: 'Lato Light', serif;
+    font-weight: 100;
+    font-size: 30px;
+    color: #9C51A0 !important;
+    margin: 0 50px;
+}
+
+.header-nav-bar li a:hover{
+    text-decoration: none !important;
+    border-bottom: 1px solid;
+    padding-bottom: 14px;
+}
+
+.sticky-nav {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    z-index:9999;
+}
+
+/* Index */
+.banner-div {
+    background: #D8D8D8;
+    height: auto;
+    text-align: center;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+.feature-div i {
+    color: #767676;
+}
+
+.feature-div p {
+    font-family: 'Lato Light', serif;
+    font-size: 20px;
+}
+
+.feature-partition {
+    height: 50%;
+    border-right: 2px solid #D8D8D8;
+    position: absolute;
+    left: 100%;
+    top: 20%;
+}
+
+.index-product-div {
+    cursor: pointer;
+    min-height: 40vh;
+    background: #D8D8D8;
+    padding-top: 100px;
+}
+
+
+.index-product-div .card:hover{
+    opacity: 0.8;
+}
+
+.index-product-div img {
+    max-width: 100vw;
+    height: auto;
+    max-height: 1000px;
+    position: relative;
+    overflow: hidden;
+}
+
+.delivery-schedule-div {
+    font-family: 'Lato Light', serif;
+    min-height: 40vh;
+    display: block;
+    position: relative;
+}
+
+.delivery-schedule-div::after {
+    content: "";
+    background: url('../img/Poinsettia-white1.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+  }
+
+/* footer */
+.footer-div {
+    font-family: 'Lato Light', serif;
+    font-size: 18px;
+    background: #53565B;
+    min-height: 5vh;
+    color: #ffffff;
+}
+
+/* Product Modal */
+.product-modal p {
+    font-size: 22px;
+}
+
+.product-modal span {
+    font-size: 12px;
+}
+
+@media only screen and (max-width: 480px) {
+    .product-modal p {
+        font-size: 16px;
+    }
+    
+    .product-modal span {
+        font-size: 10px;
+    }
+
+    select.form-control:not([size]):not([multiple]) {
+        max-height: 4vh;
+    }
+}
+
+.product-modal span {
+    font-size: 12px;
+}
+
+/* About */
+.paddingTB60 {padding:60px 0px 60px 0px;}
+.gray-bg {background: #F1F1F1 !important;}
+.about-title {}
+.about-title h1 {color: #535353; font-size:45px;font-weight:600;}
+.about-title span {color: #AF0808; font-size:45px;font-weight:700;}
+.about-title h3 {color: #535353; font-size:23px;margin-bottom:24px;}
+.about-title p {color: #7a7a7a;line-height: 1.8;margin: 0 0 15px;}
+.about-paddingB {padding-bottom: 12px;}
+.about-img {padding-left: 57px;}
+
+@media only screen and (max-width: 768px) {
+    .about-img {padding-left: 0px;}
+}
+
+/* Product */
+.product-column {padding: 2vh 0px;}
+
+/* Thank out */
+.thankyou-p {
+    font-size:24px;
+    color:red;
+}
+.thankyou-span {
+    font-size: 14px !important;
+    color: grey !important;
+}

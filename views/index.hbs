@@ -1,0 +1,231 @@
+<div class="desktop-only">
+<div class="container-fluid banner-div">
+  <img class="img-fluid" src="/img/banner.png" style="width:100%;">
+</div>
+
+<div class="container my-5 feature-div">
+  <div class="row py-4">
+    <h1>Let's have a Glamorous Christmas this year!</h1>
+    <p>Want to experience a gourmet Christmas trees? Tired of looking around and picking up Christmas trees?
+    <br>
+    <br>
+    Here at Sophie's Christmas Trees, we can fulfill all your desires!
+    <br>
+    <br>
+    Easily send us order online and Christmas tree will be delivered right at your door! Various Christmas trees come in different sizes to fit different
+    household. Simply choose the kind and size of a tree at your preference, choose a day and welcome the tree! No more running around choosing
+    Christmas Trees and sweating from bringing back and setting up the tree. We do everything for you!
+    <br>
+    <br>
+    Order now to experience the freshest trees ever! Please see <a href="/product">our product</a> for further details.
+    </p>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-lg-3">
+      <div class="d-flex justify-content-center"><i class="fas fa-truck fa-8x"></i></div>
+      <p class="d-flex justify-content-center my-5">Delivered 7
+          days a week</p>
+      <div class="d-none d-sm-block feature-partition"></div>
+    </div>
+
+    <div class="col-12 col-lg-3">
+      <div class="d-flex justify-content-center"><i class="far fa-thumbs-up fa-8x"></i></div>
+      <p class="d-flex justify-content-center my-5">Over 20years experience</p>
+      <div class="d-none d-sm-block feature-partition"></div>
+    </div>
+
+    <div class="col-12 col-lg-3">
+      <div class="d-flex justify-content-center"><i class="far fa-laugh-beam fa-8x"></i></div>
+      <p class="d-flex justify-content-center my-5">Freshness
+          guarantee</p>
+      <div class="d-none d-sm-block feature-partition"></div>
+    </div>
+
+    <div class="col-12 col-lg-3">
+      <div class="d-flex justify-content-center"><i class="fas fa-tree fa-8x"></i></div>
+      <p class="d-flex justify-content-center my-5">Customize Your Tree </p>
+    </div>
+
+  </div>
+  
+</div>
+
+<div class="container-fluid index-product-div py-5">
+  <div class="flex-row d-flex justify-content-center px-5">
+
+    <div class="card-deck">
+
+      <div class="card d-flex flex-column" @click="showProductModal('nf')">
+        <img src="/img/noble_fir.jpg" class="card-img-top" alt="Noble Fir">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title align-self-center mt-auto">Noble Fir</h5>
+        </div>
+      </div>
+      <div class="card" @click="showProductModal('ff')">
+        <img src="/img/frasier_fir.jpg" class="card-img-top" alt="Frasier Fir">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title align-self-center mt-auto">Frasier Fir</h5>
+        </div>
+      </div>
+      <div class="card" @click="showProductModal('df')">
+        <img src="/img/douglas_fir.jpg" class="card-img-top" alt="Douglas Fir">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title align-self-center mt-auto">Douglas Fir</h5>
+        </div>
+      </div>
+      <div class="card" @click="showProductModal('pw')">
+        <img src="/img/poinsettia_wreath.jpg" class="card-img-top" alt="Poinsettia / Wreath">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title align-self-center mt-auto">Poinsettia / Wreath</h5>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="container-fluid delivery-schedule-div py-5">
+  <div class="row">
+    <h1 class="my-5 mx-auto">Delivery Schedule</h1>
+  </div>
+  <div class="row">
+    <h4 class="my-3 px-5">Find your region and circle a preferred date of delivery in the calendar</h2>
+  </div>
+  <div class="row">
+    <p class="my-3 px-5">A - The Peak / Mid-Levels<br>
+      B - Central / Wan Chai / Causeway Bay<br>
+      C - Repulse Bay / Stanley / Tai Tam / Shek O / Chung Hom Kok / Chai Wan<br>
+      D - North Point / Tai Hang / Jardine’s Look-Out / Happy Valley<br>
+      E - Sai Wan / Sheung Wan / Pok Fu Lam / Aberdeen / Shouson Hill / Deep Water Bay<br>
+      F - Kowloon Tong / Mong Kok / Hung Hom / Tsim Sha Tsui / Tai Kok Tsui<br>
+      G - Kowloon Bay / Kwun Tong / Fei Ngo Shan / Kowloon City / To Kwa Wan<br>
+      H - Tai Po / Fanling / Sheung Shui<br>
+      I - Shatin / Tuen Mun / Tsuen Wan / Yuen Long / Cheung Sha Wan<br>
+      J - Sai Kung / Clear Water Bay / Tseung Kwan O<br>
+      K - Discovery Bay / Tung Chung / Tsing Yi
+    </p>
+  </div>
+  <div class="row">
+  <img src="img/schedule.png" class="mx-auto" style="height: 500px;">
+  </div>
+</div>
+
+{{> client/modal}}
+</div>
+
+{{!-- Mobile Container --}}
+<div class="mobile-only">
+<div class="container-fluid banner-div">
+  <img class="img-fluid" src="https://via.placeholder.com/1400x600.png">
+</div>
+
+<div class="container my-5 feature-div">
+  <div class="row py-4 mx-2">
+    <h1>Let's have a Glamorous Christmas this year!</h1>
+    <p>Want to experience a gourmet Christmas trees? Tired of looking around and picking up Christmas trees?
+    <br>
+    <br>
+    Here at Sophie's Christmas Trees, we can fulfill all your desires!
+    <br>
+    <br>
+    Easily send us order online and Christmas tree will be delivered right at your door! Various Christmas trees come in different sizes to fit different
+    household. Simply choose the kind and size of a tree at your preference, choose a day and welcome the tree! No more running around choosing
+    Christmas Trees and sweating from bringing back and setting up the tree. We do everything for you!
+    <br>
+    <br>
+    Order now to experience the freshest trees ever! Please see <a href="/product">our product</a> for further details.
+    </p>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-lg-3">
+      <div class="d-flex justify-content-center"><i class="fas fa-truck fa-8x"></i></div>
+      <p class="d-flex justify-content-center my-5">Delivered 7
+          days a week</p>
+      <div class="d-none d-sm-block feature-partition"></div>
+    </div>
+
+    <div class="col-12 col-lg-3">
+      <div class="d-flex justify-content-center"><i class="far fa-thumbs-up fa-8x"></i></div>
+      <p class="d-flex justify-content-center my-5">Over 20years experience</p>
+      <div class="d-none d-sm-block feature-partition"></div>
+    </div>
+
+    <div class="col-12 col-lg-3">
+      <div class="d-flex justify-content-center"><i class="far fa-laugh-beam fa-8x"></i></div>
+      <p class="d-flex justify-content-center my-5">Freshness
+          guarantee</p>
+      <div class="d-none d-sm-block feature-partition"></div>
+    </div>
+
+    <div class="col-12 col-lg-3">
+      <div class="d-flex justify-content-center"><i class="fas fa-tree fa-8x"></i></div>
+      <p class="d-flex justify-content-center my-5">Customize Your Tree </p>
+    </div>
+
+  </div>
+  
+</div>
+
+<div class="container-fluid index-product-div py-5">
+  <div class="flex-row d-flex justify-content-center px-5">
+
+    <div class="card-deck">
+
+      <div class="card d-flex flex-column" @click="showProductModal('nf')">
+        <img src="/img/noble_fir.jpg" class="card-img-top img-fluid" alt="Noble Fir">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title align-self-center mt-auto">Noble Fir</h5>
+        </div>
+      </div>
+      <div class="card" @click="showProductModal('ff')">
+        <img src="/img/frasier_fir.jpg" class="card-img-top img-fluid" alt="Frasier Fir">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title align-self-center mt-auto">Frasier Fir</h5>
+        </div>
+      </div>
+      <div class="card" @click="showProductModal('df')">
+        <img src="/img/douglas_fir.jpg" class="card-img-top img-fluid" alt="Douglas Fir">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title align-self-center mt-auto">Douglas Fir</h5>
+        </div>
+      </div>
+      <div class="card" @click="showProductModal('pw')">
+        <img src="/img/poinsettia_wreath.jpg" class="card-img-top img-fluid" alt="Poinsettia / Wreath">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title align-self-center mt-auto">Poinsettia / Wreath</h5>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="container-fluid delivery-schedule-div py-5">
+  <div class="row">
+    <h1 class="my-5 mx-auto">Delivery Schedule</h1>
+  </div>
+  <div class="row">
+    <h4 class="my-3 px-5">Find your region and circle a preferred date of delivery in the calendar</h2>
+  </div>
+  <div class="row">
+    <p class="my-3 px-5">A - The Peak / Mid-Levels<br>
+      B - Central / Wan Chai / Causeway Bay<br>
+      C - Repulse Bay / Stanley / Tai Tam / Shek O / Chung Hom Kok / Chai Wan<br>
+      D - North Point / Tai Hang / Jardine’s Look-Out / Happy Valley<br>
+      E - Sai Wan / Sheung Wan / Pok Fu Lam / Aberdeen / Shouson Hill / Deep Water Bay<br>
+      F - Kowloon Tong / Mong Kok / Hung Hom / Tsim Sha Tsui / Tai Kok Tsui<br>
+      G - Kowloon Bay / Kwun Tong / Fei Ngo Shan / Kowloon City / To Kwa Wan<br>
+      H - Tai Po / Fanling / Sheung Shui<br>
+      I - Shatin / Tuen Mun / Tsuen Wan / Yuen Long / Cheung Sha Wan<br>
+      J - Sai Kung / Clear Water Bay / Tseung Kwan O<br>
+      K - Discovery Bay / Tung Chung / Tsing Yi
+    </p>
+  </div>
+</div>
+
+{{> client/modal}}
+</div>

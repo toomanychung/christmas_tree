@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    <title>Sophie's Christmax Tree - Admin Panel</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://unpkg.com/vue2-animate/dist/vue2-animate.min.css"/>
+    <link rel="stylesheet" href="../stylesheets/login.css"/>
+  </head>
+
+  <body>
+    <div class="simple-login-container">
+    <h2>Login Form</h2>
+    <form action="/admin/login" method="post">
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <input type="text" class="form-control" name="username" placeholder="Username" required="true">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <input type="password" name="password" placeholder="Enter your Password" class="form-control" required="true">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <input type="submit" class="btn btn-block btn-login">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a href="../">Return to Main Page</a>
+        </div>
+    </div>
+    </form>
+</div>
+  </body>
+</html>

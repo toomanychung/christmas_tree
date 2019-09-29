@@ -1,0 +1,171 @@
+<modal name="product-modal" width="50%" height="auto" @before-close="resetSelectedTree" class="desktop-only">
+  <div class="container my-5 product-modal">
+    <div class="row">
+      <div class="col-12">
+      <h1 v-if="selectedTree.product=='nf'" class="text-center">Noble Fir</h1>
+      <h1 v-if="selectedTree.product=='ff'" class="text-center">Frasier Fir</h1>
+      <h1 v-if="selectedTree.product=='df'" class="text-center">Douglas Fir</h1>
+      <h1 v-if="selectedTree.product=='pw'" class="text-center">Poinsettia / Wreath</h1>
+      </div>
+    </div>
+    <div class="row align-items-center">
+      <div class="col-4">
+        <img v-if="selectedTree.product=='nf'" src="/img/noble_fir.jpg" class="card-img-top" alt="Noble Fir">
+        <img v-if="selectedTree.product=='ff'" src="/img/frasier_fir.jpg" class="card-img-top" alt="Frasier Fir">
+        <img v-if="selectedTree.product=='df'" src="/img/douglas_fir.jpg" class="card-img-top" alt="Douglas Fir">
+        <img v-if="selectedTree.product=='pw'" src="/img/poinsettia_wreath.jpg" class="card-img-top" alt="Poinsettia / Wreath">
+      </div>
+      <div class="col-8">
+        <div v-if="selectedTree.product!=='pw'">
+          <div class="form-group">
+            <label for="tree-size">Tree Size:</label>
+            <select class="form-control" id="tree-size" v-model="selectedTree.size" @change="onTreeSizeChange">
+              <option v-for="item in treeSizeList[selectedTree.product]">
+                \{{ item }}
+              </option>
+            </select>
+            <label for="tree-stand">Tree Stand / Installation:</label>
+            <select class="form-control" id="tree-stand" v-model="selectedTree.stand">
+              <option v-for="(item, key) in productDetails.stand" :value="key">
+                \{{ item.name }}
+              </option>
+            </select>
+            <label for="tree-preference-width">Width Preference:</label>
+            <select class="form-control" id="tree-preference-width" v-model="selectedTree.widthPreference">
+              <option v-for="item in treePreferenceWidth">
+                \{{ item }}
+              </option>
+            </select>
+            <label for="tree-preference-height">Height Preference:</label>
+            <select class="form-control" id="tree-preference-height" v-model="selectedTree.heightPreference">
+              <option v-for="item in treePreferenceHeight">
+                \{{ item }}
+              </option>
+            </select>
+            {{!-- <label for="tree-quantity">Quantity :</label>
+            <select class="form-control" id="tree-quantity" v-model="selectedTree.quantity">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select> --}}
+          </div>
+          <p>Stock :
+            <span v-if="isProductOnStock" style="color:green;font-size:22px;">Available</span>
+            <span v-else-if="!selectedTree.size" style="color:gray;font-size:22px;">Unknown</span>
+            <span v-else style="color:red;font-size:22px;">Out of Stock</span>
+          </p>
+          <p>Price <span>(Not include delivery charge)</span> : HK$ \{{ productPriceSubTotal }}</p> 
+          <button type="button" class="btn btn-success btn-lg" :disabled="!isProductOnStock" @click="addToCart">Add to Cart</button>
+        </div>
+        <div v-else>
+            <div class="form-group">
+            <label for="tree-size">Product:</label>
+            <select class="form-control" id="tree-size" v-model="selectedTree.size" @change="onTreeSizeChange">
+              <option v-for="(item, key) in productDetails[selectedTree.product]" :value="key">
+                \{{ item.name }}
+              </option>
+            </select>
+            <label for="tree-quantity">Quantity:</label>
+            <input type="number" min="1" class="form-control" id="tree-color" v-model="selectedTree.quantity">
+            <p>Stock :
+              <span v-if="isProductOnStock" style="color:green;font-size:22px;">\{{ this.productDetails[this.selectedTree.product][this.selectedTree.size].stock }}</span>
+              <span v-else-if="!selectedTree.size" style="color:gray;font-size:22px;">Unknown</span>
+              <span v-else style="color:red;font-size:22px;">Out of Stock</span>
+            </p>
+            <p>Price <span>(Not include delivery charge)</span> : HK$ \{{ productPriceSubTotal }}</p> 
+            <button type="button" class="btn btn-success btn-lg" :disabled="!isProductOnStock" @click="addToCart">Add to Cart</button>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</modal>
+
+<modal name="product-modal" width="90%" height="auto" @before-close="resetSelectedTree" class="mobile-only">
+  <div class="container my-5 product-modal" style="overflow: auto;">
+    <div class="row">
+      <div class="col-12">
+      <h1 v-if="selectedTree.product=='nf'" class="text-center">Noble Fir</h1>
+      <h1 v-if="selectedTree.product=='ff'" class="text-center">Frasier Fir</h1>
+      <h1 v-if="selectedTree.product=='df'" class="text-center">Douglas Fir</h1>
+      <h1 v-if="selectedTree.product=='pw'" class="text-center">Poinsettia / Wreath</h1>
+      </div>
+    </div>
+    <div class="row align-items-center">
+      <div class="col-4">
+        <img v-if="selectedTree.product=='nf'" src="/img/noble_fir.jpg" class="card-img-top" alt="Noble Fir">
+        <img v-if="selectedTree.product=='ff'" src="/img/frasier_fir.jpg" class="card-img-top" alt="Frasier Fir">
+        <img v-if="selectedTree.product=='df'" src="/img/douglas_fir.jpg" class="card-img-top" alt="Douglas Fir">
+        <img v-if="selectedTree.product=='pw'" src="/img/poinsettia_wreath.jpg" class="card-img-top" alt="Poinsettia / Wreath">
+      </div>
+      <div class="col-8">
+        <div v-if="selectedTree.product!=='pw'">
+          <div class="form-group">
+            <label for="tree-size">Tree Size:</label>
+            <select class="form-control" id="tree-size" v-model="selectedTree.size" @change="onTreeSizeChange">
+              <option v-for="item in treeSizeList[selectedTree.product]">
+                \{{ item }}
+              </option>
+            </select>
+            <label for="tree-stand">Tree Stand / Installation:</label>
+            <select class="form-control" id="tree-stand" v-model="selectedTree.stand">
+              <option v-for="(item, key) in productDetails.stand" :value="key">
+                \{{ item.name }}
+              </option>
+            </select>
+            <label for="tree-preference-width">Width Preference:</label>
+            <select class="form-control" id="tree-preference-width" v-model="selectedTree.widthPreference">
+              <option v-for="item in treePreferenceWidth">
+                \{{ item }}
+              </option>
+            </select>
+            <label for="tree-preference-height">Height Preference:</label>
+            <select class="form-control" id="tree-preference-height" v-model="selectedTree.heightPreference">
+              <option v-for="item in treePreferenceHeight">
+                \{{ item }}
+              </option>
+            </select>
+            {{!-- <label for="tree-quantity">Quantity :</label>
+            <select class="form-control" id="tree-quantity" v-model="selectedTree.quantity">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select> --}}
+          </div>
+          <p>Stock :
+            <span v-if="isProductOnStock" style="color:green;font-size:22px;">Available</span>
+            <span v-else-if="!selectedTree.size" style="color:gray;font-size:22px;">Unknown</span>
+            <span v-else style="color:red;font-size:22px;">Out of Stock</span>
+          </p>
+          <p>Price <span>(Not include delivery charge)</span> : HK$ \{{ productPriceSubTotal }}</p> 
+          <button type="button" class="btn btn-success btn-lg" :disabled="!isProductOnStock" @click="addToCart">Add to Cart</button>
+        </div>
+        <div v-else>
+            <div class="form-group">
+            <label for="tree-size">Product:</label>
+            <select class="form-control" id="tree-size" v-model="selectedTree.size" @change="onTreeSizeChange">
+              <option v-for="(item, key) in productDetails[selectedTree.product]" :value="key">
+                \{{ item.name }}
+              </option>
+            </select>
+            <label for="tree-quantity">Quantity:</label>
+            <input type="number" class="form-control" id="tree-color" v-model="selectedTree.quantity">
+            <p>Stock :
+              <span v-if="isProductOnStock" style="color:green;font-size:22px;">Available</span>
+              <span v-else-if="!selectedTree.size" style="color:gray;font-size:22px;">Unknown</span>
+              <span v-else style="color:red;font-size:22px;">Out of Stock</span>
+            </p>
+            <p>Price <span>(Not include delivery charge)</span> : HK$ \{{ productPriceSubTotal }}</p> 
+            <button type="button" class="btn btn-success btn-lg" :disabled="!isProductOnStock" @click="addToCart">Add to Cart</button>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</modal>
