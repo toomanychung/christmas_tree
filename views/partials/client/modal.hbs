@@ -153,9 +153,9 @@
               </option>
             </select>
             <label for="tree-quantity">Quantity:</label>
-            <input type="number" class="form-control" id="tree-color" v-model="selectedTree.quantity">
+            <input type="number" min="1" class="form-control" id="tree-color" v-model="selectedTree.quantity">
             <p>Stock :
-              <span v-if="isProductOnStock" style="color:green;font-size:22px;">Available</span>
+              <span v-if="isProductOnStock" style="color:green;font-size:22px;">\{{ this.productDetails[this.selectedTree.product][this.selectedTree.size].stock }}</span>
               <span v-else-if="!selectedTree.size" style="color:gray;font-size:22px;">Unknown</span>
               <span v-else style="color:red;font-size:22px;">Out of Stock</span>
             </p>
