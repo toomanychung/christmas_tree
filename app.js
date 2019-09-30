@@ -68,7 +68,9 @@ app.engine('hbs', hbs({
   extname: '.hbs'
 }));
 app.set('view engine', 'hbs');
-app.use(logger('dev'));
+if (process.env.ENV === 'dev') {
+  app.use(logger('dev'));
+}
 const rawBodySaver = function (req, res, buf, encoding) {
   if (buf && buf.length) {
     req.rawBody = buf.toString(encoding || 'utf8');
