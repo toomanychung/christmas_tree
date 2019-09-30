@@ -16,14 +16,14 @@ function authenticated(req, res, next) {
   return null;
 }
 
-// router.use((req, res, next) => {
-//   console.log(req.path);
-//   if (req.path !== '/login') {
-//     authenticated(req, res, next);
-//     return;
-//   }
-//   next();
-// });
+router.use((req, res, next) => {
+  console.log(req.path);
+  if (req.path !== '/login') {
+    authenticated(req, res, next);
+    return;
+  }
+  next();
+});
 
 /* Login */
 router.get('/login', (req, res) => {
