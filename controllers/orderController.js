@@ -125,25 +125,29 @@ module.exports = {
       return o;
     });
 
-    // Deduct stock
-    newCartItem.forEach(async (item) => {
-      if (item.product !== 'pw') {
-        productDetails[item.product][item.size].stock -= 1;
-        await product.updateOne({ _id: productObjID }, productDetails);
-        productDetails = await product.findOne({}, (err, res) => res);
-      } else if (item.product === 'pw') {
-        productDetails[item.product][item.size].stock -= parseInt(item.quantity, 10);
-        await product.updateOne({ _id: productObjID }, productDetails);
-        // const result = await product.updateOne({ _id: productObjID }, productDetails);
-        productDetails = await product.findOne({}, (err, res) => res);
-      }
-    });
-
     // Price
     let priceAftercalculated = await calculateCart(payload.cart);
     if (priceAftercalculated === 0) {
       error = true;
     }
+
+    // Deduct stock
+    if (!error) {
+      newCartItem.forEach(async (item) => {
+        if (item.product !== 'pw') {
+          productDetails[item.product][item.size].stock -= 1;
+          await product.updateOne({ _id: productObjID }, productDetails);
+          productDetails = await product.findOne({}, (err, res) => res);
+        } else if (item.product === 'pw') {
+          productDetails[item.product][item.size].stock -= parseInt(item.quantity, 10);
+          await product.updateOne({ _id: productObjID }, productDetails);
+          // const result = await product.updateOne({ _id: productObjID }, productDetails);
+          productDetails = await product.findOne({}, (err, res) => res);
+        }
+      });
+    }
+
+
     const deliveryMethod = payload.cInfo.delivery_method;
     // Standard Delivery + Floor Charge
     if (deliveryMethod === 1) {

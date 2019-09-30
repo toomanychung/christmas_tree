@@ -239,15 +239,29 @@ var app = new Vue({
       } else {
         axios.post('/checkout2', mergedObj)
           .then((res) => {
-            window.setTimeout(() => { window.location = `/thank-you?id=${res.data}`; }, 2000);
+            const that = this;
+            if (!res.data) {
+              that.$toasted.show('One of your item in Cart have error, please try again', {
+                theme: 'bubble',
+                position: 'top-center',
+                duration: 3000,
+                type: 'error'
+              });
+              this.cart = [];
+              localStorage.setItem('cart', JSON.stringify(this.cart));
+            } else {
+              window.setTimeout(() => { window.location = `/thank-you?id=${res.data}`; }, 1500);
+            }
           })
           .catch((err) => {
-            this.$toasted.show('One of your item in Cart have error, please try again', {
+            that.$toasted.show('One of your item in Cart have error, please try again', {
               theme: 'bubble',
               position: 'top-center',
               duration: 3000,
               type: 'error'
             });
+            this.cart = [];
+            localStorage.setItem('cart', JSON.stringify(this.cart));
           })
           .then(() => {
             this.isLoading = false;
