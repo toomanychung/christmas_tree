@@ -157,6 +157,10 @@
             </div>
 
             <div class="mb-3" v-if="cInfo.delivery_method === 1" v-cloak>
+              <img class="img-fluid" src="img/calendar.png" class="mx-auto">
+            </div>
+
+            <div class="mb-3" v-if="cInfo.delivery_method === 1" v-cloak>
               <Validation-provider ref="address" name="address" rules="required">
               <div slot-scope="{ errors }">
               <label for="address">Address</label>
