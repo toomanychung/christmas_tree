@@ -13,6 +13,7 @@ import Toasted from 'vue-toasted';
 import axios from 'axios';
 import { extend, ValidationProvider, ValidationObserver } from 'vee-validate';
 import { required, email, between } from 'vee-validate/dist/rules';
+import VTooltip from 'v-tooltip';
 
 Vue.use(Toasted);
 Vue.component('ValidationProvider', ValidationProvider);
@@ -20,6 +21,7 @@ Vue.component('ValidationObserver', ValidationObserver);
 Vue.config.devtools = true;
 Vue.use(VModal);
 Vue.use(VueSession);
+Vue.use(VTooltip);
 
 extend('required', {
   ...required,
@@ -59,7 +61,9 @@ const treeSizeList = {
 const treePreferenceWidth = ['Wide', 'Average', 'Narrow'];
 const treePreferenceHeight = ['Tall', 'Average', 'Fit'];
 
-const defaultSelectedTree = { stand: 'NA', widthPreference: 'Average', heightPreference: 'Average' };
+const defaultSelectedTree = {
+  stand: 'NA', widthPreference: 'Average', heightPreference: 'Average', chooseMyOwnTree: false
+};
 
 var app = new Vue({
   el: '#main',
@@ -86,6 +90,13 @@ var app = new Vue({
     this.loadSetting();
   },
   methods: {
+    forceUpdate() {
+      const tempTree = this.selectedTree;
+      this.selectedTree = {};
+      this.selectedTree = tempTree;
+      this.$forceUpdate();
+      console.log('update', this.selectedTree.quantity);
+    },
     loadStorage() {
       const _cart = localStorage.getItem('cart');
       console.log('load Storage', JSON.parse(_cart));
@@ -107,6 +118,10 @@ var app = new Vue({
           this.deliveryDetails = deliveryRes.data;
           this.isLoading = false;
         }));
+      if (window.location.pathname === '/thank-you') {
+        this.cart = [];
+        localStorage.setItem('cart', JSON.stringify(this.cart));
+      }
     },
     showProductModal(sku) {
       if (sku === 'pw') {
@@ -116,6 +131,9 @@ var app = new Vue({
       this.selectedTree.product = sku;
       this.$forceUpdate();
       this.$modal.show('product-modal');
+    },
+    showCheckOutModal() {
+      this.$modal.show('checkout-modal');
     },
     resetSelectedTree() {
       console.log(defaultSelectedTree);
@@ -209,6 +227,7 @@ var app = new Vue({
       return 'Unknown';
     },
     async onCheckOut() {
+      this.$modal.hide('checkout-modal');
       this.isLoading = true;
       const mergedObj = { cart: this.cart, cInfo: this.cInfo };
       if (parseInt(this.payment_method, 10) === 0) {
@@ -354,6 +373,13 @@ var app = new Vue({
       const region = this.deliveryDetails.find(o => o.value === this.cInfo.region);
       return region;
     },
+    isQuantityGreaterThanStock() {
+      if (this.selectedTree.quantity && this.selectedTree.size) {
+        const { stock } = this.productDetails.pw[this.selectedTree.size];
+        return stock < this.selectedTree.quantity;
+      }
+      return false;
+    }
   },
   filters: {
     formatCartProductName(sku) {

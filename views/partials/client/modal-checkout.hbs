@@ -1,0 +1,23 @@
+<modal name="checkout-modal" width="80%" height="auto">
+  <div class="container my-5 product-modal">
+    <div class="row">
+      <div class="col-12">
+      <h1 class="text-center">Please read the below policy</h1>
+      </div>
+      <div class="col-12 my-3">
+          <ol class="about-paddingB">
+            <li>Cancellation has to be made 5 days prior delivery date.</li>
+            <li>Exchange or refund within 5 days upon pick-up/delivery.</li>
+            <li>Exchange can only be made for item with following matter : 
+              <ul>
+                <li>Broken Top Branch</li>
+                <li>Dry leaves / tree gap with minimum surface of 10”L x 10” W</li>
+                <li>Wrong size delivered</li>
+              </ul>
+            </li>
+          </ol>
+          <button class="btn btn-success btn-lg mx-auto d-block" @click.prevent="onCheckOut">Check Out</button>
+      </div>
+    </div>
+  </div>
+</modal>

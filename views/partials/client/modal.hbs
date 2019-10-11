@@ -50,6 +50,8 @@
               <option>4</option>
             </select> --}}
           </div>
+          <input type="checkbox" v-model="selectedTree.chooseMyOwnTree" class="ml-2"><span class="px-3" style="font-size: 1.15rem">Choose my own tree</span>
+          <i class="fa fa-question-circle" v-tooltip="'We will notify you once the tree arrived, and you are welcome to choose your own tree!'"></i>
           <p>Stock :
             <span v-if="isProductOnStock" style="color:green;font-size:22px;">Available</span>
             <span v-else-if="!selectedTree.size" style="color:gray;font-size:22px;">Unknown</span>
@@ -67,14 +69,14 @@
               </option>
             </select>
             <label for="tree-quantity">Quantity:</label>
-            <input type="number" min="1" class="form-control" id="tree-color" v-model="selectedTree.quantity">
+            <input type="number" min="1" class="form-control" id="tree-quantity" v-model.lazy="selectedTree.quantity" @blur="forceUpdate">
             <p>Stock :
               <span v-if="isProductOnStock" style="color:green;font-size:22px;">\{{ this.productDetails[this.selectedTree.product][this.selectedTree.size].stock }}</span>
               <span v-else-if="!selectedTree.size" style="color:gray;font-size:22px;">Unknown</span>
               <span v-else style="color:red;font-size:22px;">Out of Stock</span>
             </p>
             <p>Price <span>(Not include delivery charge)</span> : HK$ \{{ productPriceSubTotal }}</p> 
-            <button type="button" class="btn btn-success btn-lg" :disabled="!isProductOnStock" @click="addToCart">Add to Cart</button>
+            <button type="button" class="btn btn-success btn-lg" :disabled="!isProductOnStock || isQuantityGreaterThanStock" @click="addToCart">Add to Cart</button>
 
           </div>
         </div>
@@ -136,6 +138,7 @@
               <option>4</option>
             </select> --}}
           </div>
+            <input type="checkbox" v-model="selectedTree.chooseMyOwnTree" class="ml-2"><span class="px-3" style="font-size: 1.15rem">Choose my own tree</span>
           <p>Stock :
             <span v-if="isProductOnStock" style="color:green;font-size:22px;">Available</span>
             <span v-else-if="!selectedTree.size" style="color:gray;font-size:22px;">Unknown</span>
@@ -153,14 +156,14 @@
               </option>
             </select>
             <label for="tree-quantity">Quantity:</label>
-            <input type="number" min="1" class="form-control" id="tree-color" v-model="selectedTree.quantity">
+            <input type="number" min="1" class="form-control" id="tree-quantity" v-model.lazy="selectedTree.quantity" @blur="forceUpdate">
             <p>Stock :
               <span v-if="isProductOnStock" style="color:green;font-size:22px;">\{{ this.productDetails[this.selectedTree.product][this.selectedTree.size].stock }}</span>
               <span v-else-if="!selectedTree.size" style="color:gray;font-size:22px;">Unknown</span>
               <span v-else style="color:red;font-size:22px;">Out of Stock</span>
             </p>
             <p>Price <span>(Not include delivery charge)</span> : HK$ \{{ productPriceSubTotal }}</p> 
-            <button type="button" class="btn btn-success btn-lg" :disabled="!isProductOnStock" @click="addToCart">Add to Cart</button>
+            <button type="button" class="btn btn-success btn-lg" :disabled="!isProductOnStock || isQuantityGreaterThanStock" @click="addToCart">Add to Cart</button>
 
           </div>
         </div>

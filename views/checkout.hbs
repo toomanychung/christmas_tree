@@ -184,7 +184,7 @@
             <hr class="mb-2">
             <input type="checkbox" id="acceptPolicy" v-model="acceptPolicy">
             <label for="checkbox" class="mb-5 radio-label">I've read the <a href="/about">refund policy</a></label>
-            <button class="btn btn-primary btn-lg btn-block" :disabled="!valid || !acceptPolicy" type="submit" @click.prevent="onCheckOut()">Continue to checkout</button>
+            <button class="btn btn-primary btn-lg btn-block" :disabled="!valid || !acceptPolicy" type="submit" @click.prevent="showCheckOutModal()">Continue to checkout</button>
           </form>
           </Validation-observer>
         </div>
@@ -193,4 +193,5 @@
       <footer class="my-5 pt-5 text-muted text-center text-small">
       </footer>
       </div>
+      {{> client/modal-checkout}}
     </div>

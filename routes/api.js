@@ -2,6 +2,7 @@ const { Router } = require('express');
 const productController = require('../controllers/productController');
 const deliveryController = require('../controllers/deliveryController');
 const couponController = require('../controllers/couponController');
+const mailController = require('../controllers/mailController');
 
 const router = Router();
 
@@ -37,6 +38,14 @@ router.post('/coupon', async (req, res) => {
       msg: 'Empty code.'
     });
   }
+});
+
+/* Test */
+router.get('/test-mail', async (req, res) => {
+  // mailController.sendBankInReminder('5d9f65cd9c290966fb55425e');
+  const order = await mailController.testEmailRender();
+  const logo = `${process.env.DOMIN_TEST}/img/logo.png`;
+  res.render('mail/order-confirmation', { layout: false, order, logo });
 });
 
 module.exports = router;

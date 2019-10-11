@@ -7,6 +7,7 @@ const express = require('express');
 const httpErrors = require('http-errors');
 const logger = require('morgan');
 const path = require('path');
+const Handlebars = require('handlebars');
 const hbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const passport = require('passport');
@@ -61,11 +62,130 @@ passport.use('login', new LocalStrategy({
 })));
 
 // view engine setup
+Handlebars.registerHelper({
+  choose(a, b) { return a || b; },
+  deduct00(amount) { return amount / 100; },
+  formartTreeName(productSku, size) {
+    var name = '';
+    switch (productSku) {
+      case 'nf':
+        name += 'Noble Fir';
+        break;
+      case 'df':
+        name += 'Douglas Fir';
+        break;
+      case 'ff':
+        name += 'Frasier Fir';
+        break;
+      case 'pw':
+        break;
+      default:
+        name += 'Unknown';
+        break;
+    }
+    switch (size) {
+      case 'H5W':
+        name += "Poinsettia H 5' Pot (White)";
+        break;
+      case 'H9W':
+        name += "Poinsettia H 9' Pot (White)";
+        break;
+      case 'H12W':
+        name += "Poinsettia H 12' Pot (White)";
+        break;
+      case 'H5R':
+        name += "Poinsettia H 5' Pot (Red)";
+        break;
+      case 'H9R':
+        name += "Poinsettia H 9' Pot (Red)";
+        break;
+      case '12D':
+        name += "12' Diametre";
+        break;
+      case '20D':
+        name += "20' Diametre";
+        break;
+      case '24D':
+        name += "24' Diametre";
+        break;
+      default:
+        name += `- ${size}`;
+        break;
+    }
+    return name;
+  },
+  formatDeliveryMethod(num) {
+    if (parseInt(num, 10) === 0) {
+      return 'Self Pick-up';
+    }
+    return 'Standard Delivery';
+  }
+});
+
 app.engine('hbs', hbs({
   layoutsDir: 'views',
   defaultLayout: 'layout',
   partialsDir: path.join(__dirname, 'views/partials'),
-  extname: '.hbs'
+  extname: '.hbs',
+  helpers: {
+    choose(a, b) { return a || b; },
+    deduct00(amount) { return amount / 100; },
+    formartTreeName(productSku, size) {
+      var name = '';
+      switch (productSku) {
+        case 'nf':
+          name += 'Noble Fir';
+          break;
+        case 'df':
+          name += 'Douglas Fir';
+          break;
+        case 'ff':
+          name += 'Frasier Fir';
+          break;
+        case 'pw':
+          break;
+        default:
+          name += 'Unknown';
+          break;
+      }
+      switch (size) {
+        case 'H5W':
+          name += "Poinsettia H 5' Pot (White)";
+          break;
+        case 'H9W':
+          name += "Poinsettia H 9' Pot (White)";
+          break;
+        case 'H12W':
+          name += "Poinsettia H 12' Pot (White)";
+          break;
+        case 'H5R':
+          name += "Poinsettia H 5' Pot (Red)";
+          break;
+        case 'H9R':
+          name += "Poinsettia H 9' Pot (Red)";
+          break;
+        case '12D':
+          name += "12' Diametre";
+          break;
+        case '20D':
+          name += "20' Diametre";
+          break;
+        case '24D':
+          name += "24' Diametre";
+          break;
+        default:
+          name += `- ${size}`;
+          break;
+      }
+      return name;
+    },
+    formatDeliveryMethod(num) {
+      if (parseInt(num, 10) === 0) {
+        return 'Self Pick-up';
+      }
+      return 'Standard Delivery';
+    }
+  }
 }));
 app.set('view engine', 'hbs');
 if (process.env.ENV === 'dev') {

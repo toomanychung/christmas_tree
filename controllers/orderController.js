@@ -3,6 +3,7 @@
 const {
   product, order, cart, delivery, coupon
 } = require('../model/main');
+const mailController = require('../controllers/mailController');
 
 async function calculateCart(userCart) {
   var errMsg = '';
@@ -55,6 +56,7 @@ async function getDeliveryPrice(region, floorCharge) {
 
 module.exports = {
   async createOrder(stripeSession) {
+    var flagList = [];
     const cartRef = stripeSession.client_reference_id;
     let productDetails = await product.findOne({}, (err, res) => res);
     productDetails = productDetails.toObject();
@@ -90,6 +92,13 @@ module.exports = {
       }
     });
 
+    // Check if any choose my own Tree
+    newCartItem.forEach((item) => {
+      if (item.chooseMyOwnTree) {
+        flagList = ['choose-my-own-tree'];
+      }
+    });
+
     const orderPayload = {
       status: 0,
       item: newCartItem,
@@ -99,11 +108,14 @@ module.exports = {
       payment_id: stripeSession.id,
       total_price: stripeSession.display_items[0].amount,
       remark: '',
-      flag: []
+      flag: flagList
     };
-    order.create(orderPayload);
+    const promise = order.create(orderPayload);
+    const result = await promise.then(res => res);
+    mailController.sendOrderConfirmationReminder(result.id);
   },
   async createBankInOrder(payload) {
+    var flagList = [];
     var error = false;
     // payload including cart & cInfo
     let productDetails = await product.findOne({}, (err, res) => res);
@@ -147,6 +159,13 @@ module.exports = {
       });
     }
 
+    // Check if any choose my own Tree
+    newCartItem.forEach((item) => {
+      if (item.chooseMyOwnTree) {
+        flagList = ['choose-my-own-tree'];
+      }
+    });
+
 
     const deliveryMethod = payload.cInfo.delivery_method;
     // Standard Delivery + Floor Charge
@@ -175,10 +194,11 @@ module.exports = {
         payment_method: 1,
         total_price: Math.round(priceAftercalculated) * 100,
         remark: '',
-        flag: []
+        flag: flagList
       };
       const promise = order.create(orderPayload);
       const result = await promise.then(res => res);
+      mailController.sendBankInReminder(result.id);
       return result.id;
     }
     return null;
