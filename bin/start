@@ -103,5 +103,5 @@ if (process.env.ENV === 'dev') {
     ca: fs.readFileSync('/etc/letsencrypt/live/smellyasshole.club/chain.pem')
   };
   https.createServer(SERVER_CONFIG, app)
-    .listen(443, () => { console.log('HTTPS sever started'); });
+    .listen(8080, () => { console.log('HTTPS sever started'); });
 }
