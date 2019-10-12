@@ -120,6 +120,11 @@ router.post('/webhook/', (req, res) => {
   return true;
 });
 
+// SSL API
+router.get('/.well-known/acme-challenge/2AsD0DWkyQbL-fLJzFes0keR1XwlLWenxjcjcZZp3NM', (req, res) => {
+  res.send('2AsD0DWkyQbL-fLJzFes0keR1XwlLWenxjcjcZZp3NM.nkKSu4H-lU6t9BeJBlP2QU5rl9yDTt53FePeJEBTIqc');
+});
+
 // The 404 Route (ALWAYS Keep this as the last route)
 
 
