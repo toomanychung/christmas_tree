@@ -43,7 +43,7 @@ router.post('/coupon', async (req, res) => {
 
 /* Test */
 router.get('/test-mail', async (req, res) => {
-  // mailController.sendBankInReminder('5d9f65cd9c290966fb55425e');
+  mailController.sendBankInReminder('5d9f65cd9c290966fb55425e');
   const order = await mailController.testEmailRender();
   const logo = `${process.env.DOMIN_TEST}/img/logo.png`;
   res.render('mail/order-confirmation', { layout: false, order, logo });

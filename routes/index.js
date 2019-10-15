@@ -121,8 +121,8 @@ router.post('/webhook/', (req, res) => {
 });
 
 // SSL API
-router.get('/.well-known/acme-challenge/2AsD0DWkyQbL-fLJzFes0keR1XwlLWenxjcjcZZp3NM', (req, res) => {
-  res.send('2AsD0DWkyQbL-fLJzFes0keR1XwlLWenxjcjcZZp3NM.nkKSu4H-lU6t9BeJBlP2QU5rl9yDTt53FePeJEBTIqc');
+router.get('/.well-known/acme-challenge/QyBtH1bahima9wHZQYXB8vk-eOi2hFUurmabWw0GEUE', (req, res) => {
+  res.send('QyBtH1bahima9wHZQYXB8vk-eOi2hFUurmabWw0GEUE.nkKSu4H-lU6t9BeJBlP2QU5rl9yDTt53FePeJEBTIqc');
 });
 
 // The 404 Route (ALWAYS Keep this as the last route)
