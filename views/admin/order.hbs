@@ -1,6 +1,10 @@
 <div class="container">
   <div class="row my-5" style="border-bottom:1px dotted;width:70%">
-    <h1 >Edit Order</h1> 
+    <h1 >Edit Order
+      {{#if order.cInfo.delivery_method }}
+      <a href="./api/delivery_note?id={{ order.id }}" class="btn btn-success">Delivery Note</a>
+      {{/if}}
+    </h1> 
     {{#if order.payment_method }}
     <p class="mx-2">Bank In Order</p>
     {{/if}}
@@ -12,6 +16,10 @@
     <br>
   <div class="col-12">
   <form class="form-horizontal" id="edit_orderadd" action="#">
+    <div class="form-group">
+      <label class="control-label col-md-12" for="price">Total Amount Paid: HKD<span>{{ deduct00 order.total_price }}</span>
+      {{#if order.cInfo.coupon}}<span style="color:red;">(Coupon Applied: {{ order.cInfo.coupon }})</span>{{/if}}</label>
+    </div>
     <div class="form-group">
       <label class="control-label col-md-2" for="status">Status:</label>
       <div class="col-md-10">
@@ -55,7 +63,7 @@
       <div class="col-md-10">
         <select class="custom-select w-50" id="delivery_method" disabled required>
           <option value="{{ order.cInfo.delivery_method }}" hidden="hidden" selected="selected">\{{ {{ order.cInfo.delivery_method }} | formatDeliveryMethod }}</option>
-          <option value="0">\{{-0 | formatDeliveryMethod}}</option>
+          <option value="0">\{{0 | formatDeliveryMethod}}</option>
           <option value="1">\{{1 | formatDeliveryMethod}}</option>
         </select>
       </div>
@@ -91,7 +99,7 @@
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="remark_internal">Internal Remark:</label>
+      <label class="control-label col-sm-12" for="remark_internal">Internal Remark: (will show on delivery note)</label>
       <div class="col-sm-10">
         <textarea type="text" class="form-control" id="remark_internal">{{ order.remark }}</textarea>
       </div>
@@ -99,6 +107,20 @@
 
     <hr>
 
+    <div class="row">
+      <h2 class="mx-auto">Product Details</h2>
+      {{#each order.item}}
+      <div class="col-12">
+        <h3 style="color:grey">Item {{ indexPlusOne @index }}</h3>
+        <p style="color:grey">Product:<span style="color:black">{{ formartTreeName this.product this.size}}</span></p>
+        <p style="color:grey">Qty: <span style="color:black">{{ choose this.quantity '1'}}</span></p>
+        <p style="color:grey">Width Preference: <span style="color:black">{{ choose this.widthPreference 'N/A'}}</p>
+        <p style="color:grey">Height Preference: <span style="color:black">{{ choose this.heightPreference '1'}}</p>
+        <p style="color:grey">Amount: <span style="color:black">HKD{{ choose this.price ''}}</span></p>
+        <hr style="border-top: 1px dotted black;">
+      </div>
+      {{/each}}
+    </div>
     <div class="col-md-12 my-2">
       <button class="btn btn-success btn-lg" @click.prevent="onSaveOrder">Save</button>
       <button class="btn btn-danger btn-lg mx-2" @click.prevent="close">Close</button>

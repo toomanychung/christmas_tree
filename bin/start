@@ -95,7 +95,7 @@ if (process.env.ENV === 'dev') {
     cert: fs.readFileSync('key/server.crt')
   };
   https.createServer(SERVER_CONFIG, app)
-    .listen(443, () => { console.log('HTTPS sever started'); });
+    .listen(8080, () => { console.log('HTTPS sever started'); });
 } else {
   const SERVER_CONFIG = {
     key: fs.readFileSync('/etc/letsencrypt/live/smellyasshole.club/privkey.pem'),

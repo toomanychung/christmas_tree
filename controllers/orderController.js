@@ -13,6 +13,9 @@ async function calculateCart(userCart) {
   let totalPrice = 0;
   let productDetails = await product.find({}, { _id: 0 }, (err, res) => res);
   productDetails = productDetails[0].toObject();
+  if (userCart.length > 10) {
+    errMsg = 'No more than 10 item in cart';
+  }
   userCart.forEach((item) => {
     if (item.product !== 'pw') {
       const treePrice = productDetails[item.product][item.size].price;
@@ -25,8 +28,8 @@ async function calculateCart(userCart) {
     } else if (item.product === 'pw') {
       const treePrice = productDetails[item.product][item.size].price;
       const { quantity } = item;
-      if (quantity < 0) {
-        errMsg = 'Quantity not match';
+      if (quantity < 0 || quantity > 100) {
+        errMsg = 'Quantity cant be 0 or over 100';
       }
       if (productDetails[item.product][item.size].stock < quantity) {
         errMsg = 'Out of Stock';
@@ -35,8 +38,6 @@ async function calculateCart(userCart) {
       totalPrice += sumPrice;
     }
   });
-
-  console.log(totalPrice);
 
   if (!errMsg) {
     return Math.round(totalPrice);

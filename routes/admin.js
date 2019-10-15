@@ -5,6 +5,7 @@ const adminController = require('../controllers/adminController');
 const settingController = require('../controllers/settingController');
 const couponController = require('../controllers/couponController');
 const deliveryController = require('../controllers/deliveryController');
+const xlsxController = require('../controllers/xlsxController');
 
 const router = Router();
 
@@ -17,7 +18,6 @@ function authenticated(req, res, next) {
 }
 
 router.use((req, res, next) => {
-  console.log(req.path);
   if (req.path !== '/login') {
     authenticated(req, res, next);
     return;
@@ -152,6 +152,26 @@ router.post('/api/delivery', async (req, res) => {
   }
   res.status(200).send('OK');
   return null;
+});
+
+router.get('/api/delivery_note', async (req, res) => {
+  const orderId = req.query.id;
+  if (!orderId) {
+    res.status(400).send('Error');
+    return;
+  }
+  try {
+    const data = await xlsxController.genDeliveryNote(orderId);
+    if (data) {
+      res.setHeader('Content-Type', 'application/vnd.openxmlformats');
+      res.setHeader('Content-Disposition', `attachment; filename=${orderId}.xlsx`);
+      res.end(data, 'binary');
+    } else {
+      res.status(400).send('Error');
+    }
+  } catch (error) {
+    res.status(400).send('Error');
+  }
 });
 
 

@@ -130,6 +130,7 @@ app.engine('hbs', hbs({
   helpers: {
     choose(a, b) { return a || b; },
     deduct00(amount) { return amount / 100; },
+    indexPlusOne(index) { return index + 1; },
     formartTreeName(productSku, size) {
       var name = '';
       switch (productSku) {
@@ -163,6 +164,9 @@ app.engine('hbs', hbs({
           break;
         case 'H9R':
           name += "Poinsettia H 9' Pot (Red)";
+          break;
+        case 'H12R':
+          name += "Poinsettia H 12' Pot (Red)";
           break;
         case '12D':
           name += "12' Diametre";

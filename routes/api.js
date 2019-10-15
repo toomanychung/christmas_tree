@@ -3,6 +3,7 @@ const productController = require('../controllers/productController');
 const deliveryController = require('../controllers/deliveryController');
 const couponController = require('../controllers/couponController');
 const mailController = require('../controllers/mailController');
+const xlsxController = require('../controllers/xlsxController');
 
 const router = Router();
 
@@ -46,6 +47,15 @@ router.get('/test-mail', async (req, res) => {
   const order = await mailController.testEmailRender();
   const logo = `${process.env.DOMIN_TEST}/img/logo.png`;
   res.render('mail/order-confirmation', { layout: false, order, logo });
+});
+
+router.get('/test-xlsx', async (req, res) => {
+  const data = await xlsxController.xlstTesting();
+  // console.log('get from controller', data);
+  // res.json(data);
+  res.setHeader('Content-Type', 'application/vnd.openxmlformats');
+  res.setHeader('Content-Disposition', 'attachment; filename=894594759.xlsx');
+  res.end(data, 'binary');
 });
 
 module.exports = router;

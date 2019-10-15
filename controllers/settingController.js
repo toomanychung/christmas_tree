@@ -11,7 +11,6 @@ module.exports = {
     }
   },
   async changeAnnouncementSetting(text) {
-    console.log(text);
     const response = await setting.updateOne({ type: 'announcement' }, { content: text }, (err, res) => res);
     return response.ok;
   }

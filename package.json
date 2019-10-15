@@ -39,6 +39,7 @@
     "nodemailer-mailgun-transport": "^1.4.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+    "path": "^0.12.7",
     "stripe": "^7.8.0",
     "v-tooltip": "^2.0.2",
     "vee-validate": "^3.0.4",
@@ -49,7 +50,8 @@
     "vue-tables-2": "^1.4.70",
     "vue-toasted": "^1.1.27",
     "vue2-animate": "^2.1.2",
-    "vuejs-datepicker": "^1.6.2"
+    "vuejs-datepicker": "^1.6.2",
+    "xlsx-template": "^0.5.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",

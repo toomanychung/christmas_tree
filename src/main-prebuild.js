@@ -80,7 +80,7 @@ var app = new Vue({
     acceptPolicy: false,
     cart: [],
     cInfo: {
-      name: '', phone: '', email: '', delivery_method: 0, remark: '', delivery_date: '', coupon: '', floor: 0
+      name: '', phone: '', email: '', delivery_method: 0, remark: '', delivery_date: '', coupon: ''
     },
     coupon: '',
     coupon_discount: 0
