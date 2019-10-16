@@ -84,11 +84,35 @@ function read(orderId) {
   });
 }
 
+function genReport(rawData) {
+  return new Promise((resolve, reject) => {
+    fs.readFile(path.join(__dirname, '../', 'templates', 'report_template.xlsx'), async (err, data) => {
+      if (err) {
+        reject(err);
+      } else {
+        const template = new XlsxTemplate(data);
+        const sheetNumber = 1;
+        rawData.forEach((item, index) => {
+          // eslint-disable-next-line no-param-reassign
+          rawData[index].newPrice = item.total_price / 100;
+        });
+        const values = { rawData };
+        template.substitute(sheetNumber, values);
+        const result = template.generate({ type: 'nodebuffer' });
+        resolve(result);
+      }
+    });
+  });
+}
+
 module.exports = {
   xlstTesting() {
-    return read('5da5b6c51f60570ccc99c431').then(res => res);
+    return genReport();
   },
   genDeliveryNote(orderId) {
     return read(orderId).then(res => res);
   },
+  genOrderReport(data) {
+    return genReport(data);
+  }
 };

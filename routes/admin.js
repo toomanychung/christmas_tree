@@ -91,7 +91,14 @@ router.get('/setting', async (req, res) => {
 router.get('/api/getOrder', async (req, res) => {
   const params = req.query;
   const result = await adminController.getOrderList(params);
-  res.json(result);
+  if (params.excel === 'true') {
+    const report = await xlsxController.genOrderReport(result.data);
+    res.setHeader('Content-Type', 'application/vnd.openxmlformats');
+    res.setHeader('Content-Disposition', 'attachment; filename=report.xlsx');
+    res.end(report, 'binary');
+  } else {
+    res.json(result);
+  }
 });
 
 router.post('/api/editOrder', async (req, res) => {

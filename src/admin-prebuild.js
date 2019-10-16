@@ -51,6 +51,7 @@ var app = new Vue({
       customFilters: ['customFilter'],
       filterable: false,
       perPage: 25,
+      perPageValues: [10, 15, 25, 50, 100, 500]
     },
     columns: ['_id', 'email', 'status', 'create_time', 'phone', 'delivery_method', 'delivery_date', 'region', 'total_price', 'remark'],
   },
