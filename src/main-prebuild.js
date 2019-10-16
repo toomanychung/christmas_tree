@@ -1,3 +1,4 @@
+/* eslint-disable block-scoped-var */
 /* eslint-disable no-restricted-globals */
 /* eslint-disable no-alert */
 /* eslint-disable no-undef */
@@ -18,7 +19,9 @@ import VTooltip from 'v-tooltip';
 Vue.use(Toasted);
 Vue.component('ValidationProvider', ValidationProvider);
 Vue.component('ValidationObserver', ValidationObserver);
-Vue.config.devtools = true;
+if (process.env.ENV === 'dev') {
+  Vue.config.devtools = true;
+}
 Vue.use(VModal);
 Vue.use(VueSession);
 Vue.use(VTooltip);
@@ -38,7 +41,13 @@ extend('email', {
   message: 'Please provide a valid email address'
 });
 
-const stripe = Stripe('pk_test_e94q65F16GIG6KAoQPW0yZ3M');
+if (process.env.ENV === 'dev') {
+  var stripePublicKey = 'pk_test_e94q65F16GIG6KAoQPW0yZ3M';
+} else {
+  // eslint-disable-next-line no-redeclare
+  var stripePublicKey = 'pk_live_cd0FeMhe46AcOBhyzWb4F7YE00JPcJDiks';
+}
+const stripe = Stripe(stripePublicKey);
 
 const defaultDeliveryMethod = [
   {
@@ -95,11 +104,9 @@ var app = new Vue({
       this.selectedTree = {};
       this.selectedTree = tempTree;
       this.$forceUpdate();
-      console.log('update', this.selectedTree.quantity);
     },
     loadStorage() {
       const _cart = localStorage.getItem('cart');
-      console.log('load Storage', JSON.parse(_cart));
       if (!_.isEmpty(_cart)) {
         this.cart = JSON.parse(_cart);
       }
@@ -136,7 +143,6 @@ var app = new Vue({
       this.$modal.show('checkout-modal');
     },
     resetSelectedTree() {
-      console.log(defaultSelectedTree);
       this.selectedTree = _.cloneDeep(defaultSelectedTree);
     },
     onTreeSizeChange() {
@@ -220,7 +226,6 @@ var app = new Vue({
     },
     formatFlowerName(size) {
       if (this.productDetails) {
-        console.log(size);
         const flower = this.productDetails.pw[size];
         return flower.name;
       }
