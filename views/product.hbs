@@ -11,6 +11,9 @@
         <li>Has soft blue-green needles on evenly spaced strong branches</li>
         <li>Able to hold large and heavy ornaments</li>
       </ul>
+      <div class="col-6 mx-auto my-5">
+        <button class="btn btn-success btn-lg" @click="showProductModal('nf')">Buy this</button>
+      </div>
       </div>
     </div>
   </div>
@@ -29,6 +32,9 @@
         <li>Has full and conical shape</li>
         <li>Has a distinctive pine-like scent</li>
       </ul>
+      <div class="col-6 mx-auto my-5">
+        <button class="btn btn-success btn-lg" @click="showProductModal('df')">Buy this</button>
+      </div>
       </div>
     </div>
   </div>
@@ -47,6 +53,9 @@
         <li>Narrower in sizes which make perfect for small houses</li>
         <li>Has silvery-green needles and unique sweet-fruit fragrance</li>
       </ul>
+      <div class="col-6 mx-auto my-5">
+        <button class="btn btn-success btn-lg" @click="showProductModal('ff')">Buy this</button>
+      </div>
       </div>
     </div>
   </div>
@@ -66,6 +75,9 @@
         <li>Perfect complement to your Christmas décor</li>
         <li>Suitable for both indoor or outdoor</li>
       </ul>
+      <div class="col-6 mx-auto my-5">
+        <button class="btn btn-success btn-lg" @click="showProductModal('pw')">Buy this</button>
+      </div>
       </div>
     </div>
   </div>
@@ -73,4 +85,5 @@
   <div class="row">
     <a href="/" class="btn btn-info my-5 col-12">Shop Now!</a>
   </div>
+  {{> client/modal}}
 </div>

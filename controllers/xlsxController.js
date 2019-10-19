@@ -1,8 +1,10 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-lonely-if */
 /* eslint-disable no-underscore-dangle */
 const XlsxTemplate = require('xlsx-template');
 const fs = require('fs');
 const path = require('path');
+const moment = require('moment');
 const {
   order
 } = require('../model/main');
@@ -44,8 +46,9 @@ function read(orderId) {
           address_eng: orderObj.cInfo.address,
           address_chi: orderObj.cInfo.address_chi || orderObj.cInfo.address,
           telephone: orderObj.cInfo.phone,
+          telephone2: orderObj.cInfo.phone2,
           order_id: orderObj._id.toString(),
-          remark: orderObj.remark,
+          remark: orderObj.cInfo.remark,
         };
         orderObj.item.forEach((itemObj) => {
           if (itemObj.product !== 'pw') {
@@ -93,8 +96,11 @@ function genReport(rawData) {
         const template = new XlsxTemplate(data);
         const sheetNumber = 1;
         rawData.forEach((item, index) => {
-          // eslint-disable-next-line no-param-reassign
           rawData[index].newPrice = item.total_price / 100;
+          rawData[index].id2 = item.id.slice(item.id.length - 5);
+          rawData[index].create_time2 = moment(item.create_time).format('YYYY-MM-DD');
+          rawData[index].delivery_method = (item.cInfo.delivery_method === 0 ? 'Self-Pickup' : 'Standard Delivery');
+          rawData[index].payment_method = (item.payment_method === 0 ? 'Credit Card' : 'Bank-in');
         });
         const values = { rawData };
         template.substitute(sheetNumber, values);

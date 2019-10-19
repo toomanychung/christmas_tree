@@ -61,6 +61,14 @@ module.exports = new Schema({
       price: Number,
       stock: Number
     },
+    '6ft': {
+      price: Number,
+      stock: Number
+    },
+    '7ft': {
+      price: Number,
+      stock: Number
+    },
   },
   pw: {
     H5W: {

@@ -63,7 +63,7 @@ const defaultDeliveryMethod = [
 const treeSizeList = {
   nf: ['4ft', '5ft', '6ft', '7ft', '8ft', '9ft'],
   df: ['5ft', '6ft', '7ft', '8ft', '9ft'],
-  ff: ['5ft'],
+  ff: ['5ft', '6ft', '7ft'],
   pw: []
 };
 

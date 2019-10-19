@@ -81,7 +81,7 @@
     <div class="col-lg-2 d-flex align-items-center">
       <button class="btn btn-success" @click.prevent="onApplyFilter">Search</button>
       <button class="btn btn-info mx-3" @click.prevent="onResetFilter">Reset</button>
-      <a target="_blank" href="./admin/api/getOrder?query=&limit=9999&excel=true" class="btn btn-danger">Report</a>
+      <button class="btn btn-danger" @click.prevent="onRequestReport">Report</button>
     </div>
   </div>
   </form>

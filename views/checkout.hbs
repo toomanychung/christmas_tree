@@ -108,6 +108,13 @@
             </div>
 
             <div class="row">
+              <div class="col-md-12 mb-3">
+                <label for="phonenumber2">Phone Number 2 <span class="text-muted">(Optional)</span></label>
+                <input type="text" class="form-control" id="phonenumber2" v-model="cInfo.phone2" placeholder="another contact phone number" required="">
+              </div>
+            </div>
+
+            <div class="row">
             <div class="col-md-12 mb-3">
               <label for="email">Email</label>
               <Validation-provider ref="email" name="email" rules="required|email">
@@ -163,7 +170,7 @@
             <div class="mb-3" v-if="cInfo.delivery_method === 1" v-cloak>
               <Validation-provider ref="address" name="address" rules="required">
               <div slot-scope="{ errors }">
-              <label for="address">Address</label>
+              <label for="address">Address (One order for one address only)</label>
               <input type="text" class="form-control" id="address" placeholder="English address" required="" v-model="cInfo.address">
               <span style="color:red;" v-cloak>\{{ errors[0] }}</span>
               </div>

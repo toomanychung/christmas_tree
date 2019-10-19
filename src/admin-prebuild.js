@@ -104,12 +104,19 @@ var app = new Vue({
       this.filters = {};
       this.onApplyFilter();
     },
+    onRequestReport() {
+      const params = this.filters;
+      const u = JSON.stringify(params);
+      const url = `./admin/api/getOrder?customFilter=${u}&query=&limit=9999&excel=true`;
+      window.open(url);
+    },
     onSaveOrder() {
       this.isLoading = true;
       const editedOrder = {};
       editedOrder._id = document.getElementById('order_id').innerHTML;
       editedOrder.status = document.getElementById('status').value;
       editedOrder.phone = document.getElementById('phone').value;
+      editedOrder.phone2 = document.getElementById('phone2').value;
       if (parseInt(document.getElementById('delivery_method').value, 10) !== 0) {
         editedOrder.delivery_date = document.getElementById('delivery_date').value;
         editedOrder.address = document.getElementById('address').value;

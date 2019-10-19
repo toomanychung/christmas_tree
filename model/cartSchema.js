@@ -7,6 +7,7 @@ module.exports = new Schema({
   cInfo: {
     name: String,
     phone: String,
+    phone2: String,
     email: String,
     delivery_method: Number,
     remark: String,

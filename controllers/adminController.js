@@ -94,6 +94,7 @@ module.exports = {
       status: editedOrder.status,
       cInfo: {
         phone: editedOrder.phone,
+        phone2: editedOrder.phone2,
         remark: editedOrder.remark_client,
         address: editedOrder.address || '',
         address_chi: editedOrder.address_chi || '',
