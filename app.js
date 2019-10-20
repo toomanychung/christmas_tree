@@ -15,6 +15,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 const flash = require('connect-flash');
 const bcrypt = require('bcrypt-nodejs');
+const moment = require('moment');
 
 const indexRouter = require('./routes/index');
 const apiRouter = require('./routes/api');
@@ -119,6 +120,9 @@ Handlebars.registerHelper({
       return 'Self Pick-up';
     }
     return 'Standard Delivery';
+  },
+  formateEmailDate(date) {
+    return moment(date).format('YYYY-MM-DD');
   }
 });
 
@@ -188,6 +192,9 @@ app.engine('hbs', hbs({
         return 'Self Pick-up';
       }
       return 'Standard Delivery';
+    },
+    formateEmailDate(date) {
+      return moment(date).format('YYYY-MM-DD');
     }
   }
 }));

@@ -28,6 +28,10 @@ module.exports = new Schema({
   },
   total_price: Number,
   remark: String,
+  invoice_no: {
+    type: String,
+    default: 'Unknown'
+  },
   flag: [],
   create_time: {
     type: Date,

@@ -210,8 +210,8 @@ p {padding: 0!important; margin-top: 0!important; margin-right: 0!important; mar
                               </span>
                               <hr>
                                 <div><span style="font-family: &quot;Trebuchet MS&quot;;"><br></span></div><div><span style="font-family: &quot;Trebuchet MS&quot;;"><br></span></div><div><span style="font-family: &quot;Trebuchet MS&quot;;"><br></span></div><div>
-                                <span style="font-family: &quot;Trebuchet MS&quot;;">Order No.: {{ order._id }}</span></div>
-                                <div><span style="font-family: &quot;Trebuchet MS&quot;;">Date: {{ order.create_time }}</span></div>
+                                <span style="font-family: &quot;Trebuchet MS&quot;;">Invoice No.: #{{ order.invoice_no }}</span></div>
+                                <div><span style="font-family: &quot;Trebuchet MS&quot;;">Date: {{ formateEmailDate order.create_time }}</span></div>
                                 <div><span style="font-family: &quot;Trebuchet MS&quot;;">Delivery Method: {{ formatDeliveryMethod order.cInfo.delivery_method }}</span></div>
                                 {{!-- <div><span style="font-family: &quot;Trebuchet MS&quot;;">Delivery Date: {{ choose order.cInfo.delivery_date 'N/A' }}</span></div> --}}
                                 {{!-- <div><span style="font-family: &quot;Trebuchet MS&quot;;">Pay By: {{ order._id }}</span></div> --}}

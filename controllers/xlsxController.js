@@ -48,6 +48,7 @@ function read(orderId) {
           telephone: orderObj.cInfo.phone,
           telephone2: orderObj.cInfo.phone2,
           order_id: orderObj._id.toString(),
+          invoice_no: orderObj.invoice_no,
           remark: orderObj.cInfo.remark,
         };
         orderObj.item.forEach((itemObj) => {

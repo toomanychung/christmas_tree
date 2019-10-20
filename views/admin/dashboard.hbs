@@ -90,7 +90,8 @@
   <div class="row my-5">
     <div class="col-12">
           <v-server-table ref="table" :columns="columns" :options="options">
-            <a slot="_id" slot-scope="{row}" :href="'/admin/order?id=' + row._id" target="_blank"> \{{ row._id.slice(-6) }} </a>
+            {{!-- <a slot="_id" slot-scope="{row}" :href="'/admin/order?id=' + row._id" target="_blank"> \{{ row._id.slice(-6) }} </a> --}}
+            <a slot="_id" slot-scope="{row}" :href="'/admin/order?id=' + row._id" target="_blank"> #\{{ row.invoice_no }} </a>
             <p slot="email" slot-scope="{row}"> \{{ row.cInfo.email }} </p>
             <p slot="phone" slot-scope="{row}"> \{{ row.cInfo.phone }} </p>
             <p slot="delivery_method" slot-scope="{row}">\{{ row.cInfo.delivery_method | formatDeliveryMethod }}</p>

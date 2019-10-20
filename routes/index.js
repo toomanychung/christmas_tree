@@ -65,6 +65,7 @@ router.get('/thank-you', async (req, res) => {
     const date = moment(result.create_time).format('YYYY-MM-DD HH:mm');
     res.render('thankyou', {
       orderRef: result._id,
+      invoiceRef: result.invoice_no,
       amountPaid: result.total_price / 100,
       date
     });
@@ -75,6 +76,7 @@ router.get('/thank-you', async (req, res) => {
   if (result) {
     res.render('thankyou-bank', {
       orderRef: result._id,
+      invoiceRef: result.invoice_no,
       amountPaid: result.total_price / 100,
       date
     });

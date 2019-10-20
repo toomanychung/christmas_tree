@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 /* eslint-disable no-underscore-dangle */
 const {
-  product, order, cart, delivery, coupon
+  product, order, cart, delivery, coupon, setting
 } = require('../model/main');
 const mailController = require('../controllers/mailController');
 
@@ -100,6 +100,11 @@ module.exports = {
       }
     });
 
+    // Invoice No.
+    const _tempInvoiceNo = await setting.findOne({ type: 'order_2019' }, { _id: 0 }, (err, res) => res);
+    const tempInvoiceNo = _tempInvoiceNo.count;
+    console.log('invoice_no', tempInvoiceNo);
+
     const orderPayload = {
       status: 0,
       item: newCartItem,
@@ -109,10 +114,12 @@ module.exports = {
       payment_id: stripeSession.id,
       total_price: stripeSession.display_items[0].amount,
       remark: '',
+      invoice_no: tempInvoiceNo,
       flag: flagList
     };
     const promise = order.create(orderPayload);
     const result = await promise.then(res => res);
+    setting.updateOne({ type: 'order_2019' }, { count: tempInvoiceNo + 1 }, (err, res) => res);
     mailController.sendOrderConfirmationReminder(result.id);
   },
   async createBankInOrder(payload) {
@@ -184,6 +191,10 @@ module.exports = {
         priceAftercalculated *= 1 - couponValue;
       }
     }
+    // Invoice No.
+    const _tempInvoiceNo = await setting.findOne({ type: 'order_2019' }, { _id: 0 }, (err, res) => res);
+    const tempInvoiceNo = _tempInvoiceNo.count;
+    console.log('invoice_no', tempInvoiceNo);
 
     if (!error) {
       const orderPayload = {
@@ -195,11 +206,13 @@ module.exports = {
         payment_method: 1,
         total_price: Math.round(priceAftercalculated) * 100,
         remark: '',
-        flag: flagList
+        flag: flagList,
+        invoice_no: tempInvoiceNo
       };
       const promise = order.create(orderPayload);
       const result = await promise.then(res => res);
       mailController.sendBankInReminder(result.id);
+      setting.updateOne({ type: 'order_2019' }, { count: tempInvoiceNo + 1 }, (err, res) => res);
       return result.id;
     }
     return null;

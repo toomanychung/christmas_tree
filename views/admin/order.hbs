@@ -11,7 +11,8 @@
   </div>
   <div class="row my-3 p-2 rounded" style="border: 1px solid rgb(187, 186, 186)">
     <div class="col-12">
-      <p class="float-right block">Order No.: <span id="order_id">{{ order._id }}</span></p>
+      <p class="float-right block" style="display:none;">Order No.: <span id="order_id">{{ order._id }}</span></p>
+      <p class="float-right block">Invoice No.: <span id="invoice_no">{{ order.invoice_no }}</span></p>
     </div>
     <br>
   <div class="col-12">
