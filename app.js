@@ -86,28 +86,31 @@ Handlebars.registerHelper({
     }
     switch (size) {
       case 'H5W':
-        name += "Poinsettia H 5' Pot (White)";
+        name += 'Poinsettia 1 H 5" Pot (White)';
         break;
       case 'H9W':
-        name += "Poinsettia H 9' Pot (White)";
+        name += 'Poinsettia 2 H 9" Pot (White)';
         break;
       case 'H12W':
-        name += "Poinsettia H 12' Pot (White)";
+        name += 'Poinsettia 3 H 12" Pot (White)';
         break;
       case 'H5R':
-        name += "Poinsettia H 5' Pot (Red)";
+        name += 'Poinsettia 1 H 5" Pot (Red)';
         break;
       case 'H9R':
-        name += "Poinsettia H 9' Pot (Red)";
+        name += 'Poinsettia 2 H 9" Pot (Red)';
+        break;
+      case 'H12R':
+        name += 'Poinsettia 3 H 12" Pot (Red)';
         break;
       case '12D':
-        name += "12' Diametre";
+        name += '12" Diametre Wreath';
         break;
       case '20D':
-        name += "20' Diametre";
+        name += '20" Diametre Wreath';
         break;
       case '24D':
-        name += "24' Diametre";
+        name += '24" Diametre Wreath';
         break;
       default:
         name += `- ${size}`;
@@ -155,31 +158,31 @@ app.engine('hbs', hbs({
       }
       switch (size) {
         case 'H5W':
-          name += "Poinsettia H 5' Pot (White)";
+          name += 'Poinsettia 1 H 5" Pot (White)';
           break;
         case 'H9W':
-          name += "Poinsettia H 9' Pot (White)";
+          name += 'Poinsettia 2 H 9" Pot (White)';
           break;
         case 'H12W':
-          name += "Poinsettia H 12' Pot (White)";
+          name += 'Poinsettia 3 H 12" Pot (White)';
           break;
         case 'H5R':
-          name += "Poinsettia H 5' Pot (Red)";
+          name += 'Poinsettia 1 H 5" Pot (Red)';
           break;
         case 'H9R':
-          name += "Poinsettia H 9' Pot (Red)";
+          name += 'Poinsettia 2 H 9" Pot (Red)';
           break;
         case 'H12R':
-          name += "Poinsettia H 12' Pot (Red)";
+          name += 'Poinsettia 3 H 12" Pot (Red)';
           break;
         case '12D':
-          name += "12' Diametre";
+          name += '12" Diametre Wreath';
           break;
         case '20D':
-          name += "20' Diametre";
+          name += '20" Diametre Wreath';
           break;
         case '24D':
-          name += "24' Diametre";
+          name += '24" Diametre Wreath';
           break;
         default:
           name += `- ${size}`;
