@@ -1,9 +1,7 @@
 <div class="container">
   <div class="row my-5" style="border-bottom:1px dotted;width:70%">
     <h1 >Edit Order
-      {{#if order.cInfo.delivery_method }}
       <a href="./api/delivery_note?id={{ order.id }}" class="btn btn-success">Delivery Note</a>
-      {{/if}}
     </h1> 
     {{#if order.payment_method }}
     <p class="mx-2">Bank In Order</p>
@@ -120,6 +118,7 @@
       <div class="col-12">
         <h3 style="color:grey">Item {{ indexPlusOne @index }}</h3>
         <p style="color:grey">Product:<span style="color:black">{{ formartTreeName this.product this.size}}</span></p>
+        {{#if this.stand}}<p style="color:grey">Stand: <span style="color:black">{{ choose this.stand 'Not a Tree'}}</span></p>{{/if}}
         <p style="color:grey">Qty: <span style="color:black">{{ choose this.quantity '1'}}</span></p>
         <p style="color:grey">Width Preference: <span style="color:black">{{ choose this.widthPreference 'N/A'}}</p>
         <p style="color:grey">Height Preference: <span style="color:black">{{ choose this.heightPreference '1'}}</p>

@@ -1,0 +1,2189 @@
+/* 1 */
+{
+  "_id" : ObjectId("5dacf24bca1b374115b9457e"),
+  "item" : [ 
+      {
+          "quantity" : "15",
+          "product" : "pw",
+          "size" : "H5W",
+          "price" : 900
+      }
+  ],
+  "payment_method" : 1,
+  "invoice_no" : "20190006",
+  "flag" : [],
+  "status" : -1,
+  "cInfo" : {
+      "name" : "Peter Lau",
+      "phone" : "24242333",
+      "email" : "toomanychung@gmail.com",
+      "delivery_method" : 1,
+      "remark" : "bank in testing order",
+      "delivery_date" : "2019-12-03",
+      "coupon" : "",
+      "region" : "A",
+      "address" : "Peak",
+      "floor" : 0,
+      "phone2" : "93482321"
+  },
+  "stripe_ref" : "N/A",
+  "payment_id" : "N/A",
+  "total_price" : 102000,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-20T23:48:27.322Z"),
+  "update_time" : ISODate("2019-10-20T23:48:27.322Z"),
+  "__v" : 0
+}
+
+/* 2 */
+{
+  "_id" : ObjectId("5dacf33060f20f414602704e"),
+  "item" : [ 
+      {
+          "quantity" : "20",
+          "product" : "pw",
+          "size" : "H5W",
+          "price" : 1200
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190007",
+  "flag" : [],
+  "status" : -2,
+  "cInfo" : {
+      "name" : "YINCHUNGLAU",
+      "phone" : "63489710",
+      "email" : "toomanychung@gmail.com",
+      "delivery_method" : 1,
+      "remark" : "Test",
+      "delivery_date" : "2019-12-03",
+      "coupon" : "",
+      "region" : "C",
+      "address" : "Anywhere",
+      "floor" : 0,
+      "address_chi" : "",
+      "phone2" : ""
+  },
+  "cart_ref" : "5dacf32160f20f414602704d",
+  "stripe_ref" : "pi_1FVoBqDeX0wBSg1W8YfDfPwA",
+  "payment_id" : "cs_test_vlTNq9gF9qvX9E9LFfD1pFCfLwOqtusY0L2wqTkTbL7QI3Qw82WaQ3N4",
+  "total_price" : 132000,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-20T23:52:16.211Z"),
+  "update_time" : ISODate("2019-10-20T23:55:44.854Z"),
+  "__v" : 0
+}
+
+/* 3 */
+{
+  "_id" : ObjectId("5dacfd21f050504c8c8228f9"),
+  "item" : [ 
+      {
+          "stand" : "NA",
+          "widthPreference" : "Average",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "4ft",
+          "price" : 800
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190008",
+  "flag" : [],
+  "status" : -2,
+  "cInfo" : {
+      "name" : "Joyce Li",
+      "phone" : "95321753",
+      "email" : "cslijoyce@gmail.com",
+      "delivery_method" : 1,
+      "remark" : "testing",
+      "delivery_date" : "2019-11-28",
+      "coupon" : "EARLY3",
+      "region" : "J",
+      "address" : "G/F, 11 Tai Tung Village, Sai Sha Road, Sai Kung",
+      "floor" : 0,
+      "address_chi" : "",
+      "phone2" : ""
+  },
+  "cart_ref" : "5dacfcddf050504c8c8228f8",
+  "stripe_ref" : "pi_1FVoq2Eg289Pw5MVe3CXpao7",
+  "payment_id" : "cs_live_jwnp6x9HXX3tpHpmCz9z69qtczcApDtWtHYJ3Kbdhgrf5N4TP9oTArSc",
+  "total_price" : 89200,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T00:34:41.355Z"),
+  "update_time" : ISODate("2019-10-21T07:58:15.334Z"),
+  "__v" : 0
+}
+
+/* 4 */
+{
+  "_id" : ObjectId("5dad0b0cf050504c8c8228fa"),
+  "item" : [ 
+      {
+          "stand" : "NA",
+          "widthPreference" : "Average",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "4ft",
+          "price" : 800
+      }
+  ],
+  "payment_method" : 1,
+  "invoice_no" : "20190009",
+  "flag" : [],
+  "status" : -2,
+  "cInfo" : {
+      "name" : "TESTING",
+      "phone" : "68246256",
+      "email" : "lukyeegd@netvigator.com",
+      "delivery_method" : 0,
+      "remark" : "",
+      "delivery_date" : "",
+      "coupon" : "",
+      "address" : "",
+      "address_chi" : "",
+      "phone2" : ""
+  },
+  "stripe_ref" : "N/A",
+  "payment_id" : "N/A",
+  "total_price" : 80000,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T01:34:04.142Z"),
+  "update_time" : ISODate("2019-10-21T02:00:40.521Z"),
+  "__v" : 0
+}
+
+/* 5 */
+{
+  "_id" : ObjectId("5dad13d6f050504c8c8228fd"),
+  "item" : [ 
+      {
+          "stand" : "NA",
+          "widthPreference" : "Wide",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : false,
+          "product" : "df",
+          "size" : "7ft",
+          "price" : 1200
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190010",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Raquel Hankins",
+      "phone" : "97655109",
+      "email" : "raquelhankins@gmail.com",
+      "delivery_method" : 1,
+      "remark" : "Call before delivery ",
+      "delivery_date" : "2019-11-28",
+      "coupon" : "",
+      "address" : "11 Tung Shan Terrace, GF Flat C",
+      "region" : "D",
+      "floor" : 0,
+      "address_chi" : "灣仔東山臺11號GF層C室",
+      "phone2" : ""
+  },
+  "cart_ref" : "5dad139cf050504c8c8228fc",
+  "stripe_ref" : "pi_1FVqLwEg289Pw5MV3dkakbAH",
+  "payment_id" : "cs_live_9lNKwR8r0EbboGPP5HfPQlRr9YSp2jskRwhF6GUUVsLpF7zulKydQDRo",
+  "total_price" : 132000,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T02:11:34.764Z"),
+  "update_time" : ISODate("2019-10-21T02:55:20.166Z"),
+  "__v" : 0
+}
+
+/* 6 */
+{
+  "_id" : ObjectId("5dad13eaf050504c8c8228fe"),
+  "item" : [ 
+      {
+          "stand" : "exchange",
+          "widthPreference" : "Average",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : true,
+          "product" : "nf",
+          "size" : "6ft",
+          "price" : 1130
+      }, 
+      {
+          "quantity" : "2",
+          "product" : "pw",
+          "size" : "20D",
+          "price" : 680
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190011",
+  "flag" : [ 
+      "choose-my-own-tree"
+  ],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Elaine Champion",
+      "phone" : "97436979",
+      "email" : "elaine_champion@cathaypacific.com",
+      "delivery_method" : 1,
+      "remark" : "We live in a village so please call when on the way and we will direct you to the house",
+      "delivery_date" : "2019-12-01",
+      "coupon" : "EARLY3",
+      "region" : "K",
+      "phone2" : "27472668",
+      "address" : "5A Shek Lau Po Village",
+      "floor" : 0,
+      "address_chi" : "東涌石榴埔5A (由東涌道轉入)"
+  },
+  "cart_ref" : "5dad1368f050504c8c8228fb",
+  "stripe_ref" : "pi_1FVqL6Eg289Pw5MVqe7PWFNk",
+  "payment_id" : "cs_live_2vp2Asoxo1wMeriGDYlmNCFqsmEQBgi9fKiUIs6CyDAsL6JmqWjMxLDi",
+  "total_price" : 189200,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T02:11:54.372Z"),
+  "update_time" : ISODate("2019-10-21T07:21:01.290Z"),
+  "__v" : 0
+}
+
+/* 7 */
+{
+  "_id" : ObjectId("5dad1440f050504c8c822900"),
+  "item" : [ 
+      {
+          "stand" : "exchange",
+          "widthPreference" : "Wide",
+          "heightPreference" : "Tall",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "7ft",
+          "price" : 1420
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190012",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Julia Roehrich",
+      "phone" : "55008320",
+      "email" : "juliaroehrich@aol.de",
+      "delivery_method" : 1,
+      "remark" : "Call before delivery to confirm delivery address in Stanley. We will likely change houses in Stanley until Christmas. 55008320",
+      "delivery_date" : "2019-12-15",
+      "coupon" : "EARLY3",
+      "phone2" : "",
+      "region" : "C",
+      "address" : "9 Stanley Mound Road, 19 Stanley Court OR 88 Wong Ma Kok Rd., C32 Regalia Bay",
+      "floor" : 0,
+      "address_chi" : "赤柱赤柱崗道9號海灣園19座 或 赤柱黃麻角道88號富豪海灣C32座"
+  },
+  "cart_ref" : "5dad140bf050504c8c8228ff",
+  "stripe_ref" : "pi_1FVqNkEg289Pw5MVxyXl72Rz",
+  "payment_id" : "cs_live_48MbnTeNWco7EU4C9Rfd55YJ96pywE5buS5mewCu3aQX6WN2ylVknV7p",
+  "total_price" : 149400,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T02:13:20.165Z"),
+  "update_time" : ISODate("2019-10-21T07:23:20.562Z"),
+  "__v" : 0
+}
+
+/* 8 */
+{
+  "_id" : ObjectId("5dad14b4f050504c8c822902"),
+  "item" : [ 
+      {
+          "stand" : "exchange",
+          "widthPreference" : "Average",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "6ft",
+          "price" : 1130
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190013",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "John Kin Ping YANG",
+      "phone" : "98876483",
+      "email" : "kinpingyang@yahoo.com",
+      "delivery_method" : 1,
+      "remark" : "Delivery in the morning and call before delivery",
+      "delivery_date" : "2019-11-30",
+      "coupon" : "",
+      "phone2" : "",
+      "region" : "F",
+      "address" : "Unit 11C, 11/F, Block 2, Beacon Heights, 2 Lung Ping Road, Kowloon",
+      "floor" : 0,
+      "address_chi" : "大窩坪龍坪道2號畢架山花園4期2座11C"
+  },
+  "cart_ref" : "5dad1479f050504c8c822901",
+  "stripe_ref" : "pi_1FVqPVEg289Pw5MVGlw7R2bd",
+  "payment_id" : "cs_live_5CvLUDeQ3FBhTUlvL8R022KLAgyd9RG7yHXCYpUiTUKLR4NSobyhfdG4",
+  "total_price" : 125000,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T02:15:16.781Z"),
+  "update_time" : ISODate("2019-10-21T07:45:28.018Z"),
+  "__v" : 0
+}
+
+/* 9 */
+{
+  "_id" : ObjectId("5dad1718f050504c8c822904"),
+  "item" : [ 
+      {
+          "stand" : "C148",
+          "widthPreference" : "Wide",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : true,
+          "product" : "nf",
+          "size" : "7ft",
+          "price" : 1805
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190014",
+  "flag" : [ 
+      "choose-my-own-tree"
+  ],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Jennifer Earnshaw",
+      "phone" : "90943234",
+      "email" : "jennifer.earnshaw@gmail.com",
+      "delivery_method" : 1,
+      "remark" : "",
+      "delivery_date" : "2019-11-29",
+      "coupon" : "EARLY3",
+      "region" : "E",
+      "address" : "9D Block 22, Upper Baguio Villa, 555 Victoria Road, Pokfulam`",
+      "floor" : 0,
+      "address_chi" : "薄扶林域多利道555號(上)碧瑤灣22座9D",
+      "phone2" : ""
+  },
+  "cart_ref" : "5dad16dcf050504c8c822903",
+  "stripe_ref" : "pi_1FVqZNEg289Pw5MVji6fX8hz",
+  "payment_id" : "cs_live_jRkS42JDxnYRG6a82xaXWb9NyB2V4HxwyJMsceTHiQJFIfSsbfnnAM8A",
+  "total_price" : 186700,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T02:25:28.110Z"),
+  "update_time" : ISODate("2019-10-21T07:48:00.989Z"),
+  "__v" : 0
+}
+
+/* 10 */
+{
+  "_id" : ObjectId("5dad19cef050504c8c822906"),
+  "item" : [ 
+      {
+          "stand" : "exchange",
+          "widthPreference" : "Average",
+          "heightPreference" : "Tall",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "9ft",
+          "price" : 3420
+      }
+  ],
+  "payment_method" : 1,
+  "invoice_no" : "20190015",
+  "flag" : [],
+  "status" : -1,
+  "cInfo" : {
+      "name" : "New Land Development Limited",
+      "phone" : "37574553",
+      "email" : "norvy.lam@mmagtague.com",
+      "delivery_method" : 1,
+      "remark" : "Thick Leaves, delivery arranged in the morning around 10:00am",
+      "delivery_date" : "2019-11-30",
+      "coupon" : "EARLY3",
+      "phone2" : "93680788",
+      "region" : "G",
+      "address" : "G/F, 163 Hoi Bun Road, Kwun Tong",
+      "floor" : 0,
+      "address_chi" : "觀塘海濱道163號地下"
+  },
+  "stripe_ref" : "N/A",
+  "payment_id" : "N/A",
+  "total_price" : 343400,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T02:37:02.678Z"),
+  "update_time" : ISODate("2019-10-21T07:51:34.159Z"),
+  "__v" : 0
+}
+
+/* 11 */
+{
+  "_id" : ObjectId("5dad19e7f050504c8c822907"),
+  "item" : [ 
+      {
+          "stand" : "C152",
+          "widthPreference" : "Narrow",
+          "heightPreference" : "Fit",
+          "chooseMyOwnTree" : false,
+          "product" : "ff",
+          "size" : "6ft",
+          "price" : 1385
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190016",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Joanna Kwong",
+      "phone" : "98487390",
+      "email" : "sonnetjoanna@gmail.com",
+      "delivery_method" : 1,
+      "remark" : "Please call before arrived.  ",
+      "delivery_date" : "2019-11-29",
+      "coupon" : "",
+      "region" : "D",
+      "address" : "Flat 4H Evelyn Towers 38 Cloud View Road, North Point",
+      "floor" : 0,
+      "phone2" : "",
+      "address_chi" : "北角雲景道38號雲景台H座4室"
+  },
+  "cart_ref" : "5dad198df050504c8c822905",
+  "stripe_ref" : "pi_1FVqkTEg289Pw5MVz0f4yAIQ",
+  "payment_id" : "cs_live_uT7M6FAHyeUy1pMtoJFsHlUWqmUnqo7j0vG1a6gj3rE60B17TM7mMPY6",
+  "total_price" : 150500,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T02:37:27.929Z"),
+  "update_time" : ISODate("2019-10-22T00:55:39.716Z"),
+  "__v" : 0
+}
+
+/* 12 */
+{
+  "_id" : ObjectId("5dad1be006066b4e63eb9047"),
+  "item" : [ 
+      {
+          "stand" : "exchange",
+          "widthPreference" : "Narrow",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "8ft",
+          "price" : 2200
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190017",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Wendy Kwok",
+      "phone" : "96405715",
+      "email" : "whykwok@gmail.com",
+      "delivery_method" : 1,
+      "remark" : "",
+      "delivery_date" : "2019-11-29",
+      "coupon" : "",
+      "phone2" : "25267315",
+      "region" : "E",
+      "address" : "House 6, 45 Island Road, Deep Water Bay, Hong Kong",
+      "floor" : 0,
+      "address_chi" : "深水灣  香島道 45號  6號屋"
+  },
+  "cart_ref" : "5dad1b7806066b4e63eb9046",
+  "stripe_ref" : "pi_1FVqsPEg289Pw5MViMFMPhSG",
+  "payment_id" : "cs_live_79EfpiWuLZAQKymUXQDWGkOhfZYTs9PKVQIeAbIxRwPh8gZci9OTtXTL",
+  "total_price" : 232000,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T02:45:52.987Z"),
+  "update_time" : ISODate("2019-10-21T08:28:17.415Z"),
+  "__v" : 0
+}
+
+/* 13 */
+{
+  "_id" : ObjectId("5dad1c0e06066b4e63eb9049"),
+  "item" : [ 
+      {
+          "stand" : "exchange",
+          "widthPreference" : "Average",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : false,
+          "product" : "df",
+          "size" : "6ft",
+          "price" : 1055
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190018",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Rebecca Goad",
+      "phone" : "51958951",
+      "email" : "goad.rebecca@gmail.com",
+      "delivery_method" : 1,
+      "remark" : "None",
+      "delivery_date" : "2019-12-01",
+      "coupon" : "",
+      "region" : "K",
+      "phone2" : "97012501",
+      "address" : "3A 42 Crestmont Villa, Caperidge Drive, Discovery Bay ",
+      "floor" : 0,
+      "address_chi" : "愉景灣  蘅峰 蘅欣徑 倚濤軒 42號  3A"
+  },
+  "cart_ref" : "5dad1bfc06066b4e63eb9048",
+  "stripe_ref" : "pi_1FVquWEg289Pw5MVxsy97iKC",
+  "payment_id" : "cs_live_QGB2zSGErhG4c6f2YOmnu4F3AcU9zSR34g6admIRMAdQPrH4w2BAFtR4",
+  "total_price" : 119500,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T02:46:38.781Z"),
+  "update_time" : ISODate("2019-10-21T08:30:07.693Z"),
+  "__v" : 0
+}
+
+/* 14 */
+{
+  "_id" : ObjectId("5dad1d9a06066b4e63eb904c"),
+  "item" : [ 
+      {
+          "stand" : "NA",
+          "widthPreference" : "Average",
+          "heightPreference" : "Tall",
+          "chooseMyOwnTree" : true,
+          "product" : "nf",
+          "size" : "6ft",
+          "price" : 1130
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190019",
+  "flag" : [ 
+      "choose-my-own-tree"
+  ],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "May Lynn Funnell",
+      "phone" : "90978777",
+      "email" : "maylynnfunnell@gmail.com",
+      "delivery_method" : 0,
+      "remark" : "",
+      "delivery_date" : "",
+      "coupon" : "EARLY3"
+  },
+  "cart_ref" : "5dad1d7e06066b4e63eb904b",
+  "stripe_ref" : "pi_1FVr0kEg289Pw5MVmP0KLhOY",
+  "payment_id" : "cs_live_ZwPdycTn1xY34y7GyNAz0KZvvyQVOz09B3UOBRy6cit6H7m5lXd6PBXs",
+  "total_price" : 109600,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T02:53:14.542Z"),
+  "update_time" : ISODate("2019-10-21T02:53:14.542Z"),
+  "__v" : 0
+}
+
+/* 15 */
+{
+  "_id" : ObjectId("5dad1f2406066b4e63eb904f"),
+  "item" : [ 
+      {
+          "stand" : "C152",
+          "widthPreference" : "Average",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "6ft",
+          "price" : 1415
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190020",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Yanni Chan ",
+      "phone" : "54052176",
+      "email" : "yanni@frites.hk",
+      "delivery_method" : 1,
+      "remark" : "",
+      "delivery_date" : "2019-11-28",
+      "coupon" : "EARLY3",
+      "phone2" : "54052176",
+      "region" : "B",
+      "address" : "The Wellington 1/F No 198 Wellington Street Central",
+      "floor" : 0,
+      "address_chi" : "中環  威靈頓街198號  The Wellington   1樓"
+  },
+  "cart_ref" : "5dad1f0406066b4e63eb904e",
+  "stripe_ref" : "pi_1FVr73Eg289Pw5MVxQ2QaWti",
+  "payment_id" : "cs_live_j5NVtOqeWMzF6nDoLfQZpz8sXWsx328gSxOb35KG6Tcaa7HLdaQoQ4s6",
+  "total_price" : 148900,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T02:59:48.297Z"),
+  "update_time" : ISODate("2019-10-21T08:47:33.150Z"),
+  "__v" : 0
+}
+
+/* 16 */
+{
+  "_id" : ObjectId("5dad1f3406066b4e63eb9050"),
+  "item" : [ 
+      {
+          "stand" : "NA",
+          "widthPreference" : "Wide",
+          "heightPreference" : "Tall",
+          "chooseMyOwnTree" : true,
+          "product" : "nf",
+          "size" : "7ft",
+          "price" : 1420
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190021",
+  "flag" : [ 
+      "choose-my-own-tree"
+  ],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Stella Simpson ",
+      "phone" : "94519218",
+      "email" : "jemjems@netvigator.com",
+      "delivery_method" : 1,
+      "remark" : "Please deliver the tree to our front door via the main lobby lift. ",
+      "delivery_date" : "2019-12-01",
+      "coupon" : "EARLY3",
+      "region" : "C",
+      "address" : "18/F Repulse Bay Garden, 38 Belleview Drive, Repulse Bay",
+      "floor" : 0,
+      "address_chi" : "淺水灣 麗景道38號 淺水灣  麗景園 2座  18樓",
+      "phone2" : ""
+  },
+  "cart_ref" : "5dad1ea906066b4e63eb904d",
+  "stripe_ref" : "pi_1FVr5aEg289Pw5MVWUUFn9CW",
+  "payment_id" : "cs_live_17OOgYdpRoaIT3UPmbynoEKQcHaIomU73swkIxsjGel9KP3TChP9Enxu",
+  "total_price" : 149400,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T03:00:04.908Z"),
+  "update_time" : ISODate("2019-10-21T08:48:25.326Z"),
+  "__v" : 0
+}
+
+/* 17 */
+{
+  "_id" : ObjectId("5dad202b06066b4e63eb9052"),
+  "item" : [ 
+      {
+          "stand" : "exchange",
+          "widthPreference" : "Average",
+          "heightPreference" : "Tall",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "7ft",
+          "price" : 1420
+      }
+  ],
+  "payment_method" : 1,
+  "invoice_no" : "20190022",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Mr. Stemp",
+      "phone" : "91692356",
+      "email" : "ts@stempinternational.com",
+      "delivery_method" : 1,
+      "remark" : "",
+      "delivery_date" : "2019-11-29",
+      "coupon" : "EARLY3",
+      "region" : "E",
+      "address" : "Flat 51, 2/F, Block EF, High West, 142 Pok Fu Lam Road",
+      "floor" : 0,
+      "address_chi" : "薄扶林  薄扶林道142號  西苑  EF座 2樓 51室",
+      "phone2" : ""
+  },
+  "stripe_ref" : "N/A",
+  "payment_id" : "N/A",
+  "total_price" : 149400,
+  "remark" : "HSBC #796079",
+  "create_time" : ISODate("2019-10-21T03:04:11.749Z"),
+  "update_time" : ISODate("2019-10-21T08:49:24.267Z"),
+  "__v" : 0
+}
+
+/* 18 */
+{
+  "_id" : ObjectId("5dad20e606066b4e63eb9054"),
+  "item" : [ 
+      {
+          "stand" : "C152",
+          "widthPreference" : "Average",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "6ft",
+          "price" : 1415
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190023",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Wing Yan Chan ",
+      "phone" : "54052176",
+      "email" : "yanni@frites.hk",
+      "delivery_method" : 1,
+      "remark" : "",
+      "delivery_date" : "2019-11-28",
+      "coupon" : "EARLY3",
+      "phone2" : "54052176",
+      "region" : "B",
+      "address" : "Shop 6 1/F Causeway Centre 28 Harbour Road Wanchai",
+      "floor" : 0,
+      "address_chi" : "灣仔  港灣道 28號  灣景中心大廈  1樓  6號舖"
+  },
+  "cart_ref" : "5dad20c206066b4e63eb9053",
+  "stripe_ref" : "pi_1FVrEFEg289Pw5MVX3K58AZJ",
+  "payment_id" : "cs_live_0lvEVNtMHZENJK2JuWB1L7jT9BBZZR0QULnITnRJ0RrFdKIkql0T0JAd",
+  "total_price" : 148900,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T03:07:18.226Z"),
+  "update_time" : ISODate("2019-10-21T08:50:16.938Z"),
+  "__v" : 0
+}
+
+/* 19 */
+{
+  "_id" : ObjectId("5dad21e006066b4e63eb9056"),
+  "item" : [ 
+      {
+          "stand" : "C152",
+          "widthPreference" : "Average",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "5ft",
+          "price" : 1245
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190024",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Wing Yan Chan ",
+      "phone" : "54052176",
+      "email" : "yanni@frites.hk",
+      "delivery_method" : 1,
+      "remark" : "",
+      "delivery_date" : "2019-11-28",
+      "coupon" : "EARLY3",
+      "phone2" : "54052176",
+      "region" : "B",
+      "address" : "Shop 1 G/F Park Haven No. 38 Haven Street Causeway Bay",
+      "floor" : 0,
+      "address_chi" : "銅鑼灣  希雲街 38號  曦巒  地下  1號舖"
+  },
+  "cart_ref" : "5dad217b06066b4e63eb9055",
+  "stripe_ref" : "pi_1FVrHDEg289Pw5MVd97XYBn3",
+  "payment_id" : "cs_live_NlTSKa2maKmKC4gIwWRJHSWjM8Mc8lOw41aH27COYAribYcBohhN6moT",
+  "total_price" : 132400,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T03:11:28.171Z"),
+  "update_time" : ISODate("2019-10-21T08:51:10.777Z"),
+  "__v" : 0
+}
+
+/* 20 */
+{
+  "_id" : ObjectId("5dad227006066b4e63eb9058"),
+  "item" : [ 
+      {
+          "stand" : "C152",
+          "widthPreference" : "Average",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "6ft",
+          "price" : 1415
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190025",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Wing Yan Chan ",
+      "phone" : "54052176",
+      "email" : "yanni@frites.hk",
+      "delivery_method" : 1,
+      "remark" : "",
+      "delivery_date" : "2019-11-29",
+      "coupon" : "EARLY3",
+      "phone2" : "54052176",
+      "region" : "D",
+      "address" : "G/F Oxford House TaiKoo Place 979 King’s Road Island East Hong Kong (Entrance at 22 Westlands Road)",
+      "floor" : 0,
+      "address_chi" : "太古  英皇道979號  濠豐大廈  地下"
+  },
+  "cart_ref" : "5dad225506066b4e63eb9057",
+  "stripe_ref" : "pi_1FVrKkEg289Pw5MVMM5Y12uq",
+  "payment_id" : "cs_live_iz2SxzYrT2CRrIX43sNjSHsWWFh2ijjSYXJKKOb19rL4A1xaiVa6C5KN",
+  "total_price" : 148900,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T03:13:52.723Z"),
+  "update_time" : ISODate("2019-10-21T08:51:42.988Z"),
+  "__v" : 0
+}
+
+/* 21 */
+{
+  "_id" : ObjectId("5dad233006066b4e63eb905a"),
+  "item" : [ 
+      {
+          "stand" : "C152",
+          "widthPreference" : "Average",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "5ft",
+          "price" : 1245
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190026",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "WING YAN CHAN ",
+      "phone" : "54052176",
+      "email" : "yanni@frites.hk",
+      "delivery_method" : 1,
+      "remark" : "",
+      "delivery_date" : "2019-11-28",
+      "coupon" : "EARLY3",
+      "phone2" : "54052176",
+      "region" : "G",
+      "address" : "Shop No 3, 1/F The Quayside 77 Hoi Bun Road Kowloon Bay",
+      "floor" : 0,
+      "address_chi" : "官塘  海濱道77號  The Quayside 1樓  3號舖"
+  },
+  "cart_ref" : "5dad22e006066b4e63eb9059",
+  "stripe_ref" : "pi_1FVrMzEg289Pw5MVMA2YmZJi",
+  "payment_id" : "cs_live_QnEFDGpk6v4m7OhPvzyg32wWalg50wKLHKI7n4va8sF12V9dMxhMaWft",
+  "total_price" : 132400,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T03:17:04.671Z"),
+  "update_time" : ISODate("2019-10-22T02:08:48.711Z"),
+  "__v" : 0
+}
+
+/* 22 */
+{
+  "_id" : ObjectId("5dad2adc06066b4e63eb905c"),
+  "item" : [ 
+      {
+          "stand" : "install",
+          "widthPreference" : "Average",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "6ft",
+          "price" : 1280
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190027",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Rachel Andrews",
+      "phone" : "98542193",
+      "email" : "rachel.andrews@fil.com",
+      "delivery_method" : 1,
+      "remark" : "",
+      "delivery_date" : "2019-11-30",
+      "coupon" : "",
+      "region" : "B",
+      "address" : "501, Block 78, Bamboo Grove, 74-86 Kennedy Road, Wan Chai",
+      "floor" : 0,
+      "address_chi" : "灣仔 堅尼地道78號  竹林苑 78座 501室",
+      "phone2" : ""
+  },
+  "cart_ref" : "5dad2aa606066b4e63eb905b",
+  "stripe_ref" : "pi_1FVrt4Eg289Pw5MVGsl47AcE",
+  "payment_id" : "cs_live_JjnEaihA5892Wyghc3zmZv69N696ejq7AYkGw0DbjzYFObASY2WhRaNK",
+  "total_price" : 140000,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T03:49:48.039Z"),
+  "update_time" : ISODate("2019-10-21T08:59:58.153Z"),
+  "__v" : 0
+}
+
+/* 23 */
+{
+  "_id" : ObjectId("5dad2c3306066b4e63eb905e"),
+  "item" : [ 
+      {
+          "stand" : "NA",
+          "widthPreference" : "Narrow",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "6ft",
+          "price" : 1130
+      }, 
+      {
+          "quantity" : 1,
+          "product" : "pw",
+          "size" : "20D",
+          "price" : 340
+      }, 
+      {
+          "quantity" : "3",
+          "product" : "pw",
+          "size" : "H5W",
+          "price" : 180
+      }, 
+      {
+          "quantity" : "3",
+          "product" : "pw",
+          "size" : "H5R",
+          "price" : 180
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190028",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Veronique Lafon-Vinais",
+      "phone" : "23587686",
+      "email" : "vlafon@ust.hk",
+      "delivery_method" : 1,
+      "remark" : "",
+      "delivery_date" : "2019-12-04",
+      "coupon" : "",
+      "phone2" : "28134304",
+      "region" : "J",
+      "address" : "Apt 3, 1 University Road, Clearwater Bay, NT",
+      "floor" : 1,
+      "address_chi" : "清水灣  大學道1號  科技大學教職員宿舍  Apartment 3  1樓"
+  },
+  "cart_ref" : "5dad2c0506066b4e63eb905d",
+  "stripe_ref" : "pi_1FVrykEg289Pw5MV2uhxCl0C",
+  "payment_id" : "cs_live_zIBc9lfjPYvq9ts1W34fTvYhtxsK22jeGI1YhfMl5LzTXegtjq8jkyLC",
+  "total_price" : 202500,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T03:55:31.124Z"),
+  "update_time" : ISODate("2019-10-21T09:03:34.833Z"),
+  "__v" : 0
+}
+
+/* 24 */
+{
+  "_id" : ObjectId("5dad2e2406066b4e63eb9060"),
+  "item" : [ 
+      {
+          "stand" : "NA",
+          "widthPreference" : "Narrow",
+          "heightPreference" : "Tall",
+          "chooseMyOwnTree" : false,
+          "product" : "ff",
+          "size" : "6ft",
+          "price" : 1100
+      }, 
+      {
+          "quantity" : 1,
+          "product" : "pw",
+          "size" : "20D",
+          "price" : 340
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190029",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Tina Mak",
+      "phone" : "93783393",
+      "email" : "tina.mak@gmail.com",
+      "delivery_method" : 1,
+      "remark" : "",
+      "delivery_date" : "2019-11-28",
+      "coupon" : "",
+      "region" : "B",
+      "address" : "56 MacDonnell Road, 12B, Greenland Court",
+      "floor" : 0,
+      "address_chi" : "半山  麥當勞道56號 恆翠園 12B",
+      "phone2" : ""
+  },
+  "cart_ref" : "5dad2dbd06066b4e63eb905f",
+  "stripe_ref" : "pi_1FVs5qEg289Pw5MVhgCI5Ph9",
+  "payment_id" : "cs_live_UBag7BJ5kmvR7sKzTIKtbrF3HTtbYnBUdhTlZmQ5AZcbYia2rVIS0pDi",
+  "total_price" : 156000,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T04:03:48.109Z"),
+  "update_time" : ISODate("2019-10-21T09:07:35.637Z"),
+  "__v" : 0
+}
+
+/* 25 */
+{
+  "_id" : ObjectId("5dad2e6c06066b4e63eb9061"),
+  "item" : [ 
+      {
+          "stand" : "C148",
+          "widthPreference" : "Narrow",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "5ft",
+          "price" : 1345
+      }, 
+      {
+          "stand" : "exchange",
+          "widthPreference" : "Average",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "5ft",
+          "price" : 960
+      }
+  ],
+  "payment_method" : 1,
+  "invoice_no" : "20190030",
+  "flag" : [],
+  "status" : -2,
+  "cInfo" : {
+      "name" : "Kathy Li",
+      "phone" : "26478008",
+      "email" : "kathy.cy.li@gmail.com",
+      "delivery_method" : 1,
+      "remark" : "",
+      "delivery_date" : "2019-12-05",
+      "coupon" : "EARLY3",
+      "region" : "E",
+      "address" : "gsfaefsgv",
+      "floor" : 2,
+      "address_chi" : "",
+      "phone2" : ""
+  },
+  "stripe_ref" : "N/A",
+  "payment_id" : "N/A",
+  "total_price" : 249800,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T04:05:00.234Z"),
+  "update_time" : ISODate("2019-10-21T04:18:16.275Z"),
+  "__v" : 0
+}
+
+/* 26 */
+{
+  "_id" : ObjectId("5dad312e06066b4e63eb9064"),
+  "item" : [ 
+      {
+          "stand" : "install",
+          "widthPreference" : "Average",
+          "heightPreference" : "Tall",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "7ft",
+          "price" : 1570
+      }, 
+      {
+          "quantity" : 1,
+          "product" : "pw",
+          "size" : "H9W",
+          "price" : 140
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190031",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Emily Christie",
+      "phone" : "97213594",
+      "email" : "tillett.emily@gmail.com",
+      "delivery_method" : 1,
+      "remark" : "You can use the lift to access the floor.  Please call prior to delivery so we can ensure that someone is home.  Thank you.",
+      "delivery_date" : "2019-12-08",
+      "coupon" : "EARLY3",
+      "phone2" : "",
+      "region" : "A",
+      "address" : "B3, 15/F, Block B, Greenville Gardens, 15 Shiu Fai Terrace, Wanchai",
+      "floor" : 0,
+      "address_chi" : "半山  肇輝臺15號  嘉苑B座  15樓 B3"
+  },
+  "cart_ref" : "5dad30e306066b4e63eb9063",
+  "stripe_ref" : "pi_1FVsIpEg289Pw5MVxHMBXpb1",
+  "payment_id" : "cs_live_9RK3juwpE7iKz4VWzh4AvFmD36FKLHItV0kU7NRWPF76IiqSZXAXwS8I",
+  "total_price" : 177500,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T04:16:46.721Z"),
+  "update_time" : ISODate("2019-10-22T01:49:40.360Z"),
+  "__v" : 0
+}
+
+/* 27 */
+{
+  "_id" : ObjectId("5dad323806066b4e63eb9067"),
+  "item" : [ 
+      {
+          "stand" : "exchange",
+          "widthPreference" : "Wide",
+          "heightPreference" : "Tall",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "6ft",
+          "price" : 1130
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190032",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Charmaine Shum",
+      "phone" : "92693212",
+      "email" : "charmshk@yahoo.com",
+      "delivery_method" : 1,
+      "remark" : "Pls call before arrival",
+      "delivery_date" : "2019-12-08",
+      "coupon" : "EARLY3",
+      "region" : "A",
+      "address" : "Apt. 14C, Wealthy Heights, 35-37 Macdonnell Road, Mid Levels, Hong Kong",
+      "floor" : 0,
+      "address_chi" : "半山  麥當勞道35-37號  威豪閣  14C",
+      "phone2" : ""
+  },
+  "cart_ref" : "5dad321606066b4e63eb9065",
+  "stripe_ref" : "pi_1FVsNnEg289Pw5MVigns4KTc",
+  "payment_id" : "cs_live_nbSkoFfD9h5HWgxPlsTfDvpVscIYf9sJbogLfdK5nTqVHn600PZIH4Jw",
+  "total_price" : 121300,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T04:21:12.849Z"),
+  "update_time" : ISODate("2019-10-22T01:50:10.922Z"),
+  "__v" : 0
+}
+
+/* 28 */
+{
+  "_id" : ObjectId("5dad326306066b4e63eb9068"),
+  "item" : [ 
+      {
+          "stand" : "install",
+          "widthPreference" : "Average",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "5ft",
+          "price" : 1110
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190033",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Toni Bain",
+      "phone" : "66224706",
+      "email" : "tonibain@mac.com",
+      "delivery_method" : 1,
+      "remark" : "",
+      "delivery_date" : "2019-12-02",
+      "coupon" : "",
+      "phone2" : "68483687",
+      "region" : "D",
+      "address" : "Tower 7 Flat 22B Pacific Palisades 1 Braemar Hill Road North Point",
+      "floor" : 0,
+      "address_chi" : "北角  寶馬山道1號  寶馬山花園  7座  22B"
+  },
+  "cart_ref" : "5dad322c06066b4e63eb9066",
+  "stripe_ref" : "pi_1FVsO8Eg289Pw5MVciHpyQWG",
+  "payment_id" : "cs_live_aAm5oife2Z56lCCPAcQvjAoGPTcFWZMjciImyMo81HUdfv3lpIGL7z5x",
+  "total_price" : 123000,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T04:21:55.880Z"),
+  "update_time" : ISODate("2019-10-22T04:10:00.007Z"),
+  "__v" : 0
+}
+
+/* 29 */
+{
+  "_id" : ObjectId("5dad32e706066b4e63eb906c"),
+  "item" : [ 
+      {
+          "stand" : "NA",
+          "widthPreference" : "Average",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : false,
+          "product" : "ff",
+          "size" : "5ft",
+          "price" : 900
+      }, 
+      {
+          "quantity" : 1,
+          "product" : "pw",
+          "size" : "12D",
+          "price" : 220
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190034",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Cherry Leung",
+      "phone" : "",
+      "email" : "cherrycmleung@yahoo.com.hk",
+      "delivery_method" : 1,
+      "remark" : "Call before arrived",
+      "delivery_date" : "2019-11-30",
+      "coupon" : "",
+      "phone2" : "22714800",
+      "region" : "F",
+      "address" : "C702 The Dahfuldy 21 Homantin Hill Road Homantin Kowloon ",
+      "floor" : 0,
+      "address_chi" : "何文田  何文田山道21號  大夫第 C702室"
+  },
+  "cart_ref" : "5dad32cf06066b4e63eb9069",
+  "stripe_ref" : "pi_1FVsQlEg289Pw5MVEbLU5jHL",
+  "payment_id" : "cs_live_RoeS4hLbaEmRcpO6T3uhL1zeqypJGqOjijSeaUi7UE7bO9pYcxnrCt0U",
+  "total_price" : 124000,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T04:24:07.928Z"),
+  "update_time" : ISODate("2019-10-22T02:04:11.218Z"),
+  "__v" : 0
+}
+
+/* 30 */
+{
+  "_id" : ObjectId("5dad32f506066b4e63eb906d"),
+  "item" : [ 
+      {
+          "quantity" : 1,
+          "product" : "pw",
+          "size" : "20D",
+          "price" : 340
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190035",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Charmaine Shum",
+      "phone" : "92693212",
+      "email" : "charmshk@yahoo.com",
+      "delivery_method" : 1,
+      "remark" : "",
+      "delivery_date" : "2019-12-08",
+      "coupon" : "EARLY3",
+      "region" : "A",
+      "address" : "Apt 14C, Wealthy Heights, 35-37 Macdonnell Road, Mid Levels, Hong Kong",
+      "floor" : 0,
+      "address_chi" : "半山  麥當勞道35-37號  威豪閣  14C",
+      "phone2" : ""
+  },
+  "cart_ref" : "5dad32d306066b4e63eb906a",
+  "stripe_ref" : "pi_1FVsQqEg289Pw5MV0XTlCkEM",
+  "payment_id" : "cs_live_wsox34Aok8I7RpEMlaUcDzGq9D9sJ9XIjdep8RW8mtKCxe5OEWhMQ3aV",
+  "total_price" : 44600,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T04:24:21.384Z"),
+  "update_time" : ISODate("2019-10-22T02:04:45.279Z"),
+  "__v" : 0
+}
+
+/* 31 */
+{
+  "_id" : ObjectId("5dad33a206066b4e63eb906f"),
+  "item" : [ 
+      {
+          "stand" : "exchange",
+          "widthPreference" : "Average",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : false,
+          "product" : "df",
+          "size" : "5ft",
+          "price" : 890
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190036",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Jennifer Saran",
+      "phone" : "25371777",
+      "email" : "mindgrouphk@gmail.com",
+      "delivery_method" : 1,
+      "remark" : "",
+      "delivery_date" : "2019-12-01",
+      "coupon" : "",
+      "region" : "E",
+      "address" : "Blk 47, 18/F, Baguio Villa, 550 Victoria Road, Pokfulam , HK",
+      "floor" : 0,
+      "address_chi" : "薄扶林  域多利道 550號  下碧瑤灣  47座  18樓",
+      "phone2" : "97265952"
+  },
+  "cart_ref" : "5dad335e06066b4e63eb906e",
+  "stripe_ref" : "pi_1FVsT4Eg289Pw5MVsukv4d5k",
+  "payment_id" : "cs_live_ort83fmw8ShFVmyOljnTAXhlNVkQfeA2pn5THBx3dKtxFtZpxiI1q2oa",
+  "total_price" : 101000,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T04:27:14.934Z"),
+  "update_time" : ISODate("2019-10-22T02:54:47.787Z"),
+  "__v" : 0
+}
+
+/* 32 */
+{
+  "_id" : ObjectId("5dad362d06066b4e63eb9071"),
+  "item" : [ 
+      {
+          "stand" : "install",
+          "widthPreference" : "Wide",
+          "heightPreference" : "Tall",
+          "chooseMyOwnTree" : false,
+          "product" : "df",
+          "size" : "7ft",
+          "price" : 1350
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190037",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "William Madden",
+      "phone" : "63973817",
+      "email" : "billy.madden@jti.com",
+      "delivery_method" : 1,
+      "remark" : "Call before arrival please.",
+      "delivery_date" : "2019-11-28",
+      "coupon" : "",
+      "phone2" : "61620160",
+      "region" : "A",
+      "address" : "1705 Block C Queens Garden, 9 Old Peak Road, Hong Kong",
+      "floor" : 0,
+      "address_chi" : "半山  舊山頂道9號  裕景花園  C座  1705室"
+  },
+  "cart_ref" : "5dad360306066b4e63eb9070",
+  "stripe_ref" : "pi_1FVse0Eg289Pw5MVwqWHroVv",
+  "payment_id" : "cs_live_UrX6oKxJ4kr5Iv5opJlszQVEuYYRRRY8Z20dNDyIpgj62t8KNhecoMFW",
+  "total_price" : 147000,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T04:38:05.871Z"),
+  "update_time" : ISODate("2019-10-22T02:08:21.746Z"),
+  "__v" : 0
+}
+
+/* 33 */
+{
+  "_id" : ObjectId("5dad398606066b4e63eb9073"),
+  "item" : [ 
+      {
+          "stand" : "NA",
+          "widthPreference" : "Average",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : false,
+          "product" : "ff",
+          "size" : "6ft",
+          "price" : 1100
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190038",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Helena Harrison",
+      "phone" : "66861115",
+      "email" : "hharrison@g.lfis.edu.hk",
+      "delivery_method" : 1,
+      "remark" : "Call before delivery",
+      "delivery_date" : "2019-12-02",
+      "coupon" : "",
+      "region" : "D",
+      "address" : "34 Price Rd, Jardine's Lookout",
+      "phone2" : "92725491",
+      "floor" : 0,
+      "address_chi" : "渣甸山  裴樂士道34號  法國國際學校"
+  },
+  "cart_ref" : "5dad393a06066b4e63eb9072",
+  "stripe_ref" : "pi_1FVsrGEg289Pw5MVwO1ucP3Z",
+  "payment_id" : "cs_live_GhmqxVmRG0xCSNOZUYxXUE7Vq7brYDtSUVlG4C883dBc3W0ICCkb6kqZ",
+  "total_price" : 122000,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T04:52:22.879Z"),
+  "update_time" : ISODate("2019-10-22T02:09:23.711Z"),
+  "__v" : 0
+}
+
+/* 34 */
+{
+  "_id" : ObjectId("5dad3c0f06066b4e63eb9075"),
+  "item" : [ 
+      {
+          "stand" : "install",
+          "widthPreference" : "Average",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "7ft",
+          "price" : 1570
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190039",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Ross Royden",
+      "phone" : "61931227",
+      "email" : "rossroyden@gmail.com",
+      "delivery_method" : 1,
+      "remark" : "There is no need to call before arrival.  There is always someone here.",
+      "delivery_date" : "2019-11-30",
+      "coupon" : "",
+      "region" : "F",
+      "address" : "Christ Church Vicarage, 2 Derby Road, Kowloon Tong",
+      "floor" : 0,
+      "address_chi" : "九龍塘  打比道2號  基督堂牧師住宅 (火石道入)",
+      "phone2" : ""
+  },
+  "cart_ref" : "5dad3b8306066b4e63eb9074",
+  "stripe_ref" : "pi_1FVt0iEg289Pw5MVruSpuU4J",
+  "payment_id" : "cs_live_myZ0t0M57krPw6DkTK2HrCSirhKP2yvpzNSs4lyJqYydnUTezi4Zw9Pk",
+  "total_price" : 169000,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T05:03:11.841Z"),
+  "update_time" : ISODate("2019-10-22T02:10:02.673Z"),
+  "__v" : 0
+}
+
+/* 35 */
+{
+  "_id" : ObjectId("5dad3cd206066b4e63eb9077"),
+  "item" : [ 
+      {
+          "stand" : "exchange",
+          "widthPreference" : "Wide",
+          "heightPreference" : "Tall",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "6ft",
+          "price" : 1130
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190040",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Victoria Grace",
+      "phone" : "51935569",
+      "email" : "toria.grace@yahoo.co.uk",
+      "delivery_method" : 1,
+      "remark" : "",
+      "delivery_date" : "2019-12-01",
+      "coupon" : "EARLY3",
+      "region" : "J",
+      "address" : "4 Riverside Heights, Pak Tam Chung, Sai Kung",
+      "floor" : 0,
+      "address_chi" : "西貢  北潭涌  河畔山莊 4號屋",
+      "phone2" : ""
+  },
+  "cart_ref" : "5dad3c9006066b4e63eb9076",
+  "stripe_ref" : "pi_1FVt53Eg289Pw5MVTXmff7AI",
+  "payment_id" : "cs_live_5qwuOuBCTMHINCWuEEWJ5GyfHJZPbY6QAaTJyF0TSwFHM0EwH3nzXWz2",
+  "total_price" : 121300,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T05:06:26.113Z"),
+  "update_time" : ISODate("2019-10-22T02:17:05.414Z"),
+  "__v" : 0
+}
+
+/* 36 */
+{
+  "_id" : ObjectId("5dad3e6a06066b4e63eb9079"),
+  "item" : [ 
+      {
+          "stand" : "NA",
+          "widthPreference" : "Average",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : false,
+          "product" : "df",
+          "size" : "7ft",
+          "price" : 1200
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190041",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Timothy Maudson",
+      "phone" : "90817838",
+      "email" : "turfwad@mac.com",
+      "delivery_method" : 1,
+      "remark" : "",
+      "delivery_date" : "2019-12-10",
+      "coupon" : "",
+      "region" : "J",
+      "address" : "218 Sheung Sze Wan Rd, Clearwater Bay",
+      "floor" : 0,
+      "address_chi" : "清水灣  相思灣  218號屋",
+      "phone2" : ""
+  },
+  "cart_ref" : "5dad3e5a06066b4e63eb9078",
+  "stripe_ref" : "pi_1FVtCQEg289Pw5MV6AvJ12Xl",
+  "payment_id" : "cs_live_hv0UEbtTiIY3mXI7v3nrfFOw3bjbcyE4uku5gQkzo5zFJf3SAk851eHx",
+  "total_price" : 132000,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T05:13:14.953Z"),
+  "update_time" : ISODate("2019-10-22T02:25:41.339Z"),
+  "__v" : 0
+}
+
+/* 37 */
+{
+  "_id" : ObjectId("5dad416406066b4e63eb907c"),
+  "item" : [ 
+      {
+          "stand" : "exchange",
+          "widthPreference" : "Average",
+          "heightPreference" : "Tall",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "7ft",
+          "price" : 1420
+      }, 
+      {
+          "quantity" : "2",
+          "product" : "pw",
+          "size" : "H9R",
+          "price" : 280
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190042",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Andrew Bailey",
+      "phone" : "91846040",
+      "email" : "engajb@cathaypacific.com",
+      "delivery_method" : 1,
+      "remark" : "Please try and provide an approximate time. Early delivery preferred.",
+      "delivery_date" : "2019-12-01",
+      "coupon" : "EARLY3",
+      "region" : "K",
+      "phone2" : "90339793",
+      "floor" : 0,
+      "address" : "Flat C, 2/F, Block 16 Positano, 18 Bayside Drive, Discovery Bay",
+      "address_chi" : "愉景灣  堤畔徑18號 悅堤 16座 2C"
+  },
+  "cart_ref" : "5dad40e206066b4e63eb907b",
+  "stripe_ref" : "pi_1FVtMsEg289Pw5MVOHCgmD5w",
+  "payment_id" : "cs_live_E8uDQIJ102SajV1VQB5EzVvPYrS6phjxhRAWb5VKel9IdwcRCCPQ8Ffq",
+  "total_price" : 178500,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T05:25:56.211Z"),
+  "update_time" : ISODate("2019-10-22T02:58:29.853Z"),
+  "__v" : 0
+}
+
+/* 38 */
+{
+  "_id" : ObjectId("5dad448406066b4e63eb907f"),
+  "item" : [ 
+      {
+          "quantity" : "2",
+          "product" : "pw",
+          "size" : "H9R",
+          "price" : 280
+      }, 
+      {
+          "stand" : "C148",
+          "widthPreference" : "Average",
+          "heightPreference" : "Tall",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "7ft",
+          "price" : 1805
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190043",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Jonathan Garrick",
+      "phone" : "61836880",
+      "email" : "jonathan.garrick@gmail.com",
+      "delivery_method" : 1,
+      "remark" : "Call before arrive please",
+      "delivery_date" : "2019-11-30",
+      "coupon" : "",
+      "phone2" : "96651711",
+      "region" : "A",
+      "address" : "Flat 9A,  62B Robinson Road",
+      "floor" : 0,
+      "address_chi" : "半山  羅便臣道62B號  愛富華庭  9A"
+  },
+  "cart_ref" : "5dad444c06066b4e63eb907e",
+  "stripe_ref" : "pi_1FVtazEg289Pw5MVzMeYhjYz",
+  "payment_id" : "cs_live_jwWhuC9PBvyPw4qSeHSP8KwHvHObzB6Ouu1OX3OKwjpTo08CYuOLm1BE",
+  "total_price" : 220500,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T05:39:16.211Z"),
+  "update_time" : ISODate("2019-10-22T02:41:58.065Z"),
+  "__v" : 0
+}
+
+/* 39 */
+{
+  "_id" : ObjectId("5dad454f06066b4e63eb9081"),
+  "item" : [ 
+      {
+          "stand" : "exchange",
+          "widthPreference" : "Average",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "5ft",
+          "price" : 960
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190044",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Phoebe Ng Fung Lai",
+      "phone" : "91882224",
+      "email" : "phoebenfl@netvigator.com",
+      "delivery_method" : 1,
+      "remark" : "Call before delivery",
+      "delivery_date" : "2019-12-15",
+      "coupon" : "",
+      "phone2" : "90977140",
+      "region" : "I",
+      "address" : "Flat19C Blk 8 Villa Oceania, No8 On Chun Street, Ma On Shan, Shatin, HK",
+      "floor" : 0,
+      "address_chi" : "馬鞍山  鞍駿街8號  海典居  8座  19C"
+  },
+  "cart_ref" : "5dad450706066b4e63eb9080",
+  "stripe_ref" : "pi_1FVtdzEg289Pw5MVuYKSr0TF",
+  "payment_id" : "cs_live_lkTOnww24MGOXO2KZVhBu3YSs4V7KwY6d8e0GJtScGZ1tilbAkXJTvRq",
+  "total_price" : 108000,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T05:42:39.375Z"),
+  "update_time" : ISODate("2019-10-22T02:55:20.866Z"),
+  "__v" : 0
+}
+
+/* 40 */
+{
+  "_id" : ObjectId("5dad463c06066b4e63eb9083"),
+  "item" : [ 
+      {
+          "stand" : "exchange",
+          "widthPreference" : "Average",
+          "heightPreference" : "Tall",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "5ft",
+          "price" : 960
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190045",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Wong Chi Yan David ",
+      "phone" : "90171938",
+      "email" : "davewong@btinternet.com",
+      "delivery_method" : 1,
+      "remark" : "Call before arrival please. Thank you.",
+      "delivery_date" : "2019-12-01",
+      "coupon" : "EARLY3",
+      "phone2" : "92366102",
+      "region" : "E",
+      "address" : "4H Fulham Garden, 84 Pokfulam Road, HK ",
+      "floor" : 0,
+      "address_chi" : "薄扶林  薄扶林道84號  富林閣  H座 4樓"
+  },
+  "cart_ref" : "5dad45f306066b4e63eb9082",
+  "stripe_ref" : "pi_1FVthoEg289Pw5MVQpkVu1pb",
+  "payment_id" : "cs_live_lLh7yJvTYTSV4V9r8Ae23Z7SZ8ZOo0qHZCEZLiUJTrlciWU1eRaxhl5u",
+  "total_price" : 104800,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T05:46:36.551Z"),
+  "update_time" : ISODate("2019-10-22T02:43:46.646Z"),
+  "__v" : 0
+}
+
+/* 41 */
+{
+  "_id" : ObjectId("5dad4b4606066b4e63eb9085"),
+  "item" : [ 
+      {
+          "stand" : "NA",
+          "widthPreference" : "Average",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : false,
+          "product" : "ff",
+          "size" : "5ft",
+          "price" : 900
+      }, 
+      {
+          "stand" : "NA",
+          "widthPreference" : "Average",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : false,
+          "product" : "ff",
+          "size" : "5ft",
+          "price" : 900
+      }, 
+      {
+          "stand" : "NA",
+          "widthPreference" : "Average",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : false,
+          "product" : "ff",
+          "size" : "5ft",
+          "price" : 900
+      }, 
+      {
+          "stand" : "NA",
+          "widthPreference" : "Average",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : false,
+          "product" : "ff",
+          "size" : "5ft",
+          "price" : 900
+      }, 
+      {
+          "stand" : "NA",
+          "widthPreference" : "Wide",
+          "heightPreference" : "Tall",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "7ft",
+          "price" : 1420
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190046",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Jane Parry",
+      "phone" : "97512393",
+      "email" : "parryj1@stconline.edu.hk",
+      "delivery_method" : 1,
+      "remark" : "",
+      "delivery_date" : "2019-12-01",
+      "coupon" : "",
+      "region" : "I",
+      "address" : "Sha Tin College, 3 Lai Wo Lane, Fo Tan",
+      "floor" : 0,
+      "address_chi" : "沙田  麗禾里3號  沙田  英童中學",
+      "phone2" : ""
+  },
+  "cart_ref" : "5dad4a8c06066b4e63eb9084",
+  "stripe_ref" : "pi_1FVu0mEg289Pw5MV5Zbn5W4x",
+  "payment_id" : "cs_live_845XUTyy9y3yzh4CojPF8dbq3iaNtJRtLqnW0MgVNXur0dtzh7j90Irm",
+  "total_price" : 514000,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T06:08:06.547Z"),
+  "update_time" : ISODate("2019-10-22T02:45:59.469Z"),
+  "__v" : 0
+}
+
+/* 42 */
+{
+  "_id" : ObjectId("5dad4bbf06066b4e63eb9086"),
+  "item" : [ 
+      {
+          "stand" : "NA",
+          "widthPreference" : "Average",
+          "heightPreference" : "Tall",
+          "chooseMyOwnTree" : false,
+          "product" : "df",
+          "size" : "5ft",
+          "price" : 890
+      }
+  ],
+  "payment_method" : 1,
+  "invoice_no" : "20190047",
+  "flag" : [],
+  "status" : -1,
+  "cInfo" : {
+      "name" : "Leslie Taylor",
+      "phone" : "85252712088",
+      "email" : "lesliejoytaylor@gmail.com",
+      "delivery_method" : 0,
+      "remark" : "",
+      "delivery_date" : "",
+      "coupon" : ""
+  },
+  "stripe_ref" : "N/A",
+  "payment_id" : "N/A",
+  "total_price" : 89000,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T06:10:07.139Z"),
+  "update_time" : ISODate("2019-10-21T06:10:07.139Z"),
+  "__v" : 0
+}
+
+/* 43 */
+{
+  "_id" : ObjectId("5dad4cd206066b4e63eb9088"),
+  "item" : [ 
+      {
+          "stand" : "C152",
+          "widthPreference" : "Narrow",
+          "heightPreference" : "Tall",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "6ft",
+          "price" : 1415
+      }, 
+      {
+          "quantity" : 1,
+          "product" : "pw",
+          "size" : "20D",
+          "price" : 340
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190048",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Andrea Morrow",
+      "phone" : "68904921",
+      "email" : "andreabackhaus@hotmail.com",
+      "delivery_method" : 1,
+      "remark" : "Call be arriving ",
+      "delivery_date" : "2019-12-02",
+      "coupon" : "EARLY3",
+      "region" : "B",
+      "floor" : 2,
+      "address" : "12A, block 5, Phoenix Court, 39 Kennedy Road, wan chai",
+      "address_chi" : "灣仔  堅尼地道39號  鳳凰閣  5座  12A (車由堅尼地道入)",
+      "phone2" : ""
+  },
+  "cart_ref" : "5dad4c7e06066b4e63eb9087",
+  "stripe_ref" : "pi_1FVu8pEg289Pw5MVmvw2sK2C",
+  "payment_id" : "cs_live_xdbNPrFbGyGqCkudA0IM6LMs9iDzYr73thp6N4Ia6GLIpAuCV9BgvHkc",
+  "total_price" : 196400,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T06:14:42.916Z"),
+  "update_time" : ISODate("2019-10-22T02:59:52.624Z"),
+  "__v" : 0
+}
+
+/* 44 */
+{
+  "_id" : ObjectId("5dad4de206066b4e63eb908a"),
+  "item" : [ 
+      {
+          "stand" : "exchange",
+          "widthPreference" : "Wide",
+          "heightPreference" : "Tall",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "8ft",
+          "price" : 2200
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190049",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Li Bratton ",
+      "phone" : "66809242",
+      "email" : "letbratton@yahoo.com.sg",
+      "delivery_method" : 1,
+      "remark" : "Please call before delivery",
+      "delivery_date" : "2019-12-07",
+      "coupon" : "EARLY3",
+      "phone2" : "64027748",
+      "region" : "C",
+      "address" : "Flat 1A, Fairview Court, 94 Repulse Bay Road, HK",
+      "floor" : 0,
+      "address_chi" : "淺水灣  淺水灣道94號  ﻿富慧閣  1A"
+  },
+  "cart_ref" : "5dad4db606066b4e63eb9089",
+  "stripe_ref" : "pi_1FVuDrEg289Pw5MVvZQBuw2l",
+  "payment_id" : "cs_live_zdG2xqzbnUNZpwVqbGRkFDGdIxsKgDNe6WN2T2u1ssRJVdYceXmDjL6I",
+  "total_price" : 225000,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T06:19:14.803Z"),
+  "update_time" : ISODate("2019-10-22T03:00:23.593Z"),
+  "__v" : 0
+}
+
+/* 45 */
+{
+  "_id" : ObjectId("5dad4f0206066b4e63eb908d"),
+  "item" : [ 
+      {
+          "stand" : "exchange",
+          "widthPreference" : "Average",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "4ft",
+          "price" : 800
+      }
+  ],
+  "payment_method" : 1,
+  "invoice_no" : "20190050",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Claire Valles",
+      "phone" : "67186463",
+      "email" : "clairemodiano2@gmail.com",
+      "delivery_method" : 1,
+      "remark" : "N/A",
+      "delivery_date" : "2019-12-12",
+      "coupon" : "EARLY3",
+      "phone2" : "95351141",
+      "region" : "B",
+      "floor" : 0,
+      "address" : "5A Kennedy Court 7A Shiu Fai Terrace Wanchai",
+      "address_chi" : "半山  肇輝臺7A號  顯輝豪庭  5A"
+  },
+  "stripe_ref" : "N/A",
+  "payment_id" : "N/A",
+  "total_price" : 89200,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T06:24:02.831Z"),
+  "update_time" : ISODate("2019-10-22T03:00:51.118Z"),
+  "__v" : 0
+}
+
+/* 46 */
+{
+  "_id" : ObjectId("5dad4f2506066b4e63eb908e"),
+  "item" : [ 
+      {
+          "stand" : "exchange",
+          "widthPreference" : "Average",
+          "heightPreference" : "Tall",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "8ft",
+          "price" : 2200
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190051",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Annie Ho",
+      "phone" : "91959290",
+      "email" : "halcyon520@yahoo.com.hk",
+      "delivery_method" : 1,
+      "remark" : "",
+      "delivery_date" : "2019-11-30",
+      "coupon" : "EARLY3",
+      "region" : "A",
+      "address" : "Flat 18A, Tower 2, Regent On The Park, 9A Kennedy Road ",
+      "floor" : 0,
+      "address_chi" : "半山  堅尼地道  9A號  御花園  2座  18A",
+      "phone2" : ""
+  },
+  "cart_ref" : "5dad4efd06066b4e63eb908c",
+  "stripe_ref" : "pi_1FVuJ8Eg289Pw5MV5HzW5F9V",
+  "payment_id" : "cs_live_EekHMjaDVzP9weTtsV1XqSlruUzAHGZefpR4WKI9fURMQLP8ypPghIr9",
+  "total_price" : 225000,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T06:24:37.403Z"),
+  "update_time" : ISODate("2019-10-22T03:01:45.874Z"),
+  "__v" : 0
+}
+
+/* 47 */
+{
+  "_id" : ObjectId("5dad536f06066b4e63eb9090"),
+  "item" : [ 
+      {
+          "stand" : "exchange",
+          "widthPreference" : "Wide",
+          "heightPreference" : "Tall",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "8ft",
+          "price" : 2200
+      }, 
+      {
+          "quantity" : "4",
+          "product" : "pw",
+          "size" : "H9R",
+          "price" : 560
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190052",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Sau Yan Samantha Stowe",
+      "phone" : "91863139",
+      "email" : "samanthasystowe@yahoo.com",
+      "delivery_method" : 1,
+      "remark" : "Please call to let me know approximate timing when tree will be delivered",
+      "delivery_date" : "2019-11-30",
+      "coupon" : "EARLY3",
+      "region" : "H",
+      "address" : "House 69, Casa Marina 1, 28 Lo Fai Road, Tai Po",
+      "floor" : 1,
+      "address_chi" : "大埔  露輝路28號  淺月灣1期  69號屋",
+      "phone2" : ""
+  },
+  "cart_ref" : "5dad534e06066b4e63eb908f",
+  "stripe_ref" : "pi_1FVuaxEg289Pw5MVRzM0BflR",
+  "payment_id" : "cs_live_xvJ05KJGrRdVMxK838HjZzybLbw84qtXlzfBTejXgvHowwjHskJCKIzw",
+  "total_price" : 286600,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T06:42:55.415Z"),
+  "update_time" : ISODate("2019-10-22T03:02:20.900Z"),
+  "__v" : 0
+}
+
+/* 48 */
+{
+  "_id" : ObjectId("5dad541f06066b4e63eb9092"),
+  "item" : [ 
+      {
+          "stand" : "C148",
+          "widthPreference" : "Wide",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : false,
+          "product" : "df",
+          "size" : "8ft",
+          "price" : 2485
+      }
+  ],
+  "payment_method" : 0,
+  "invoice_no" : "20190053",
+  "flag" : [],
+  "status" : 0,
+  "cInfo" : {
+      "name" : "Timothy  Moreno",
+      "phone" : "63900081",
+      "email" : "tkmoreno@gmail.com",
+      "delivery_method" : 1,
+      "remark" : "Thank you ",
+      "delivery_date" : "2019-11-30",
+      "coupon" : "",
+      "region" : "F",
+      "address" : "Flat 5A.  Highview. 1A Cox’s Road.  Jordan.  Kowloon",
+      "phone2" : "63900081",
+      "floor" : 0,
+      "address_chi" : "佐敦  學士道1A號  高景臺  5A"
+  },
+  "cart_ref" : "5dad53fe06066b4e63eb9091",
+  "stripe_ref" : "pi_1FVudnEg289Pw5MV4i8fcvwK",
+  "payment_id" : "cs_live_2giUKh073qhcllE7zhLHyMb95eOy0m0PPSaqg8L3JuDHMkpCVZszCeyC",
+  "total_price" : 260500,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T06:45:51.876Z"),
+  "update_time" : ISODate("2019-10-22T03:03:50.231Z"),
+  "__v" : 0
+}
+
+/* 49 */
+{
+  "_id" : ObjectId("5dad564406066b4e63eb9093"),
+  "item" : [ 
+      {
+          "stand" : "C152",
+          "widthPreference" : "Average",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : false,
+          "product" : "nf",
+          "size" : "6ft",
+          "price" : 1415
+      }
+  ],
+  "payment_method" : 1,
+  "invoice_no" : "20190054",
+  "flag" : [],
+  "status" : -1,
+  "cInfo" : {
+      "name" : "Unique Fashion (HK) Ltd.",
+      "phone" : "31911367",
+      "email" : "sarah@uniquefashionhk.com",
+      "delivery_method" : 1,
+      "remark" : "Call before arrived. Lunch hour: 12:30 to 2:00pm",
+      "delivery_date" : "2019-12-13",
+      "coupon" : "EARLY3",
+      "phone2" : "31911368",
+      "region" : "I",
+      "address" : "Unit A, 7/F Wing Cheung Ind. Bldg., 58-70 Kwai Cheong Road, Kwai Chung. N.T.",
+      "floor" : 0,
+      "address_chi" : "葵興  葵昌路58-70號  永祥工業大廈  7A"
+  },
+  "stripe_ref" : "N/A",
+  "payment_id" : "N/A",
+  "total_price" : 148900,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T06:55:00.055Z"),
+  "update_time" : ISODate("2019-10-22T03:04:49.100Z"),
+  "__v" : 0
+}
+
+/* 50 */
+{
+  "_id" : ObjectId("5dad5c2906066b4e63eb9094"),
+  "item" : [ 
+      {
+          "stand" : "exchange",
+          "widthPreference" : "Average",
+          "heightPreference" : "Average",
+          "chooseMyOwnTree" : true,
+          "product" : "nf",
+          "size" : "6ft",
+          "price" : 1130
+      }
+  ],
+  "payment_method" : 1,
+  "invoice_no" : "20190055",
+  "flag" : [ 
+      "choose-my-own-tree"
+  ],
+  "status" : -1,
+  "cInfo" : {
+      "name" : "Arnhold & Co., Ltd.",
+      "phone" : "28079400",
+      "email" : "sunnytang@arnhold.com.hk",
+      "delivery_method" : 1,
+      "remark" : "",
+      "delivery_date" : "2019-12-19",
+      "coupon" : "EARLY3",
+      "phone2" : "28079444",
+      "region" : "D",
+      "address" : "6/F., Victoria Centre, 15 Watson Road, Fortress Hill, Hong Kong",
+      "floor" : 0,
+      "address_chi" : "炮台山 屈臣道15號 維多利亞中心 6樓"
+  },
+  "stripe_ref" : "N/A",
+  "payment_id" : "N/A",
+  "total_price" : 121300,
+  "remark" : "",
+  "create_time" : ISODate("2019-10-21T07:20:09.927Z"),
+  "update_time" : ISODate("2019-10-22T03:11:06.355Z"),
+  "__v" : 0
+}
