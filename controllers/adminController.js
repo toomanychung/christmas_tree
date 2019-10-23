@@ -70,7 +70,7 @@ module.exports = {
         filters['cInfo.delivery_method'] = parseInt(customQueryParams.delivery_method, 10);
       }
       if (customQueryParams.date) {
-        customQueryParams.date = moment(customQueryParams.date).format('YYYY-MM-DD').toString();
+        customQueryParams.date = moment(customQueryParams.date).utc('2016-01-01T00:00:00+08:00').format('YYYY-MM-DD').toString();
         filters['cInfo.delivery_date'] = customQueryParams.date;
       }
     }
