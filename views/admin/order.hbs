@@ -75,6 +75,12 @@
     </div>
     {{#if order.cInfo.delivery_method }}
     <div class="form-group">
+      <label class="control-label col-md-2" for="floor">Floor charged:</label>
+      <div class="col-sm-2">
+        <input type="text" class="form-control" id="floor" value="{{ order.cInfo.floor }}" disabled required>
+      </div>
+    </div>
+    <div class="form-group">
       <label class="control-label col-md-2" for="delivery_region">Delivery Region:</label>
       <div class="col-sm-2">
         <input type="text" class="form-control" id="delivery_region" value="{{ order.cInfo.region }}" required>
