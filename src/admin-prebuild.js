@@ -121,6 +121,7 @@ var app = new Vue({
         editedOrder.delivery_date = document.getElementById('delivery_date').value;
         editedOrder.address = document.getElementById('address').value;
         editedOrder.address_chi = document.getElementById('address_chi').value;
+        editedOrder.region = document.getElementById('delivery_region').value;
       }
       editedOrder.remark_client = document.getElementById('remark_client').value;
       editedOrder.remark_internal = document.getElementById('remark_internal').value;

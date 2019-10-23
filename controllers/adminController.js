@@ -99,6 +99,7 @@ module.exports = {
         address: editedOrder.address || '',
         address_chi: editedOrder.address_chi || '',
         delivery_date: editedOrder.delivery_date || '',
+        region: editedOrder.region || '',
       },
       remark: editedOrder.remark_internal
     };
