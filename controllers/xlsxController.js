@@ -21,6 +21,25 @@ function formatColor(pwSize) {
   return '紅色';
 }
 
+function formatStatus(status) {
+  switch (+status) {
+    case -3:
+      return 'Refunded';
+    case -2:
+      return 'Cancelled';
+    case -1:
+      return 'Waiting';
+    case 0:
+      return 'Pending';
+    case 1:
+      return 'Deliverying';
+    case 2:
+      return 'Complete';
+    default:
+      return status;
+  }
+}
+
 function read(orderId) {
   return new Promise((resolve, reject) => {
     fs.readFile(path.join(__dirname, '../', 'templates', 'delivery_note.xlsx'), async (err, data) => {
@@ -97,6 +116,7 @@ function genReport(rawData) {
         const template = new XlsxTemplate(data);
         const sheetNumber = 1;
         rawData.forEach((item, index) => {
+          rawData[index].status2 = formatStatus(item.status);
           rawData[index].newPrice = item.total_price / 100;
           rawData[index].id2 = item.id.slice(item.id.length - 5);
           rawData[index].create_time2 = moment(item.create_time).format('YYYY-MM-DD');
