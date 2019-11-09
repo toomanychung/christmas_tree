@@ -126,6 +126,9 @@ Handlebars.registerHelper({
   },
   formateEmailDate(date) {
     return moment(date).format('YYYY-MM-DD');
+  },
+  json(content) {
+    return JSON.stringify(content);
   }
 });
 
@@ -198,6 +201,9 @@ app.engine('hbs', hbs({
     },
     formateEmailDate(date) {
       return moment(date).format('YYYY-MM-DD');
+    },
+    json(content) {
+      return JSON.stringify(content);
     }
   }
 }));

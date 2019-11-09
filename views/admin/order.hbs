@@ -120,7 +120,7 @@
 
     <hr>
 
-    <div class="row">
+    {{!-- <div class="row">
       <h2 class="mx-auto">Product Details</h2>
       {{#each order.item}}
       <div class="col-12">
@@ -134,12 +134,55 @@
         <hr style="border-top: 1px dotted black;">
       </div>
       {{/each}}
+    </div> --}}
+
+    <div class="row" v-if="tempOrderVue" v-cloak>
+      <h2 class="mx-auto">Product Details</h2>
+      {{!-- Vue render list --}}
+      <div v-for="(product, index) in tempOrderVue.item" class="col-12 mx-4">
+        <h3 style="color:grey">Item \{{ index + 1 }}<i class="delete-delivery fa fa-trash" style="color:red;" @click.prevent="onDeleteOrderItem(index)"></i></h3>
+        <p style="color:grey">Product:
+          <select v-model="product.product">
+            <option v-for="option in orderProductTypeOptions" :value="option.value">
+              \{{ option.text }}
+            </option>
+          </select> 
+        </p>
+        <p style="color:grey">Size: 
+          <select v-if="product.product !== 'pw'" v-model="product.size" >
+            <option v-for="option in orderProductSizeOptions" :value="option">
+              \{{ option }}
+            </option>
+          </select> 
+          <select v-model="product.size" v-else>
+            <option v-for="option in orderProductPwSizeOptions" :value="option.value">
+              \{{ option.text }}
+            </option>
+          </select> 
+        </p>
+        <p style="color:grey" v-if="product.product === 'pw'">Quantity: <input v-model="product.quantity"></p>
+        <p style="color:grey" v-if="product.product !== 'pw'">Stand: 
+          <select v-model="product.stand" >
+            <option v-for="option in orderProductStandOptions" :value="option.value">
+              \{{ option.text }}
+            </option>
+          </select> 
+        </p>
+        <p style="color:grey">Amount: <span style="color:black">HKD\{{ product.price }}</span></p>
+      </div>
     </div>
+
     <div class="col-md-12 my-2">
       <button class="btn btn-success btn-lg" @click.prevent="onSaveOrder">Save</button>
       <button class="btn btn-danger btn-lg mx-2" @click.prevent="close">Close</button>
+      <button class="btn btn-info btn-lg mx-2" @click.prevent="onAddItem">Add new Item</button>
     </div>
+    
   </form>
   </div>
   </div>
 </div>
+
+<script type="application/javascript">
+  var tempOrder = {{{ json order }}};
+</script>

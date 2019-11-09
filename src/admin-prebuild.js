@@ -27,6 +27,39 @@ var app = new Vue({
     productDetails: {},
     deliveryDetails: {},
     coupon: {},
+    tempOrderVue: {},
+    orderProductTypeOptions: [
+      { text: 'Noble Fir', value: 'nf' },
+      { text: 'Fraser Fir', value: 'ff' },
+      { text: 'Douglas Fir', value: 'df' },
+      { text: 'Poinsettia / Wreath', value: 'pw' },
+    ],
+    orderProductSizeOptions: [
+      '4ft',
+      '5ft',
+      '6ft',
+      '7ft',
+      '8ft',
+      '9ft'
+    ],
+    orderProductPwSizeOptions: [
+      { text: 'Poinsettia 1 H 5" Pot (White)', value: 'H5W' },
+      { text: 'Poinsettia 2 H 9" Pot (White)', value: 'H9W' },
+      { text: 'Poinsettia 3 H 12" Pot (White)', value: 'H12W' },
+      { text: 'Poinsettia 1 H 5" Pot (Red)', value: 'H5R' },
+      { text: 'Poinsettia 2 H 9" Pot (Red)', value: 'H9R' },
+      { text: 'Poinsettia 3 H 12" Pot (Red)', value: 'H12R' },
+      { text: '12" Diametre Wreath', value: '12D' },
+      { text: '20" Diametre Wreath', value: '20D' },
+      { text: '24" Diametre Wreath', value: '24D' },
+    ],
+    orderProductStandOptions: [
+      { text: 'No stand and installation need', value: 'NA' },
+      { text: 'C152 Stand', value: 'C152' },
+      { text: 'C148 Stand', value: 'C148' },
+      { text: 'Exchange', value: 'exchange' },
+      { text: 'Installation at delivery', value: 'install' },
+    ],
     options: {
       requestFunction(params) {
         return axios.get('admin/api/getOrder', {
@@ -66,6 +99,10 @@ var app = new Vue({
       }
       function getDeliveryDetails() {
         return axios.get('/api/delivery');
+      }
+      if (window.tempOrder) {
+        this.tempOrderVue = _.cloneDeep(window.tempOrder);
+        this.$forceUpdate();
       }
       if (window.location.pathname === '/admin/product') {
         axios.all([getProductDetails(), getDeliveryDetails()])
@@ -125,7 +162,7 @@ var app = new Vue({
       }
       editedOrder.remark_client = document.getElementById('remark_client').value;
       editedOrder.remark_internal = document.getElementById('remark_internal').value;
-      console.log(editedOrder);
+      editedOrder.item = this.tempOrderVue.item;
       axios.post('/admin/api/editOrder', editedOrder)
         .then((res) => {
           this.$toasted.show('Update Order success!', {
@@ -171,6 +208,18 @@ var app = new Vue({
           // eslint-disable-next-line no-restricted-globals
           setTimeout(() => { location.reload(); }, 1000);
         });
+    },
+    onAddItem() {
+      const emptyItem = {
+        product: 'nf',
+        size: '4ft',
+        stand: 'NA',
+        price: 0,
+      };
+      this.tempOrderVue.item.push(emptyItem);
+    },
+    onDeleteOrderItem(index) {
+      this.tempOrderVue.item.splice(index, 1);
     },
     onSettingSubmit() {
       const content = {};

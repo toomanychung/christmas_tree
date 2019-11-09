@@ -101,6 +101,7 @@ module.exports = {
         delivery_date: editedOrder.delivery_date || '',
         region: editedOrder.region || '',
       },
+      item: editedOrder.item,
       remark: editedOrder.remark_internal
     };
     var dotOrder = dot.flatten(updatedOrder);
