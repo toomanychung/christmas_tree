@@ -168,6 +168,8 @@
             </option>
           </select> 
         </p>
+        <p style="color:grey" v-if="product.product !== 'pw'">Width Preference: <span style="color:black">\{{ product.widthPreference || 'N/A' }}</span></p>
+        <p style="color:grey" v-if="product.product !== 'pw'">Height Preference: <span style="color:black">\{{ product.heightPreference || 'N/A' }}</span></p>
         <p style="color:grey">Amount: <span style="color:black">HKD\{{ product.price }}</span></p>
       </div>
     </div>

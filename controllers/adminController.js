@@ -73,6 +73,9 @@ module.exports = {
         customQueryParams.date = moment(customQueryParams.date).utcOffset('+0800').format('YYYY-MM-DD').toString();
         filters['cInfo.delivery_date'] = customQueryParams.date;
       }
+      if (customQueryParams.chooseMyOwnTree) {
+        filters.flag = { $in: ['choose-my-own-tree'] };
+      }
     }
     //
     const result = await order.paginate(filters, options, ((err, res) => res));
