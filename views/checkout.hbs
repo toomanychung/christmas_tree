@@ -182,6 +182,7 @@
               <Validation-provider ref="floor" name="floor" :rules="{ required: true, between: { min: 0, max: 10 } }">
               <div slot-scope="{ errors }">
               <label for="floor">Goods require access through staircases(Type '0' if no staircases required) </label>
+              <br>
               <input type="text" min="0" max="10" class="form-control w-25" id="floor" placeholder="Floor" v-model="cInfo.floor" style="display: inline;" required=""><span>  x HKD75</span>
               <span style="color:red;" v-cloak>\{{ errors[0] }}</span>
               </div>
