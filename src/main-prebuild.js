@@ -43,7 +43,7 @@ extend('email', {
 });
 
 if (process.env.ENV === 'dev') {
-  var stripePublicKey = 'pk_test_7lTo0GLXrmpWbtQyyHl2tEyr00CZvY77P4';
+  var stripePublicKey = 'pk_test_e94q65F16GIG6KAoQPW0yZ3M';
 } else {
   // eslint-disable-next-line no-redeclare
   var stripePublicKey = 'pk_live_cd0FeMhe46AcOBhyzWb4F7YE00JPcJDiks';
