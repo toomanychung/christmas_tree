@@ -15,6 +15,7 @@ import axios from 'axios';
 import { extend, ValidationProvider, ValidationObserver } from 'vee-validate';
 import { required, email, between } from 'vee-validate/dist/rules';
 import VTooltip from 'v-tooltip';
+import vuetify from './plugins/vueify'; // path to vuetify export
 
 Vue.use(Toasted);
 Vue.component('ValidationProvider', ValidationProvider);
@@ -42,7 +43,7 @@ extend('email', {
 });
 
 if (process.env.ENV === 'dev') {
-  var stripePublicKey = 'pk_test_e94q65F16GIG6KAoQPW0yZ3M';
+  var stripePublicKey = 'pk_test_7lTo0GLXrmpWbtQyyHl2tEyr00CZvY77P4';
 } else {
   // eslint-disable-next-line no-redeclare
   var stripePublicKey = 'pk_live_cd0FeMhe46AcOBhyzWb4F7YE00JPcJDiks';
@@ -76,6 +77,7 @@ const defaultSelectedTree = {
 
 var app = new Vue({
   el: '#main',
+  vuetify,
   data: {
     isLoading: false,
     selectedTree: _.cloneDeep(defaultSelectedTree),
@@ -83,16 +85,27 @@ var app = new Vue({
     treeSizeList,
     treePreferenceWidth,
     treePreferenceHeight,
+    curretRegionValue: '',
+    deliveryCalendar: [],
     productDetails: {},
     deliveryDetails: {},
     payment_method: 0,
     acceptPolicy: false,
     cart: [],
     cInfo: {
-      name: '', phone: '', email: '', delivery_method: 0, remark: '', delivery_date: '', coupon: ''
+      name: '', phone: '', email: '', delivery_method: 0, remark: '', delivery_date: '', coupon: '', chooseMyOwnTree: false
     },
     coupon: '',
-    coupon_discount: 0
+    coupon_discount: 0,
+    drawer: false,
+    carouselList: [
+      {
+        src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg',
+      },
+      {
+        src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
+      }
+    ],
   },
   mounted() {
     this.loadStorage();
@@ -323,7 +336,29 @@ var app = new Vue({
           console.log(err);
           this.isLoading = false;
         });
-    }
+    },
+    getDeliveryCalendar() {
+      if (this.curretRegionValue) {
+        var tempList = [];
+        this.deliveryDetails.forEach((item, index) => {
+          if (item.value === this.curretRegionValue) {
+            const availableDateList = item.date;
+            availableDateList.forEach((date) => {
+              var tempDateObj = {
+                name: 'Available',
+                color: 'green',
+                start: date
+              };
+              tempList.push(tempDateObj);
+            });
+            this.deliveryCalendar = tempList;
+          }
+        });
+      }
+    },
+    getEventColor(event) {
+      return event.color;
+    },
   },
   computed: {
     productPriceSubTotal() {
@@ -372,7 +407,7 @@ var app = new Vue({
     },
     cartItemCount() {
       const itemCount = _.size(this.cart);
-      return itemCount;
+      return itemCount || '0';
     },
     selectedRegion() {
       const region = this.deliveryDetails.find(o => o.value === this.cInfo.region);

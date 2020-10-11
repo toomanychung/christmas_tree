@@ -208,7 +208,7 @@ p {padding: 0!important; margin-top: 0!important; margin-right: 0!important; mar
 															Thank you very much for your support. Your order at Sophie’s Christmas Trees has been received. Please complete payment in 5 days in order to confirm your order. Once the payment is confirmed, a receipt will be issued to you as confirmation. 
                               <br>Please follow the below instrustion:
                               <br><span style="color: red">1. Transfer: Bank of China (012)805-1-074325-8</span>
-                              <br><span style="color: red">2. Cheque - Payable to "Sophie's Christmas Trees" (P.O. Box 158, Ma On Shan Post Office, N.T 42E Ma On Shan Tsuen, N.T., Hong Kong)</span>
+                              <br><span style="color: red">2. Cheque - Payable to "Sophie's Christmas Trees" (P.O. Box 158, Ma On Shan Post Office, N.T., Hong Kong)</span>
                               <br>Please contact us after you completed your payment.
                               </span>
                               <hr>
@@ -216,7 +216,7 @@ p {padding: 0!important; margin-top: 0!important; margin-right: 0!important; mar
                                 <span style="font-family: &quot;Trebuchet MS&quot;;"><b>Invoice No.: #{{ order.invoice_no }}</b></span></div>
                                 <div><span style="font-family: &quot;Trebuchet MS&quot;;">Date: {{ formateEmailDate order.create_time }}</span></div>
                                 <div><span style="font-family: &quot;Trebuchet MS&quot;;">Delivery Method: {{ formatDeliveryMethod order.cInfo.delivery_method }}</span></div>
-                                {{!-- <div><span style="font-family: &quot;Trebuchet MS&quot;;">Delivery Date: {{ choose order.cInfo.delivery_date 'N/A' }}</span></div> --}}
+                                <div><span style="font-family: &quot;Trebuchet MS&quot;;">Delivery Date: {{ choose order.cInfo.delivery_date 'N/A' }}</span></div>
                                 {{!-- <div><span style="font-family: &quot;Trebuchet MS&quot;;">Pay By: {{ order._id }}</span></div> --}}
                                 <div><span style="font-family: &quot;Trebuchet MS&quot;;"><br></span></div><div><span style="font-family: &quot;Trebuchet MS&quot;;"><br></span></div>
 
@@ -229,7 +229,9 @@ p {padding: 0!important; margin-top: 0!important; margin-right: 0!important; mar
                               <div><span style="font-family: &quot;Trebuchet MS&quot;;">SubTotal: HKD{{ this.price }}</span></div><br>
 															{{/each }}
                               <hr>
-
+															{{#if isChooseMyTree}}
+															<span style="font-family: &quot;Trebuchet MS&quot;;color:red;font-weight:bold;">You've chosen "Choose my own tree" service and we'll notify you once the tree arrived.</span>
+															{{/if}}
                               <div><span style="font-family: &quot;Trebuchet MS&quot;;">Coupon: {{ choose order.cInfo.coupon 'N/A' }}</span></div>
                               <div><span style="font-family: &quot;Trebuchet MS&quot;;"><b>Total (Including Delivery charge): HKD{{ deduct00 order.total_price }}</b></span></div><div><span style="font-family: &quot;Trebuchet MS&quot;;"><br></span></div><div><span style="font-family: &quot;Trebuchet MS&quot;;"><br></span></div><div><span style="font-family: &quot;Trebuchet MS&quot;;">Delivery Info:</span></div>
                               <div><span style="font-family: &quot;Trebuchet MS&quot;;">{{ choose order.cInfo.address 'N/A' }}</span></div>

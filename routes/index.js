@@ -18,39 +18,42 @@ router.use(async (req, res, next) => {
 
 /* Index */
 router.get('/', (req, res) => {
-  res.render('index', {
-
+  // res.render('index', {
+  //   layout: 'v2/layout'
+  // });
+  res.render('v2/index', {
+    layout: 'v2/layout'
   });
 });
 
 router.get('/about', (req, res) => {
   res.render('about', {
-
+    layout: 'v2/layout'
   });
 });
 
 router.get('/product', (req, res) => {
   res.render('product', {
-
+    layout: 'v2/layout'
   });
 });
 
 router.get('/contact', (req, res) => {
   res.render('contact', {
-
+    layout: 'v2/layout'
   });
 });
 
 /* Cart */
 router.get('/cart', (req, res) => {
   res.render('cart', {
-
+    layout: 'v2/layout'
   });
 });
 
 router.get('/checkout', (req, res) => {
   res.render('checkout', {
-
+    layout: 'v2/layout'
   });
 });
 
@@ -64,6 +67,7 @@ router.get('/thank-you', async (req, res) => {
     }
     const date = moment(result.create_time).format('YYYY-MM-DD HH:mm');
     res.render('thankyou', {
+      layout: 'v2/layout',
       orderRef: result._id,
       invoiceRef: result.invoice_no,
       amountPaid: result.total_price / 100,
@@ -75,6 +79,7 @@ router.get('/thank-you', async (req, res) => {
   const date = moment(result.create_time).format('YYYY-MM-DD HH:mm');
   if (result) {
     res.render('thankyou-bank', {
+      layout: 'v2/layout',
       orderRef: result._id,
       invoiceRef: result.invoice_no,
       amountPaid: result.total_price / 100,
@@ -120,6 +125,12 @@ router.post('/webhook/', (req, res) => {
   // Return a response to acknowledge receipt of the event
   res.json({ received: true });
   return true;
+});
+
+router.get('/testpage', (req, res) => {
+  res.render('v2/index', {
+    layout: 'v2/layout'
+  });
 });
 
 // SSL API

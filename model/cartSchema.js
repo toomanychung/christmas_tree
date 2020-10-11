@@ -16,6 +16,7 @@ module.exports = new Schema({
     coupon: String,
     address: String,
     floor: Number,
+    chooseMyOwnTree: Boolean
   },
   create_time: {
     type: Date,

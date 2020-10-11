@@ -66,6 +66,7 @@ module.exports = {
       var _description = 'Self Pick Up';
       const userCart = result.cart;
       const refId = result._id.toHexString();
+      console.log('ref Id for cart ', refId);
       const customerEmail = result.cInfo.email;
       const couponCode = result.cInfo.coupon;
       let priceAftercalculated = await calculateCart(userCart);

@@ -72,6 +72,33 @@ function read(orderId) {
         };
         orderObj.item.forEach((itemObj) => {
           if (itemObj.product !== 'pw') {
+            // 2019 version
+            // const obj = {
+            //   stand: itemObj.stand,
+            //   product: itemObj.product,
+            //   size: itemObj.size,
+            //   qty: 1
+            // };
+
+            // amend raw data to sing alphabet
+            if (itemObj.product === 'nf') {
+              itemObj.product = 'N';
+            } else if (itemObj.product === 'df') {
+              itemObj.product = 'D';
+            } else if (itemObj.product === 'ff') {
+              itemObj.product = 'F';
+            }
+            // amend stand translation
+            if (itemObj.stand === 'exchange') {
+              itemObj.stand = '回架';
+            } else if (itemObj.stand === 'NA') {
+              itemObj.stand = '冇架';
+            } else if (itemObj.stand === 'install') {
+              itemObj.stand = '代上架';
+            } else {
+              itemObj.stand = '新架';
+            }
+
             const obj = {
               stand: itemObj.stand,
               product: itemObj.product,

@@ -94,14 +94,18 @@ module.exports = {
     });
 
     // Check if any choose my own Tree
-    newCartItem.forEach((item) => {
-      if (item.chooseMyOwnTree) {
-        flagList = ['choose-my-own-tree'];
-      }
-    });
+    console.log('Relatedcart', Relatedcart);
+    if (Relatedcart.cInfo.chooseMyOwnTree) {
+      flagList.push('choose-my-own-tree');
+    }
+    // newCartItem.forEach((item) => {
+    //   if (item.chooseMyOwnTree) {
+    //     flagList = ['choose-my-own-tree'];
+    //   }
+    // });
 
     // Invoice No.
-    const _tempInvoiceNo = await setting.findOne({ type: 'order_2019' }, { _id: 0 }, (err, res) => res);
+    const _tempInvoiceNo = await setting.findOne({ type: 'order_2020' }, { _id: 0 }, (err, res) => res);
     const tempInvoiceNo = _tempInvoiceNo.count;
     console.log('invoice_no', tempInvoiceNo);
 
@@ -119,7 +123,7 @@ module.exports = {
     };
     const promise = order.create(orderPayload);
     const result = await promise.then(res => res);
-    setting.updateOne({ type: 'order_2019' }, { count: tempInvoiceNo + 1 }, (err, res) => res);
+    setting.updateOne({ type: 'order_2020' }, { count: tempInvoiceNo + 1 }, (err, res) => res);
     mailController.sendOrderConfirmationReminder(result.id);
   },
   async createBankInOrder(payload) {
@@ -168,11 +172,14 @@ module.exports = {
     }
 
     // Check if any choose my own Tree
-    newCartItem.forEach((item) => {
-      if (item.chooseMyOwnTree) {
-        flagList = ['choose-my-own-tree'];
-      }
-    });
+    if (payload.cInfo.chooseMyOwnTree) {
+      flagList.push('choose-my-own-tree');
+    }
+    // newCartItem.forEach((item) => {
+    //   if (item.chooseMyOwnTree) {
+    //     flagList = ['choose-my-own-tree'];
+    //   }
+    // });
 
 
     const deliveryMethod = payload.cInfo.delivery_method;
@@ -192,7 +199,7 @@ module.exports = {
       }
     }
     // Invoice No.
-    const _tempInvoiceNo = await setting.findOne({ type: 'order_2019' }, { _id: 0 }, (err, res) => res);
+    const _tempInvoiceNo = await setting.findOne({ type: 'order_2020' }, { _id: 0 }, (err, res) => res);
     const tempInvoiceNo = _tempInvoiceNo.count;
     console.log('invoice_no', tempInvoiceNo);
 
@@ -212,7 +219,7 @@ module.exports = {
       const promise = order.create(orderPayload);
       const result = await promise.then(res => res);
       mailController.sendBankInReminder(result.id);
-      setting.updateOne({ type: 'order_2019' }, { count: tempInvoiceNo + 1 }, (err, res) => res);
+      setting.updateOne({ type: 'order_2020' }, { count: tempInvoiceNo + 1 }, (err, res) => res);
       return result.id;
     }
     return null;

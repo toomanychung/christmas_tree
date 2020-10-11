@@ -17,7 +17,8 @@ module.exports = new Schema({
     coupon: String,
     address: String,
     address_chi: String,
-    floor: Number
+    floor: Number,
+    chooseMyOwnTree: Boolean,
   },
   stripe_ref: String,
   cart_ref: String,

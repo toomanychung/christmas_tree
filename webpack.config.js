@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
 
@@ -17,5 +18,19 @@ module.exports = {
   },
   plugins: [
     new Dotenv()
-  ]
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.s(c|a)ss$|\.css$/,
+        use: [
+          'vue-style-loader',
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ],
+      },
+    ],
+  }
+
 };

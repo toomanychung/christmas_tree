@@ -50,14 +50,14 @@
               <option>4</option>
             </select> --}}
           </div>
-          <input type="checkbox" v-model="selectedTree.chooseMyOwnTree" class="ml-2"><span class="px-3" style="font-size: 1.15rem">Choose my own tree</span>
+          {{!-- <input type="checkbox" v-model="selectedTree.chooseMyOwnTree" class="ml-2"><span class="px-3" style="font-size: 1.15rem">Choose my own tree</span> --}}
           <i class="fa fa-question-circle" v-tooltip="'We will notify you once the tree arrived, and you are welcome to choose your own tree!'"></i>
           <p>Stock :
             <span v-if="isProductOnStock" style="color:green;font-size:22px;">Available</span>
             <span v-else-if="!selectedTree.size" style="color:gray;font-size:22px;">Unknown</span>
             <span v-else style="color:red;font-size:22px;">Out of Stock</span>
           </p>
-          <h3 v-if="selectedTree.product=='ff'" style="color:red">Important: Please select delivery date after 2019-12-03 in check out page if you choose Fraser Fir.</h3>
+          <h3 v-if="selectedTree.product=='ff'" style="color:red">Important: Fraser Fir is not available as of now.</h3>
           <p>Price <span>(Not include delivery charge)</span> : HK$ \{{ productPriceSubTotal }}</p> 
           <button type="button" class="btn btn-success btn-lg" :disabled="!isProductOnStock" @click="addToCart">Add to Cart</button>
         </div>
@@ -139,7 +139,7 @@
               <option>4</option>
             </select> --}}
           </div>
-            <input type="checkbox" v-model="selectedTree.chooseMyOwnTree" class="ml-2"><span class="px-3" style="font-size: 1.15rem">Choose my own tree</span>
+            {{!-- <input type="checkbox" v-model="selectedTree.chooseMyOwnTree" class="ml-2"><span class="px-3" style="font-size: 1.15rem">Choose my own tree</span> --}}
           <p>Stock :
             <span v-if="isProductOnStock" style="color:green;font-size:22px;">Available</span>
             <span v-else-if="!selectedTree.size" style="color:gray;font-size:22px;">Unknown</span>

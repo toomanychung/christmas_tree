@@ -38,6 +38,11 @@ module.exports = {
   },
   async sendBankInReminder(orderId) {
     order.findOne({ _id: orderId }, (err, res) => {
+      var isChooseMyTree = false;
+      // check if choose my tree
+      if (res.flag.includes('choose-my-own-tree')) {
+        isChooseMyTree = true;
+      }
       //
       nodemailerMailgun.sendMail({
         from: 'noreply@sophieshk.com',
@@ -46,7 +51,7 @@ module.exports = {
         template: {
           name: 'views/mail/bank-in-reminder.hbs',
           engine: 'handlebars',
-          context: { order: res, logo }
+          context: { order: res, logo, isChooseMyTree }
         }
       }, (err2, info) => {
         if (err2) {
@@ -60,6 +65,11 @@ module.exports = {
   },
   async sendOrderConfirmationReminder(orderId) {
     order.findOne({ _id: orderId }, (err, res) => {
+      var isChooseMyTree = false;
+      // check if choose my tree
+      if (res.flag.includes('choose-my-own-tree')) {
+        isChooseMyTree = true;
+      }
       //
       nodemailerMailgun.sendMail({
         from: 'noreply@sophieshk.com',
@@ -68,7 +78,7 @@ module.exports = {
         template: {
           name: 'views/mail/order-confirmation.hbs',
           engine: 'handlebars',
-          context: { order: res, logo }
+          context: { order: res, logo, isChooseMyTree }
         }
       }, (err2, info) => {
         if (err2) {

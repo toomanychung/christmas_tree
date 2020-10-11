@@ -213,7 +213,7 @@ p {padding: 0!important; margin-top: 0!important; margin-right: 0!important; mar
                                 <span style="font-family: &quot;Trebuchet MS&quot;;">Invoice No.: #{{ order.invoice_no }}</span></div>
                                 <div><span style="font-family: &quot;Trebuchet MS&quot;;">Date: {{ formateEmailDate order.create_time }}</span></div>
                                 <div><span style="font-family: &quot;Trebuchet MS&quot;;">Delivery Method: {{ formatDeliveryMethod order.cInfo.delivery_method }}</span></div>
-                                {{!-- <div><span style="font-family: &quot;Trebuchet MS&quot;;">Delivery Date: {{ choose order.cInfo.delivery_date 'N/A' }}</span></div> --}}
+                                <div><span style="font-family: &quot;Trebuchet MS&quot;;">Delivery Date: {{ choose order.cInfo.delivery_date 'N/A' }}</span></div>
                                 {{!-- <div><span style="font-family: &quot;Trebuchet MS&quot;;">Pay By: {{ order._id }}</span></div> --}}
                                 <div><span style="font-family: &quot;Trebuchet MS&quot;;"><br></span></div><div><span style="font-family: &quot;Trebuchet MS&quot;;"><br></span></div>
 
@@ -231,7 +231,10 @@ p {padding: 0!important; margin-top: 0!important; margin-right: 0!important; mar
                               <div><span style="font-family: &quot;Trebuchet MS&quot;;"><b>Total (Including Delivery charge): HKD{{ deduct00 order.total_price }}</b></span></div><div><span style="font-family: &quot;Trebuchet MS&quot;;"><br></span></div><div><span style="font-family: &quot;Trebuchet MS&quot;;"><br></span></div><div><span style="font-family: &quot;Trebuchet MS&quot;;">Delivery Info:</span></div>
                               <div><span style="font-family: &quot;Trebuchet MS&quot;;">{{ choose order.cInfo.address 'N/A' }}</span></div>
                               <br>
-                              <div><span style="font-family: &quot;Trebuchet MS&quot;;">If you would like to change your order, please kindly email to <a href="mailto:sophiesxmastree@gmail.com">sophiesxmastree@gmail.com</a>. Our customer service representatives will reach you for your enquiry.</span></div>
+															{{#if isChooseMyTree}}
+															<span style="font-family: &quot;Trebuchet MS&quot;;color:red;font-weight:bold;">You've chosen "Choose my own tree" service and we'll notify you once the tree arrived.</span>
+															{{/if}}
+                              <div><span style="font-family: &quot;Trebuchet MS&quot;;">If you would like to change your order, please kindly email to <a href="mailto:sophiesxmastrees@gmail.com">sophiesxmastree@gmail.com</a>. Our customer service representatives will reach you for your enquiry.</span></div>
                               <div><span style="font-family: &quot;Trebuchet MS&quot;;">We wish you a joyful Christmas with our products.</span></div>
                               <div><span style="font-family: &quot;Trebuchet MS&quot;;"><br></span></div><div><span style="font-family: &quot;Trebuchet MS&quot;;">Sophie's Christmas Tree</span></div></td>
 													</tr>

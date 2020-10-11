@@ -6,7 +6,7 @@
             <div class="card-header bg-dark text-light">
                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                 Shopping cart
-                <a href="/" class="btn btn-outline-info btn-sm float-right">Continue shopping</a>
+                <a href="/" class="btn btn-outline-info btn-sm float-right" style="color:white">Continue shopping</a>
                 <div class="clearfix"></div>
             </div>
             <div class="card-body">
@@ -35,7 +35,7 @@
                             </div>
                             <div class="col-2 col-sm-2 col-md-2 text-right">
                                 <button type="button" class="btn btn-outline-danger btn-xs" @click="deleteItemInCart(index)">
-                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                    <v-icon size="130%" color="red lighten-2">mdi-delete</v-icon>
                                 </button>
                             </div>
                         </div>
@@ -57,7 +57,7 @@
                             </div>
                             <div class="col-2 col-sm-2 col-md-2 text-right">
                                 <button type="button" class="btn btn-outline-danger btn-xs" @click="deleteItemInCart(index)">
-                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                    <v-icon>home</v-icon>
                                 </button>
                             </div>
                         </div>
@@ -84,7 +84,7 @@
                     </div>
                 </div> --}}
                 <div class="float-right" style="margin: 10px">
-                    <a class="btn btn-success float-right" href="/checkout">Checkout</a>
+                    <a class="btn btn-success float-right" style="color:white" href="/checkout">Checkout</a>
                     <div class="float-right" style="margin: 5px">
                         Total price (Not include delivery): <b>HK$ \{{calculateTotalPrice()}}</b>
                     </div>

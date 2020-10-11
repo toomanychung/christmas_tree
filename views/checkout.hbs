@@ -164,7 +164,8 @@
             </div>
 
             <div class="mb-3" v-if="cInfo.delivery_method === 1" v-cloak>
-              <img class="img-fluid" src="img/calendar.png" style="height:auto">
+              {{!-- <img class="img-fluid" src="img/calendar.png" style="height:auto"> --}}
+              <p>*** For possible delivery date, please click <a href="/#d_schedule">here</a></p>
             </div>
 
             <div class="mb-3" v-if="cInfo.delivery_method === 1" v-cloak>
@@ -190,6 +191,11 @@
             <div class="mb-3">
               <label for="remark">Remark <span class="text-muted">(Optional)</span></label>
               <textarea type="text-area" class="form-control" id="remark" v-model="cInfo.remark" placeholder="eg. Call before arrival" maxlength="200"></textarea>
+            </div>
+
+         <div class="mb-3">
+              <label for="remark">Choose My Own Tree <span class="text-muted">(Optional)</span></label>
+                <input class="mx-4" type="checkbox" id="chooseMyOwnTree" v-model="cInfo.chooseMyOwnTree">
             </div>
 
             <hr class="mb-2">

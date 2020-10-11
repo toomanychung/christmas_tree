@@ -61,7 +61,8 @@ module.exports = {
         filters['cInfo.email'] = { $regex: new RegExp(customQueryParams.email) };
       }
       if (customQueryParams.phone) {
-        filters['cInfo.phone'] = customQueryParams.phone;
+        filters.$or = [{ 'cInfo.phone': customQueryParams.phone }, { 'cInfo.phone2': customQueryParams.phone }];
+        // filters['cInfo.phone'] = customQueryParams.phone;
       }
       if (customQueryParams.status) {
         filters.status = parseInt(customQueryParams.status, 10);
@@ -73,17 +74,21 @@ module.exports = {
         customQueryParams.date = moment(customQueryParams.date).utcOffset('+0800').format('YYYY-MM-DD').toString();
         filters['cInfo.delivery_date'] = customQueryParams.date;
       }
+      if (customQueryParams.invoice_no) {
+        filters.invoice_no = customQueryParams.invoice_no;
+      }
       if (customQueryParams.chooseMyOwnTree) {
         filters.flag = { $in: ['choose-my-own-tree'] };
       }
     }
-    //
+    console.log(filters);
     const result = await order.paginate(filters, options, ((err, res) => res));
+
     return result;
   },
   async getOrderDetails(orderId) {
     if (!orderId.match(/^[0-9a-fA-F]{24}$/)) {
-      console.log('ID not match');
+      // console.log('ID not match');
       return null;
     }
     const result = await order.findOne({ _id: orderId }, {}, (err, res) => res);
