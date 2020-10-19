@@ -57,7 +57,7 @@
             <span v-else-if="!selectedTree.size" style="color:gray;font-size:22px;">Unknown</span>
             <span v-else style="color:red;font-size:22px;">Out of Stock</span>
           </p>
-          <h3 v-if="selectedTree.product=='ff'" style="color:red">Important: Fraser Fir is not available as of now.</h3>
+          {{!-- <h3 v-if="selectedTree.product=='ff'" style="color:red">Important: Fraser Fir is not available as of now.</h3> --}}
           <p>Price <span>(Not include delivery charge)</span> : HK$ \{{ productPriceSubTotal }}</p> 
           <button type="button" class="btn btn-success btn-lg" :disabled="!isProductOnStock" @click="addToCart">Add to Cart</button>
         </div>
@@ -145,7 +145,7 @@
             <span v-else-if="!selectedTree.size" style="color:gray;font-size:22px;">Unknown</span>
             <span v-else style="color:red;font-size:22px;">Out of Stock</span>
           </p>
-          <span v-if="selectedTree.product=='ff'" style="color:red">Important: Fraser Fir is not available as of now.</span>
+          {{!-- <span v-if="selectedTree.product=='ff'" style="color:red">Important: Fraser Fir is not available as of now.</span> --}}
           <p>Price <span>(Not include delivery charge)</span> : HK$ \{{ productPriceSubTotal }}</p> 
           <button type="button" class="btn btn-success btn-lg" :disabled="!isProductOnStock" @click="addToCart">Add to Cart</button>
         </div>
