@@ -76,6 +76,7 @@
               <span v-else-if="!selectedTree.size" style="color:gray;font-size:22px;">Unknown</span>
               <span v-else style="color:red;font-size:22px;">Out of Stock</span>
             </p>
+            <p style="color:red">Important: Available after 3rd December.</p>
             <p>Price <span>(Not include delivery charge)</span> : HK$ \{{ productPriceSubTotal }}</p> 
             <button type="button" class="btn btn-success btn-lg" :disabled="!isProductOnStock || isQuantityGreaterThanStock" @click="addToCart">Add to Cart</button>
 
@@ -165,6 +166,7 @@
               <span v-else-if="!selectedTree.size" style="color:gray;font-size:22px;">Unknown</span>
               <span v-else style="color:red;font-size:22px;">Out of Stock</span>
             </p>
+            <p style="color:red">Available after 3rd December.</p>
             <p>Price <span>(Not include delivery charge)</span> : HK$ \{{ productPriceSubTotal }}</p> 
             <button type="button" class="btn btn-success btn-lg" :disabled="!isProductOnStock || isQuantityGreaterThanStock" @click="addToCart">Add to Cart</button>
 
